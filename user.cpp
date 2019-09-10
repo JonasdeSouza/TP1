@@ -1,6 +1,9 @@
 #include <iostream>
+#include <string>
+#include <stdexcept>
 #include "user.h"
 using namespace std;
+
 
 void User::CadastrarUsuario(string nome, string telefone, string email, string senha, string cpf){
 
@@ -24,11 +27,65 @@ void User::Imprime(){
 }
 
 void Nome::SetNome(string Nome){
-    Nome = nome;
+    int validar;
+    validar = Validar(Nome);
+    if (validar == 0){
+        nome = Nome;
+    }
+}
+
+int Nome::Validar(string Nome) throw (invalid_argument){
+    int erro={0}, i;
+    try{
+        if (Nome.size() > 20 ||Nome.size() < 1){
+            erro--;
+            throw invalid_argument("");
+        } else if (erro == 0){
+            int found = Nome.find('.');
+            if (found != -1){
+               if (Nome[found-1] <= 'A' || Nome[found-1] >= 'z'){
+                    erro--;
+                    throw invalid_argument("");
+                }
+            }
+        } else {
+            int found = Nome.find(' ');
+            if (Nome[found] == Nome[found+1]){
+                erro--;
+                throw invalid_argument("");
+            }
+        }
+        for(i=0; i<Nome.size(); i++){
+            if (Nome[i] <= 'A' || Nome[i] >= 'z'){
+                erro--;
+                throw invalid_argument("");
+            }
+        }
+    } catch (invalid_argument){
+        cout << "!!! Nome invalido !!!";
+      }
+    return erro;
 }
 
 void Telefone::SetTelefone(string Telefone){
     telefone = Telefone;
+}
+
+int Telefone::Validar(string Telefone){
+    int erro;
+    try{
+        int found = Telefone.find('-');
+        if(Telefone.size() != 11){
+            erro++;
+            throw invalid_argument;
+        } else if (erro == 0){
+            if(Telefone[found-1] <= '0' && Telefone[found-2] <= '0' || Telefone[found-1] > '9' || Telefone[found-2] > '9' )
+        }
+    }
+    catch (invalid_argument){
+        cout << "!!! Telefone inválido !!!";
+    }
+
 }
 
 void Email::SetEmail(string Email){
@@ -74,7 +131,8 @@ void Booking::ReservarCarona(int codigoreserva, int bagagem, char assento){
 }
 
 void Booking::Imprime(){
-    int codreserv, bag, assento1;
+    int codreserv, bag;
+    char assento1;
 
     codreserv = codigo.GetCodigoReserva();
     bag = bagagem.GetBagagem();

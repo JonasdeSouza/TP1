@@ -1,13 +1,15 @@
 #ifndef USER_H
 #define USER_H
 #include <string>
+#include <stdexcept>
 using namespace std;
 
     class Nome{
         private:
             string nome;
         public:
-            void SetNome(string Nome);
+            int Validar(string) throw (invalid_argument);
+            void SetNome(string);
             string GetNome();
     };
 
@@ -15,7 +17,8 @@ using namespace std;
         private:
             string telefone;
         public:
-            void SetTelefone(string Telefone);
+            int Validar(string) throw (invalid_argument);
+            void SetTelefone(string);
             string GetTelefone();
     };
 
@@ -23,7 +26,7 @@ using namespace std;
         private:
             string email;
         public:
-            void SetEmail(string Email);
+            void SetEmail(string);
             string GetEmail();
     };
 
@@ -31,7 +34,7 @@ using namespace std;
         private:
             string senha;
         public:
-            void SetSenha(string Senha);
+            void SetSenha(string);
             string GetSenha();
     };
 
@@ -39,7 +42,7 @@ using namespace std;
         private:
             string cpf;
         public:
-            void SetCpf(string Cpf);
+            void SetCpf(string);
             string GetCpf();
     };
 
@@ -51,7 +54,7 @@ using namespace std;
             Senha senha;
             Cpf cpf;
         public:
-            void CadastrarUsuario(string nome, string telefone, string email, string senha, string cpf);
+            void CadastrarUsuario(string, string, string, string, string);
             void Imprime();
     };
 
@@ -62,7 +65,7 @@ using namespace std;
             int bagagem;
 
         public:
-            void SetBagagem(int Bagagem);
+            void SetBagagem(int);
             int GetBagagem();
     };
 
@@ -70,7 +73,7 @@ using namespace std;
         private:
             char assento;
         public:
-            void SetAssento(char Assento);
+            void SetAssento(char);
             char GetAssento();
     };
 
@@ -78,7 +81,7 @@ using namespace std;
         private:
             int codigoreserva;
         public:
-            void SetCodigoReserva(int CodigoReserva);
+            void SetCodigoReserva(int);
             int GetCodigoReserva();
     };
 
@@ -88,7 +91,7 @@ using namespace std;
             Assento assento;
             Bagagem bagagem;
         public:
-            void ReservarCarona(int codigoreserva, int bagagem, char assento);
+            void ReservarCarona(int, int, char);
             void Imprime();
     };
 
@@ -98,7 +101,7 @@ using namespace std;
         private:
             int codigocarona;
         public:
-            void SetCodigoCarona(int CodigoCarona);
+            void SetCodigoCarona(int);
             int GetCodigoCarona();
     };
 
@@ -106,7 +109,7 @@ using namespace std;
         private:
             string cidadeorigem;
         public:
-            void SetCidadeOrigem(string CidadeOrigem);
+            void SetCidadeOrigem(string);
             string GetCidadeOrigem();
     };
 
@@ -114,7 +117,7 @@ using namespace std;
         private:
             string cidadedestino;
         public:
-            void SetCidadeDestino(string CidadeDestino);
+            void SetCidadeDestino(string);
             string GetCidadeDestino();
     };
 
@@ -122,7 +125,7 @@ using namespace std;
         private:
             string estadoorigem;
         public:
-            void SetEstadoOrigem(string EstadoOrigem);
+            void SetEstadoOrigem(string);
             string GetEstadoOrigem();
     };
 
@@ -130,7 +133,7 @@ using namespace std;
         private:
             string estadodestino;
         public:
-            void SetEstadoDestino(string EstadoDestino);
+            void SetEstadoDestino(string);
             string GetEstadoDestino();
     };
 
@@ -138,7 +141,7 @@ using namespace std;
         private:
             string data;
         public:
-            void SetData(string data);
+            void SetData(string);
             string GetData();
     };
 
@@ -146,7 +149,7 @@ using namespace std;
         private:
             int duracao;
         public:
-            void SetDuracao(int Duracao);
+            void SetDuracao(int);
             int GetDuracao();
     };
 
@@ -154,7 +157,7 @@ using namespace std;
         private:
             int vagas;
         public:
-            void SetVagas(int Vagas);
+            void SetVagas(int);
             int GetVagas();
     };
 
@@ -162,7 +165,7 @@ using namespace std;
         private:
             string preco;
         public:
-            void SetPreco(string preco);
+            void SetPreco(string);
             string GetPreco();
     };
 
@@ -178,7 +181,7 @@ using namespace std;
             Vagas vagas;
             Preco preco;
         public:
-            void CadastrarCarona(int vagas, int duracao, int codigocarona, string cidadeorigem, string estadoorigem, string cidadedestino, string estadodestino, string data, string preco);
+            void CadastrarCarona(int, int, int, string, string, string, string, string, string);
             void Imprime();
     };
 
@@ -188,7 +191,7 @@ using namespace std;
         private:
             int codigobanco;
         public:
-            void SetCodigoBanco(int CodigoBanco);
+            void SetCodigoBanco(int);
             int GetCodigoBanco();
     };
 
@@ -196,7 +199,7 @@ using namespace std;
         private:
             string agencia;
         public:
-            void SetAgencia(string Agencia);
+            void SetAgencia(string);
             string GetAgencia();
     };
 
@@ -204,7 +207,7 @@ using namespace std;
         private:
             string conta;
         public:
-            void SetConta(string Conta);
+            void SetConta(string);
             string GetConta();
     };
 
@@ -214,7 +217,7 @@ using namespace std;
             Agencia agencia;
             Conta conta;
         public:
-            void CadastrarInfoBancarias(int codigobanco, string agencia, string conta);
+            void CadastrarInfoBancarias(int, string, string);
             void Imprime();
     };
 #endif
