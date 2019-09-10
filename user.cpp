@@ -123,6 +123,23 @@ void Ride::CadastrarCarona(int vagas, int duracao, int codigocarona, string cida
 
 }
 
+void Ride::Imprime(){
+    int vag, duration, codcarona;
+    string cidadorigem, estadorigem, cidaddestino, estaddestino, dataa, precoa;
+
+    vag = vagas.GetVagas();
+    duration = duracao.GetDuracao();
+    codcarona = codigocarona.GetCodigoCarona();
+    cidadorigem = cidadeorigem.GetCidadeOrigem();
+    estadorigem = estadoorigem.GetEstadoOrigem();
+    cidaddestino = cidadedestino.GetCidadeDestino();
+    estaddestino = estadodestino.GetEstadoDestino();
+    dataa = data.GetData();
+    precoa = preco.GetPreco();
+
+    cout << vag << "\n" << duration << "\n" << codcarona << "\n" << cidadorigem << "\n" << estadorigem << "\n" << cidaddestino << "\n" << estaddestino << "\n" << dataa << "\n" << precoa;
+}
+
 void Vagas::SetVagas(int Vagas){
     vagas = Vagas;
 }
@@ -201,6 +218,17 @@ void Account::CadastrarInfoBancarias(int codigobanco, string agencia, string con
     this->banco.SetCodigoBanco(codigobanco);
     this->agencia.SetAgencia(agencia);
     this->conta.SetConta(conta);
+}
+
+void Account::Imprime(){
+    int codbanco;
+    string agency, acount;
+
+    codbanco = banco.GetCodigoBanco();
+    agency = agencia.GetAgencia();
+    acount = conta.GetConta();
+
+    cout << "\n" << codbanco << "\n" << agency << "\n" << acount;
 }
 
 void Banco::SetCodigoBanco(int CodigoBanco){

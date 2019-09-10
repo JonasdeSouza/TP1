@@ -179,6 +179,7 @@ using namespace std;
             Preco preco;
         public:
             void CadastrarCarona(int vagas, int duracao, int codigocarona, string cidadeorigem, string estadoorigem, string cidadedestino, string estadodestino, string data, string preco);
+            void Imprime();
     };
 
 //---------------------------------------------------------------------------------
@@ -214,5 +215,6 @@ using namespace std;
             Conta conta;
         public:
             void CadastrarInfoBancarias(int codigobanco, string agencia, string conta);
+            void Imprime();
     };
 #endif
