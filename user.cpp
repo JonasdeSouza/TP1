@@ -30,9 +30,8 @@ void User::Imprime()
 
 void Nome::SetNome(string Nome)
 {
-    int validar;
-    validar = Validar(Nome);
-    if (validar == 0)
+    int erro = Validar(Nome);
+    if (erro == 0)
     {
         nome = Nome;
     }
@@ -46,7 +45,7 @@ int Nome::Validar(string Nome) throw (invalid_argument)
         if (Nome.size() > 20 ||Nome.size() < 1)
         {
             erro--;
-            throw invalid_argument("");
+            throw invalid_argument("Nome muito grande\n");
         }
         else if (erro == 0)
         {
@@ -56,7 +55,7 @@ int Nome::Validar(string Nome) throw (invalid_argument)
                 if (Nome[found-1] <= 'A' || Nome[found-1] >= 'z')
                 {
                     erro--;
-                    throw invalid_argument("");
+                    throw invalid_argument("Existencia de ponto em lugar inválido\n");
                 }
             }
         }
@@ -66,7 +65,7 @@ int Nome::Validar(string Nome) throw (invalid_argument)
             if (Nome[found] == Nome[found+1])
             {
                 erro--;
-                throw invalid_argument("");
+                throw invalid_argument("Existencia de dois espacos consecutivos\n");
             }
         }
         for(i=0; i<Nome.size(); i++)
@@ -74,28 +73,27 @@ int Nome::Validar(string Nome) throw (invalid_argument)
             if (Nome[i] <= 'A' || Nome[i] >= 'z')
             {
                 erro--;
-                throw invalid_argument("");
+                throw invalid_argument("Existencia de numeros\n");
             }
         }
     }
-    catch (invalid_argument)
+    catch (invalid_argument& ErroNome)
     {
-        cout << "!!! Nome invalido !!!";
+        cout << "Erro no campo nome: " << ErroNome.what();
     }
     return erro;
 }
 
 void Telefone::SetTelefone(string Telefone)
 {
-    string erro;
-    erro = Validar(Telefone);
-    if (erro == "\0")
+    int erro = Validar(Telefone);
+    if (erro == 0)
     {
         telefone = Telefone;
     }
 }
 
-string Telefone::Validar(string Telefone) throw (invalid_argument)
+int Telefone::Validar(string Telefone) throw (invalid_argument)
 {
     int Tamanho= {15};
     int erro= {0};
@@ -104,39 +102,132 @@ string Telefone::Validar(string Telefone) throw (invalid_argument)
         if(Telefone.size() != Tamanho)
         {
             erro--;
-            throw invalid_argument("Tamanho de Telefone Inválido");
+            throw invalid_argument("Tamanho de Telefone Inválido\n");
         }
         if(Telefone[0] == '0' && Telefone[1] == '0' || Telefone[3] == '0' && Telefone[4] == '0')
         {
             erro--;
-            throw invalid_argument("");
+            throw invalid_argument("Codigo de pais e/ou DDD igual a zero\n");
         }
         if (Telefone[6] == '0' && Telefone[7] == '0' && Telefone[8] == '0' && Telefone[9] == '0' && Telefone[10] == '0' && Telefone[11] == '0' && Telefone[12] == '0' && Telefone[13] == '0' && Telefone[14] == '0')
         {
             erro--;
-            throw invalid_argument("");
+            throw invalid_argument("Numero de telefone igual a zero\n");
         }
         if (Telefone[0] < '0' || Telefone[0] > '9' || Telefone[1] < '0' || Telefone[1] > '9' || Telefone[3] < '0' || Telefone[3] > '9' || Telefone[4] < '0' || Telefone[4] > '9' || Telefone[6] < '0' || Telefone[6] > '9' || Telefone[7] < '0' || Telefone[7] > '9' || Telefone[8] < '0' || Telefone[8] > '9' || Telefone[9] < '0' || Telefone[9] > '9' || Telefone[10] < '0' || Telefone[10] > '9' || Telefone[11] < '0' || Telefone[11] > '9' || Telefone[12] < '0' || Telefone[12] > '9' || Telefone[13] < '0' || Telefone[13] > '9' || Telefone[14] < '0' || Telefone[14] > '9')
         {
             erro--;
-            throw invalid_argument("");
+            throw invalid_argument("Existencia de caracteres diferentes de numeros\n");
         }
     }
-    catch (invalid_argument)
+    catch (invalid_argument& ErroTelefone)
     {
-        //cout << "!!! Telefone invalido !!!";
+        cout << "Erro no campo telefone: " << ErroTelefone.what();
     }
-    return invalid_argument;
+
 }
 
 void Email::SetEmail(string Email)
 {
-    email = Email;
+    int erro = Validar(Email);
+    if (erro == 0)
+    {
+        email = Email;
+    }
 }
+
+int Email::Validar(string Email) throw (invalid_argument)
+{
+    int TamanhoMax= {20};
+    int erro= {0};
+    int arroba = Email.find('@');
+    int ponto = Email.find('.');
+    int i;
+    try
+    {
+        if(Email.size() > 2*TamanhoMax)
+        {
+            erro--;
+            throw invalid_argument("Email muito grande\n");
+        }
+        else if (arroba == -1 || arroba > TamanhoMax+1)
+        {
+            erro--;
+            throw invalid_argument("Campo local maior que o permitido\n");
+        }
+        else if (Email[0] == '.' || Email[arroba-1] == '.' || Email[arroba+1] == '.' || Email[ponto+1] == '.')
+        {
+            erro--;
+            throw invalid_argument("Ponto em local invalido ou pontos consecutivos\n");
+        }
+        for (i=0; i < Email.size(); i++)
+        {
+            if (Email[i] < 'a' || Email[i] > 'z')
+            {
+                if (Email[i] != '.' && Email[i] != '@')
+                {
+                    erro--;
+                    throw invalid_argument("Caractere invalido\n");
+                }
+            }
+        }
+    }
+    catch (invalid_argument& ErroEmail)
+    {
+        cout << "Erro no campo Email: " << ErroEmail.what();
+    }
+
+    return erro;
+}
+
 
 void Senha::SetSenha(string Senha)
 {
-    senha = Senha;
+    int erro = Validar(Senha);
+    if(erro == 0)
+    {
+        senha = Senha;
+    }
+}
+
+int Senha::Validar(string Senha) throw (invalid_argument)
+{
+    int erro= {0};
+    int i, j;
+    int TamanhoMax= {5};
+    try
+    {
+        if(Senha.size() > TamanhoMax)
+        {
+            erro--;
+            throw invalid_argument("Senha muito grande\n");
+        }
+        for(i=0; i<Senha.size(); i++)
+        {
+            if(isalnum(Senha[i]) == false)
+            {
+                if(Senha[i] != '#' || Senha[i] != '$' || Senha[i] != '%' || Senha[i] != '&')
+                {
+                    erro--;
+                    throw invalid_argument("Caractere invalido");
+                }
+            }
+            for(j=i+1; j<Senha.size(); j++)
+            {
+                if(Senha[i] == Senha[j])
+                {
+                    erro--;
+                    throw invalid_argument("Caracteres repetidos");
+                }
+            }
+        }
+    }
+
+    catch (invalid_argument& ErroSenha)
+    {
+        cout << "Erro no campo Senha: " << ErroSenha.what();
+    }
+    return erro;
 }
 
 void Cpf::SetCpf(string Cpf)

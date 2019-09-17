@@ -17,7 +17,7 @@ using namespace std;
         private:
             string telefone;
         public:
-            string Validar(string) throw (invalid_argument);
+            int Validar(string) throw (invalid_argument);
             void SetTelefone(string);
             string GetTelefone();
     };
@@ -26,6 +26,7 @@ using namespace std;
         private:
             string email;
         public:
+            int Validar(string) throw (invalid_argument);
             void SetEmail(string);
             string GetEmail();
     };
@@ -34,6 +35,7 @@ using namespace std;
         private:
             string senha;
         public:
+            int Validar(string) throw (invalid_argument);
             void SetSenha(string);
             string GetSenha();
     };
