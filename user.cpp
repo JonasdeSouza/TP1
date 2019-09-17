@@ -5,7 +5,8 @@
 using namespace std;
 
 
-void User::CadastrarUsuario(string nome, string telefone, string email, string senha, string cpf){
+void User::CadastrarUsuario(string nome, string telefone, string email, string senha, string cpf)
+{
 
     this->nome.SetNome(nome);
     this->telefone.SetTelefone(telefone);
@@ -15,7 +16,8 @@ void User::CadastrarUsuario(string nome, string telefone, string email, string s
 
 }
 
-void User::Imprime(){
+void User::Imprime()
+{
     string nome1, telefone1, email1, senha1, cpf1;
     nome1 = nome.GetNome();
     telefone1 = telefone.GetTelefone();
@@ -26,103 +28,151 @@ void User::Imprime(){
     cout << nome1 << "\n" << telefone1 << "\n" << email1 << "\n" << senha1 << "\n" << cpf1;
 }
 
-void Nome::SetNome(string Nome){
+void Nome::SetNome(string Nome)
+{
     int validar;
     validar = Validar(Nome);
-    if (validar == 0){
+    if (validar == 0)
+    {
         nome = Nome;
     }
 }
 
-int Nome::Validar(string Nome) throw (invalid_argument){
-    int erro={0}, i;
-    try{
-        if (Nome.size() > 20 ||Nome.size() < 1){
+int Nome::Validar(string Nome) throw (invalid_argument)
+{
+    int erro= {0}, i;
+    try
+    {
+        if (Nome.size() > 20 ||Nome.size() < 1)
+        {
             erro--;
             throw invalid_argument("");
-        } else if (erro == 0){
+        }
+        else if (erro == 0)
+        {
             int found = Nome.find('.');
-            if (found != -1){
-               if (Nome[found-1] <= 'A' || Nome[found-1] >= 'z'){
+            if (found != -1)
+            {
+                if (Nome[found-1] <= 'A' || Nome[found-1] >= 'z')
+                {
                     erro--;
                     throw invalid_argument("");
                 }
             }
-        } else {
+        }
+        else
+        {
             int found = Nome.find(' ');
-            if (Nome[found] == Nome[found+1]){
+            if (Nome[found] == Nome[found+1])
+            {
                 erro--;
                 throw invalid_argument("");
             }
         }
-        for(i=0; i<Nome.size(); i++){
-            if (Nome[i] <= 'A' || Nome[i] >= 'z'){
+        for(i=0; i<Nome.size(); i++)
+        {
+            if (Nome[i] <= 'A' || Nome[i] >= 'z')
+            {
                 erro--;
                 throw invalid_argument("");
             }
         }
-    } catch (invalid_argument){
+    }
+    catch (invalid_argument)
+    {
         cout << "!!! Nome invalido !!!";
-      }
+    }
     return erro;
 }
 
-void Telefone::SetTelefone(string Telefone){
-    telefone = Telefone;
+void Telefone::SetTelefone(string Telefone)
+{
+    string erro;
+    erro = Validar(Telefone);
+    if (erro == "\0")
+    {
+        telefone = Telefone;
+    }
 }
 
-int Telefone::Validar(string Telefone){
-    int erro;
-    try{
-        int found = Telefone.find('-');
-        if(Telefone.size() != 11){
-            erro++;
-            throw invalid_argument;
-        } else if (erro == 0){
-            if(Telefone[found-1] <= '0' && Telefone[found-2] <= '0' || Telefone[found-1] > '9' || Telefone[found-2] > '9' )
+string Telefone::Validar(string Telefone) throw (invalid_argument)
+{
+    int Tamanho= {15};
+    int erro= {0};
+    try
+    {
+        if(Telefone.size() != Tamanho)
+        {
+            erro--;
+            throw invalid_argument("Tamanho de Telefone Inválido");
+        }
+        if(Telefone[0] == '0' && Telefone[1] == '0' || Telefone[3] == '0' && Telefone[4] == '0')
+        {
+            erro--;
+            throw invalid_argument("");
+        }
+        if (Telefone[6] == '0' && Telefone[7] == '0' && Telefone[8] == '0' && Telefone[9] == '0' && Telefone[10] == '0' && Telefone[11] == '0' && Telefone[12] == '0' && Telefone[13] == '0' && Telefone[14] == '0')
+        {
+            erro--;
+            throw invalid_argument("");
+        }
+        if (Telefone[0] < '0' || Telefone[0] > '9' || Telefone[1] < '0' || Telefone[1] > '9' || Telefone[3] < '0' || Telefone[3] > '9' || Telefone[4] < '0' || Telefone[4] > '9' || Telefone[6] < '0' || Telefone[6] > '9' || Telefone[7] < '0' || Telefone[7] > '9' || Telefone[8] < '0' || Telefone[8] > '9' || Telefone[9] < '0' || Telefone[9] > '9' || Telefone[10] < '0' || Telefone[10] > '9' || Telefone[11] < '0' || Telefone[11] > '9' || Telefone[12] < '0' || Telefone[12] > '9' || Telefone[13] < '0' || Telefone[13] > '9' || Telefone[14] < '0' || Telefone[14] > '9')
+        {
+            erro--;
+            throw invalid_argument("");
         }
     }
-    catch (invalid_argument){
-        cout << "!!! Telefone inválido !!!";
+    catch (invalid_argument)
+    {
+        //cout << "!!! Telefone invalido !!!";
     }
-
+    return invalid_argument;
 }
 
-void Email::SetEmail(string Email){
+void Email::SetEmail(string Email)
+{
     email = Email;
 }
 
-void Senha::SetSenha(string Senha){
+void Senha::SetSenha(string Senha)
+{
     senha = Senha;
 }
 
-void Cpf::SetCpf(string Cpf){
+void Cpf::SetCpf(string Cpf)
+{
     cpf = Cpf;
 }
 
-string Nome::GetNome(){
+string Nome::GetNome()
+{
     return nome;
 }
 
-string Telefone::GetTelefone(){
+string Telefone::GetTelefone()
+{
     return telefone;
 }
 
-string Email::GetEmail(){
+string Email::GetEmail()
+{
     return email;
 }
 
-string Senha::GetSenha(){
+string Senha::GetSenha()
+{
     return senha;
 }
 
-string Cpf::GetCpf(){
+string Cpf::GetCpf()
+{
     return cpf;
 }
 
 //-----------------------------------------------------------------------------------------
 
-void Booking::ReservarCarona(int codigoreserva, int bagagem, char assento){
+void Booking::ReservarCarona(int codigoreserva, int bagagem, char assento)
+{
 
     this->assento.SetAssento(assento);
     this->codigo.SetCodigoReserva(codigoreserva);
@@ -130,7 +180,8 @@ void Booking::ReservarCarona(int codigoreserva, int bagagem, char assento){
 
 }
 
-void Booking::Imprime(){
+void Booking::Imprime()
+{
     int codreserv, bag;
     char assento1;
 
@@ -141,33 +192,40 @@ void Booking::Imprime(){
     cout << codreserv << "\n" << bag << "\n" << assento1 << "\n";
 }
 
-void Bagagem::SetBagagem(int Bagagem){
+void Bagagem::SetBagagem(int Bagagem)
+{
     bagagem = Bagagem;
 }
 
-void Assento::SetAssento(char Assento){
+void Assento::SetAssento(char Assento)
+{
     assento = Assento;
 }
 
-void CodigoReserva::SetCodigoReserva(int Codigo){
+void CodigoReserva::SetCodigoReserva(int Codigo)
+{
     codigoreserva = Codigo;
 }
 
-int Bagagem::GetBagagem(){
+int Bagagem::GetBagagem()
+{
     return bagagem;
 }
 
-char Assento::GetAssento(){
+char Assento::GetAssento()
+{
     return assento;
 }
 
-int CodigoReserva::GetCodigoReserva(){
+int CodigoReserva::GetCodigoReserva()
+{
     return codigoreserva;
 }
 
 //------------------------------------------------------------
 
-void Ride::CadastrarCarona(int vagas, int duracao, int codigocarona, string cidadeorigem, string estadoorigem, string cidadedestino, string estadodestino, string data, string preco){
+void Ride::CadastrarCarona(int vagas, int duracao, int codigocarona, string cidadeorigem, string estadoorigem, string cidadedestino, string estadodestino, string data, string preco)
+{
 
     this->vagas.SetVagas(vagas);
     this->duracao.SetDuracao(duracao);
@@ -181,7 +239,8 @@ void Ride::CadastrarCarona(int vagas, int duracao, int codigocarona, string cida
 
 }
 
-void Ride::Imprime(){
+void Ride::Imprime()
+{
     int vag, duration, codcarona;
     string cidadorigem, estadorigem, cidaddestino, estaddestino, dataa, precoa;
 
@@ -198,87 +257,107 @@ void Ride::Imprime(){
     cout << vag << "\n" << duration << "\n" << codcarona << "\n" << cidadorigem << "\n" << estadorigem << "\n" << cidaddestino << "\n" << estaddestino << "\n" << dataa << "\n" << precoa;
 }
 
-void Vagas::SetVagas(int Vagas){
+void Vagas::SetVagas(int Vagas)
+{
     vagas = Vagas;
 }
 
-void Duracao::SetDuracao(int Duracao){
+void Duracao::SetDuracao(int Duracao)
+{
     duracao = Duracao;
 }
 
-void CodigoCarona::SetCodigoCarona(int CodigoCarona){
+void CodigoCarona::SetCodigoCarona(int CodigoCarona)
+{
     codigocarona = CodigoCarona;
 }
 
-void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem){
+void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem)
+{
     cidadeorigem = CidadeOrigem;
 }
 
-void CidadeDestino::SetCidadeDestino(string CidadeDestino){
+void CidadeDestino::SetCidadeDestino(string CidadeDestino)
+{
     cidadedestino = CidadeDestino;
 }
 
-void EstadoOrigem::SetEstadoOrigem(string EstadoOrigem){
+void EstadoOrigem::SetEstadoOrigem(string EstadoOrigem)
+{
     estadoorigem = EstadoOrigem;
 }
 
-void EstadoDestino::SetEstadoDestino(string EstadoDestino){
+void EstadoDestino::SetEstadoDestino(string EstadoDestino)
+{
     estadodestino = EstadoDestino;
 }
 
-void Data::SetData(string Data){
+void Data::SetData(string Data)
+{
     data = Data;
 }
 
-void Preco::SetPreco(string Preco){
+void Preco::SetPreco(string Preco)
+{
     preco = Preco;
 }
 
-int Vagas::GetVagas(){
+int Vagas::GetVagas()
+{
     return vagas;
 }
 
-int Duracao::GetDuracao(){
+int Duracao::GetDuracao()
+{
     return duracao;
 }
 
-int CodigoCarona::GetCodigoCarona(){
+int CodigoCarona::GetCodigoCarona()
+{
     return codigocarona;
 }
 
-string CidadeOrigem::GetCidadeOrigem(){
+string CidadeOrigem::GetCidadeOrigem()
+{
     return cidadeorigem;
 }
 
-string CidadeDestino::GetCidadeDestino(){
+string CidadeDestino::GetCidadeDestino()
+{
     return cidadedestino;
 }
 
-string EstadoOrigem::GetEstadoOrigem(){
+string EstadoOrigem::GetEstadoOrigem()
+{
     return estadoorigem;
 }
 
-string EstadoDestino::GetEstadoDestino(){
+string EstadoDestino::GetEstadoDestino()
+{
     return estadodestino;
 }
 
-string Data::GetData(){
+string Data::GetData()
+{
     return data;
 }
 
-string Preco::GetPreco(){
+string Preco::GetPreco()
+{
     return preco;
 }
 
 //-------------------------------------------------------------------------------------------
 
-void Account::CadastrarInfoBancarias(int codigobanco, string agencia, string conta){
+void Account::CadastrarInfoBancarias(int codigobanco, string agencia, string conta)
+{
     this->banco.SetCodigoBanco(codigobanco);
     this->agencia.SetAgencia(agencia);
     this->conta.SetConta(conta);
 }
 
-void Account::Imprime(){
+void Account::Imprime()
+{
     int codbanco;
     string agency, acount;
 
@@ -289,27 +368,33 @@ void Account::Imprime(){
     cout << "\n" << codbanco << "\n" << agency << "\n" << acount;
 }
 
-void Banco::SetCodigoBanco(int CodigoBanco){
+void Banco::SetCodigoBanco(int CodigoBanco)
+{
     codigobanco = CodigoBanco;
 }
 
-void Agencia::SetAgencia(string Agencia){
+void Agencia::SetAgencia(string Agencia)
+{
     agencia = Agencia;
 }
 
-void Conta::SetConta(string Conta){
+void Conta::SetConta(string Conta)
+{
     conta = Conta;
 }
 
-int Banco::GetCodigoBanco(){
+int Banco::GetCodigoBanco()
+{
     return codigobanco;
 }
 
-string Agencia::GetAgencia(){
+string Agencia::GetAgencia()
+{
     return agencia;
 }
 
-string Conta::GetConta(){
+string Conta::GetConta()
+{
     return conta;
 }
 

@@ -17,7 +17,7 @@ using namespace std;
         private:
             string telefone;
         public:
-            int Validar(string) throw (invalid_argument);
+            string Validar(string) throw (invalid_argument);
             void SetTelefone(string);
             string GetTelefone();
     };
