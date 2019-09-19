@@ -44,6 +44,8 @@ using namespace std;
         private:
             string cpf;
         public:
+            int Validar(string) throw (invalid_argument);
+            int ValidarDigitoVerificador(string) throw (invalid_argument);
             void SetCpf(string);
             string GetCpf();
     };

@@ -197,19 +197,32 @@ int Senha::Validar(string Senha) throw (invalid_argument)
     int TamanhoMax= {5};
     try
     {
-        if(Senha.size() > TamanhoMax)
+        if(Senha.size() != TamanhoMax)
         {
             erro--;
-            throw invalid_argument("Senha muito grande\n");
+            throw invalid_argument("Senha com tamanho invalido\n");
         }
         for(i=0; i<Senha.size(); i++)
         {
-            if(isalnum(Senha[i]) == false)
+            if(Senha[i] < 'A' || Senha[i] > 'z' )
             {
-                if(Senha[i] != '#' || Senha[i] != '$' || Senha[i] != '%' || Senha[i] != '&')
+                if(Senha[i] < '0' || Senha[i] > '9')
                 {
-                    erro--;
-                    throw invalid_argument("Caractere invalido");
+                    if(Senha[i] != '#')
+                    {
+                        if(Senha[i] != '$')
+                        {
+                            if(Senha[i] != '%')
+                            {
+                                if(Senha[i] != '&')
+                                {
+                                    erro--;
+                                    throw invalid_argument("Caractere invalido\n");
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
             for(j=i+1; j<Senha.size(); j++)
@@ -217,7 +230,7 @@ int Senha::Validar(string Senha) throw (invalid_argument)
                 if(Senha[i] == Senha[j])
                 {
                     erro--;
-                    throw invalid_argument("Caracteres repetidos");
+                    throw invalid_argument("Caracteres repetidos\n");
                 }
             }
         }
@@ -232,7 +245,66 @@ int Senha::Validar(string Senha) throw (invalid_argument)
 
 void Cpf::SetCpf(string Cpf)
 {
-    cpf = Cpf;
+    int teste = ValidarDigitoVerificador(Cpf);
+    if(teste == 0)
+    {
+        cpf = Cpf;
+    }
+}
+
+int Cpf::Validar(string Cpf) throw (invalid_argument)
+{
+    int TamanhoPermitido = {14};
+    int erro= {0};
+    try
+    {
+        if(Cpf.size() != TamanhoPermitido)
+        {
+            erro--;
+            throw invalid_argument("Tamanho invalido");
+        }
+        if(Cpf[3] != '.' || Cpf[7] != '.' || Cpf[11] != '-')
+        {
+            erro--;
+            throw invalid_argument("CPF com formatacao invalida");
+        }
+
+    }
+    catch (invalid_argument& ErroCpf)
+    {
+        cout << "Erro no campo CPF: " << ErroCpf.what();
+    }
+    return erro;
+}
+
+int Cpf::ValidarDigitoVerificador(string Cpf) throw (invalid_argument)
+{
+    int PrimeiroDigito={0}, i, j, erro={0};
+    string CpfNumericoSemDigitoVerificador, DigitoVerificador;
+    try
+    {
+        CpfNumericoSemDigitoVerificador = Cpf;
+        CpfNumericoSemDigitoVerificador.erase(3,1);
+        CpfNumericoSemDigitoVerificador.erase(6,1);
+        CpfNumericoSemDigitoVerificador.erase(9);
+        DigitoVerificador = Cpf;
+        DigitoVerificador.erase(0, 12);
+        cout << CpfNumericoSemDigitoVerificador << "\n";
+
+        j= CpfNumericoSemDigitoVerificador.size()+1;
+        for(i=0; i< CpfNumericoSemDigitoVerificador.size(); i++){
+            PrimeiroDigito += CpfNumericoSemDigitoVerificador[i]*j;
+            cout << PrimeiroDigito << "\n";
+            j--;
+        }
+        PrimeiroDigito *= 10;
+        PrimeiroDigito /= 11;
+    }
+    catch (invalid_argument& abc)
+    {
+        cout << abc.what();
+    }
+    return erro;
 }
 
 string Nome::GetNome()
