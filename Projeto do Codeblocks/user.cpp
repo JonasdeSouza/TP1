@@ -70,10 +70,13 @@ int Nome::Validar(string Nome) throw (invalid_argument)
         }
         for(i=0; i<Nome.size(); i++)
         {
-            if (Nome[i] <= 'A' || Nome[i] >= 'z')
+            if (Nome[i] < 'A' || Nome[i] > 'z')
             {
-                erro--;
-                throw invalid_argument("Existencia de numeros\n");
+                if(Nome[i] != ' ')
+                {
+                    erro--;
+                    throw invalid_argument("Existencia de numeros\n");
+                }
             }
         }
     }
@@ -86,8 +89,8 @@ int Nome::Validar(string Nome) throw (invalid_argument)
 
 void Telefone::SetTelefone(string Telefone)
 {
-    int erro = Validar(Telefone);
-    if (erro == 0)
+    int validar = Validar(Telefone);
+    if (validar == 0)
     {
         telefone = Telefone;
     }
@@ -124,7 +127,7 @@ int Telefone::Validar(string Telefone) throw (invalid_argument)
     {
         cout << "Erro no campo telefone: " << ErroTelefone.what();
     }
-
+    return erro;
 }
 
 void Email::SetEmail(string Email)
@@ -245,8 +248,8 @@ int Senha::Validar(string Senha) throw (invalid_argument)
 
 void Cpf::SetCpf(string Cpf)
 {
-    int teste = ValidarDigitoVerificador(Cpf);
-    if(teste == 0)
+    int validar = Validar(Cpf);
+    if(validar == 0)
     {
         cpf = Cpf;
     }
@@ -258,6 +261,7 @@ int Cpf::Validar(string Cpf) throw (invalid_argument)
     int erro= {0};
     try
     {
+        erro = ValidarDigitoVerificador(Cpf);
         if(Cpf.size() != TamanhoPermitido)
         {
             erro--;
@@ -279,8 +283,9 @@ int Cpf::Validar(string Cpf) throw (invalid_argument)
 
 int Cpf::ValidarDigitoVerificador(string Cpf) throw (invalid_argument)
 {
-    int PrimeiroDigito={0}, i, j, erro={0};
+    int PrimeiroDigito= {0}, SegundoDigito= {0}, i, j, erro= {0}, ConverterAscii= {48};
     string CpfNumericoSemDigitoVerificador, DigitoVerificador;
+
     try
     {
         CpfNumericoSemDigitoVerificador = Cpf;
@@ -289,16 +294,39 @@ int Cpf::ValidarDigitoVerificador(string Cpf) throw (invalid_argument)
         CpfNumericoSemDigitoVerificador.erase(9);
         DigitoVerificador = Cpf;
         DigitoVerificador.erase(0, 12);
-        cout << CpfNumericoSemDigitoVerificador << "\n";
 
         j= CpfNumericoSemDigitoVerificador.size()+1;
-        for(i=0; i< CpfNumericoSemDigitoVerificador.size(); i++){
-            PrimeiroDigito += CpfNumericoSemDigitoVerificador[i]*j;
-            cout << PrimeiroDigito << "\n";
+        for(i=0; i< CpfNumericoSemDigitoVerificador.size(); i++)
+        {
+            PrimeiroDigito += (CpfNumericoSemDigitoVerificador[i]-ConverterAscii)*j;
             j--;
         }
-        PrimeiroDigito *= 10;
-        PrimeiroDigito /= 11;
+        PrimeiroDigito = ((PrimeiroDigito*10)%11)+ConverterAscii;
+        if(PrimeiroDigito == Cpf[12])
+        {
+            CpfNumericoSemDigitoVerificador.insert(CpfNumericoSemDigitoVerificador.end(), PrimeiroDigito);
+        }
+        else
+        {
+            erro--;
+            throw (invalid_argument("CPF invalido"));
+        }
+        j= CpfNumericoSemDigitoVerificador.size()+1;
+        for(i=0; i< CpfNumericoSemDigitoVerificador.size(); i++)
+        {
+            SegundoDigito += (CpfNumericoSemDigitoVerificador[i]-ConverterAscii)*j;
+            j--;
+        }
+        SegundoDigito = ((SegundoDigito*10)%11)+ConverterAscii;
+        if(SegundoDigito == Cpf[13])
+        {
+            CpfNumericoSemDigitoVerificador.insert(CpfNumericoSemDigitoVerificador.end(), SegundoDigito);
+        }
+        else
+        {
+            erro--;
+            throw (invalid_argument("CPF invalido"));
+        }
     }
     catch (invalid_argument& abc)
     {

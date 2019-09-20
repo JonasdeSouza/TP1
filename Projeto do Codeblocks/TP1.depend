@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1568988300 source:c:\users\jonas\documents\tp1\tp1\projeto do codeblocks\main.cc
+	<iostream>
+	"user.h"
+
+1568984989 c:\users\jonas\documents\tp1\tp1\projeto do codeblocks\user.h
+	<string>
+	<stdexcept>
+
+1568988408 source:c:\users\jonas\documents\tp1\tp1\projeto do codeblocks\user.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"user.h"
+
