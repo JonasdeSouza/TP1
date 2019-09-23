@@ -198,6 +198,7 @@ using namespace std;
             string argumento;
         public:
             int Validar(string) throw (invalid_argument);
+            int ConverterPreco(string);
             void SetPreco(string);
             string GetPreco();
     };

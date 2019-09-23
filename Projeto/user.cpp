@@ -515,10 +515,13 @@ void Ride::Imprime()
 
 void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem)
 {
-    cidadeorigem = CidadeOrigem;
+    int validar = Validar(CidadeOrigem);
+    if (validar == 0){
+        cidadeorigem = CidadeOrigem;
+    } else (cout << "Erro no campo Cidade de Origem: " << argumento);
 }
 
-int CidadeOrigem::Validar(CidadeOrigem) throw (invalid_argument)
+int CidadeOrigem::Validar(string CidadeOrigem) throw (invalid_argument)
 {
     int i, erro={0}, TamanhoMax={10}, ponto={CidadeOrigem.find('.')}, espaco={CidadeOrigem.find(' ')};
     try
@@ -526,17 +529,19 @@ int CidadeOrigem::Validar(CidadeOrigem) throw (invalid_argument)
         if (CidadeOrigem.size() > TamanhoMax)
         {
             erro--;
-            throw invalid_argument("Cidade de Origem com tamanho maior que o permitido\n")
+            throw invalid_argument("Cidade de Origem com tamanho maior que o permitido\n");
         }
         if (CidadeOrigem[espaco] == CidadeOrigem[espaco+1])
         {
             erro--;
-            throw invalid_argument("Dois espacos consecutivos");
+            throw invalid_argument("Dois espacos consecutivos\n");
         }
-        if (CidadeOrigem[ponto-1] < 'A' || CidadeOrigem[ponto-1] > 'z')
-        {
-            erro--;
-            throw invalid_argument("")
+        if(ponto != -1){
+            if (CidadeOrigem[ponto-1] < 'A' || CidadeOrigem[ponto-1] > 'z')
+            {
+                erro--;
+                throw invalid_argument("Ponto em local invalido\n");
+             }
         }
         for(i=0; i<CidadeOrigem.size(); i++){
             if (CidadeOrigem[i] < 'A' || CidadeOrigem[i] > 'z')
@@ -553,51 +558,368 @@ int CidadeOrigem::Validar(CidadeOrigem) throw (invalid_argument)
         }
         
     }
-    catch(const std::exception& e)
+    catch(invalid_argument& ErroCidadeOrigem)
     {
-        std::cerr << e.what() << '\n';
+        argumento = ErroCidadeOrigem.what();
     }
-    
+    return erro;
 }
 
 void CidadeDestino::SetCidadeDestino(string CidadeDestino)
 {
-    cidadedestino = CidadeDestino;
+    int validar = Validar(CidadeDestino);
+    if (validar == 0){
+        cidadedestino = CidadeDestino;
+    } else (cout << "Erro no campo Cidade Destino: " << argumento);
+}
+
+int CidadeDestino::Validar(string CidadeDestino) throw (invalid_argument)
+{
+    int i, erro={0}, TamanhoMax={10}, ponto={CidadeDestino.find('.')}, espaco={CidadeDestino.find(' ')};
+    try
+    {
+        if (CidadeDestino.size() > TamanhoMax)
+        {
+            erro--;
+            throw invalid_argument("Cidade Destino com tamanho maior que o permitido\n");
+        }
+        if (CidadeDestino[espaco] == CidadeDestino[espaco+1])
+        {
+            erro--;
+            throw invalid_argument("Dois espacos consecutivos\n");
+        }
+        if(ponto != -1){
+            if (CidadeDestino[ponto-1] < 'A' || CidadeDestino[ponto-1] > 'z')
+            {
+                erro--;
+                throw invalid_argument("Ponto em local invalido\n");
+             }
+        }
+        for(i=0; i<CidadeDestino.size(); i++){
+            if (CidadeDestino[i] < 'A' || CidadeDestino[i] > 'z')
+            {
+                if (CidadeDestino[i] != '.')
+                {
+                    if (CidadeDestino[i] != ' ')
+                    {
+                        erro--;
+                        throw invalid_argument("Caractere invalido");
+                    }
+                }
+            }
+        }
+        
+    }
+    catch(invalid_argument& ErroCidadeDestino)
+    {
+        argumento = ErroCidadeDestino.what();
+    }
+    return erro;
 }
 
 void Vagas::SetVagas(int Vagas)
 {
-    vagas = Vagas;
+    int validar = Validar(Vagas);
+    if (validar == 0) {
+        vagas = Vagas;
+    } else (cout << "Erro no campo Vagas: " << argumento);
+}
+
+int Vagas::Validar(int Vagas) throw (invalid_argument)
+{
+    int VagasMax={4}, erro={0};
+    try
+    {
+        if (Vagas > VagasMax) 
+        {
+            erro--;
+            throw invalid_argument("Numero de vagas maior que o permitido\n");
+        }
+    }
+    catch(invalid_argument& ErroVagas)
+    {
+        argumento = ErroVagas.what();
+    }
+    return erro;    
 }
 
 void Duracao::SetDuracao(int Duracao)
 {
-    duracao = Duracao;
+    int validar = Validar(Duracao);
+    if (validar == 0){
+        duracao = Duracao;
+    } else (cout << "Erro no campo Duracao: " << argumento);
+}
+
+int Duracao::Validar(int Duracao) throw (invalid_argument)
+{
+    int DuracaoMin={1}, DuracaoMax={48}, erro={0};
+    try
+    {
+        if (Duracao < DuracaoMin || Duracao > DuracaoMax)
+        {
+            erro--;
+            throw invalid_argument("Duracao invalida\n");
+        }
+    }
+    catch(invalid_argument& ErroDuracao)
+    {
+        argumento = ErroDuracao.what();
+    }
+    return erro;
 }
 
 void CodigoCarona::SetCodigoCarona(int CodigoCarona)
 {
-    codigocarona = CodigoCarona;
+    int validar = Validar(CodigoCarona);
+    if(validar == 0){
+        codigocarona = CodigoCarona;
+    } else (cout << "Erro no campo Codigo de Carona: " << argumento);
+}
+
+int CodigoCarona::Validar(int CodigoCarona) throw (invalid_argument)
+{   
+    int erro={0}, TamanhoMin={1000}, TamanhoMax={9999};
+    try
+    {
+        if(CodigoCarona < TamanhoMin || CodigoCarona > TamanhoMax)
+        {
+            erro--;
+            throw invalid_argument("Codigo de carona de tamanho invalido\n");
+        }
+    }
+    catch(invalid_argument& ErroCodigo)
+    {
+        argumento = ErroCodigo.what();
+    }
+    return erro;
 }
 
 void EstadoOrigem::SetEstadoOrigem(string EstadoOrigem)
 {
-    estadoorigem = EstadoOrigem;
+    int validar = Validar(EstadoOrigem);
+    if (validar == 0){
+        estadoorigem = EstadoOrigem;
+    } else (cout << "Erro no campo Estado de Origem: " << argumento);
+}
+
+int EstadoOrigem::Validar(string EstadoOrigem) throw (invalid_argument)
+{
+    int erro={0};
+    try
+    {
+        if(EstadoOrigem != "DF" || EstadoOrigem != "AC" || EstadoOrigem != "AL" || EstadoOrigem != "AP" || EstadoOrigem != "AM" || EstadoOrigem != "BA" || EstadoOrigem != "CE" || EstadoOrigem != "ES" || EstadoOrigem != "GO" || EstadoOrigem != "MA" || EstadoOrigem != "MT" || EstadoOrigem != "MS"|| EstadoOrigem != "MG" || EstadoOrigem != "PA" || EstadoOrigem != "PB" || EstadoOrigem != "PR" || EstadoOrigem != "PE" || EstadoOrigem != "PI" || EstadoOrigem != "RJ" || EstadoOrigem != "RN" || EstadoOrigem != "RS" || EstadoOrigem != "RO" || EstadoOrigem != "RR" || EstadoOrigem != "SC" || EstadoOrigem != "SP" || EstadoOrigem != "SE" || EstadoOrigem != "TO")
+        {
+            erro--;
+            throw invalid_argument("Estado Invalido\n");
+        }
+    }
+    catch(invalid_argument& ErroEstado)
+    {
+        argumento = ErroEstado.what();
+    }
+    return erro;
 }
 
 void EstadoDestino::SetEstadoDestino(string EstadoDestino)
 {
-    estadodestino = EstadoDestino;
+    int validar = Validar(EstadoDestino);
+    if(validar == 0){
+        estadodestino = EstadoDestino;
+    } else (cout << "Erro no campo Estado Destino: " << argumento);
+}
+
+int EstadoDestino::Validar(string EstadoDestino) throw (invalid_argument)
+{
+    int erro={0};
+    try
+    {
+        if(EstadoDestino != "DF" || EstadoDestino != "AC" || EstadoDestino != "AL" || EstadoDestino != "AP" || EstadoDestino != "AM" || EstadoDestino != "BA" || EstadoDestino != "CE" || EstadoDestino != "ES" || EstadoDestino != "GO" || EstadoDestino != "MA" || EstadoDestino != "MT" || EstadoDestino != "MS"|| EstadoDestino != "MG" || EstadoDestino != "PA" || EstadoDestino != "PB" || EstadoDestino != "PR" || EstadoDestino != "PE" || EstadoDestino != "PI" || EstadoDestino != "RJ" || EstadoDestino != "RN" || EstadoDestino != "RS" || EstadoDestino != "RO" || EstadoDestino != "RR" || EstadoDestino != "SC" || EstadoDestino != "SP" || EstadoDestino != "SE" || EstadoDestino != "TO")
+        {
+            erro--;
+            throw invalid_argument("Estado Invalido\n");
+        }
+    }
+    catch(invalid_argument& ErroEstado)
+    {
+        argumento = ErroEstado.what();
+    }
+    return erro;
 }
 
 void Data::SetData(string Data)
 {
-    data = Data;
+    int validar = Validar(Data);
+    if (validar == 0){
+        data = Data;
+    } else (cout << "Erro no campo Data: " << argumento);
+}
+
+int Data::Validar(string Data) throw (invalid_argument)
+{
+    int erro={0}, ConverterAscii={48};
+    try
+    {
+        if (Data[2] != '/' || Data[5] != '/')
+        {
+            erro--;
+            throw invalid_argument("Formatacao de data invalida\n");
+        }
+        if (Data[0] < '0' || Data[0] > '3')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data [0] == '3' && Data[1] > '1')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data[3] < '0' || Data[3] > '1')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data[4] < '0' || Data[4] > '9')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data[3] == '1' && Data[4] > '2')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data[6] != '2' || Data[7] != '0')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (Data[8] < '0' || Data[8] > '9' || Data[9] < '0' || Data[9] > '9')
+        {
+            erro--;
+            throw invalid_argument("Data invalida\n");
+        }
+        if (((Data[4]-ConverterAscii)%2 == 0))
+        {
+            if (Data[4] < '7')
+            {
+                if (Data [0] == '3' && Data[1] != '0')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+            if (Data[4] > '7')
+            {
+                if (Data [0] == '3' && Data[1] != '1')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+        }
+        if (((Data[4]-ConverterAscii)%2 != 0))
+        {
+            if (Data[4] > '8')
+            {
+                if (Data [0] == '3' && Data[1] != '0')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+            if (Data[4] < '8')
+            {
+                if (Data [0] == '3' && Data[1] != '1')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+        }
+        if (Data[4] == '2')
+        {
+            if (((Data[9]-ConverterAscii)%4) == 0)
+            {
+                if (Data[0] > '2')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+                if (Data[0] == '2' && Data[1] > '9')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+            if (((Data[9]-ConverterAscii)%4) != 0)
+            {
+                if (Data[0] > '2')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+                if (Data[0] == '2' && Data[1] > '8')
+                {
+                    erro--;
+                    throw invalid_argument("Data invalida\n");
+                }
+            }
+        }
+    }   
+    catch(invalid_argument& ErroData)
+    {
+        argumento = ErroData.what();
+    }
+    return erro;
 }
 
 void Preco::SetPreco(string Preco)
 {
-    preco = Preco;
+    int validar = Validar(Preco);
+    if (validar == 0){
+        preco = Preco;
+   } else (cout << "Erro no campo Preco: " << argumento);
+}
+
+int Preco::Validar(string Preco) throw (invalid_argument)
+{
+    int preco={ConverterPreco(Preco)}, PrecoMin={100}, PrecoMax={500000}, erro={0};
+
+    try
+    {
+        if (preco < PrecoMin || preco > PrecoMax)
+        {
+            erro--;
+            throw invalid_argument("Preco invalido\n");
+        }    
+
+    } 
+    catch(invalid_argument& ErroPreco)
+    {
+        argumento = ErroPreco.what();
+    }
+    
+    return erro;
+}
+
+int Preco::ConverterPreco(string Preco)
+{
+    string StrPrecoNumerico;
+    StrPrecoNumerico = Preco;
+    int ponto = {StrPrecoNumerico.find('.')};
+    if(ponto != -1)
+    {
+        StrPrecoNumerico.erase(ponto, 1);
+    }
+    int virgula = {StrPrecoNumerico.find(',')};
+    if(virgula != -1)
+    {
+       StrPrecoNumerico.erase(virgula, 1);
+    }
+    int IntPrecoNumerico = stoi (StrPrecoNumerico,nullptr,0);
+    return IntPrecoNumerico;
 }
 
 string CidadeOrigem::GetCidadeOrigem()
