@@ -21,3 +21,17 @@
 	<string>
 	<stdexcept>
 
+1569279139 source:c:\users\joaop\onedrive\documents\tp1\projeto\main.cc
+	<iostream>
+	"user.h"
+
+1569279141 c:\users\joaop\onedrive\documents\tp1\projeto\user.h
+	<string>
+	<stdexcept>
+
+1569422385 source:c:\users\joaop\onedrive\documents\tp1\projeto\user.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"user.h"
+

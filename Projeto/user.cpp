@@ -395,14 +395,14 @@ int Bagagem::Validar(int Bagagem) throw (invalid_argument)
 {
     int erro={0};
     int BagagemMax={4};
-    try 
+    try
     {
         if(Bagagem < 0 || Bagagem > BagagemMax)
         {
             erro--;
             throw invalid_argument("Numero invalido de bagagens\n");
         }
-    }    
+    }
     catch (invalid_argument& ErroBagagem)
     {
         argumento = ErroBagagem.what();
@@ -435,7 +435,7 @@ int Assento::Validar(char Assento) throw (invalid_argument)
         argumento = ErroAssento.what();
     }
     return erro;
-} 
+}
 
 void CodigoReserva::SetCodigoReserva(int Codigo)
 {
@@ -556,7 +556,7 @@ int CidadeOrigem::Validar(string CidadeOrigem) throw (invalid_argument)
                 }
             }
         }
-        
+
     }
     catch(invalid_argument& ErroCidadeOrigem)
     {
@@ -608,7 +608,7 @@ int CidadeDestino::Validar(string CidadeDestino) throw (invalid_argument)
                 }
             }
         }
-        
+
     }
     catch(invalid_argument& ErroCidadeDestino)
     {
@@ -630,7 +630,7 @@ int Vagas::Validar(int Vagas) throw (invalid_argument)
     int VagasMax={4}, erro={0};
     try
     {
-        if (Vagas > VagasMax) 
+        if (Vagas > VagasMax)
         {
             erro--;
             throw invalid_argument("Numero de vagas maior que o permitido\n");
@@ -640,7 +640,7 @@ int Vagas::Validar(int Vagas) throw (invalid_argument)
     {
         argumento = ErroVagas.what();
     }
-    return erro;    
+    return erro;
 }
 
 void Duracao::SetDuracao(int Duracao)
@@ -678,7 +678,7 @@ void CodigoCarona::SetCodigoCarona(int CodigoCarona)
 }
 
 int CodigoCarona::Validar(int CodigoCarona) throw (invalid_argument)
-{   
+{
     int erro={0}, TamanhoMin={1000}, TamanhoMax={9999};
     try
     {
@@ -867,7 +867,7 @@ int Data::Validar(string Data) throw (invalid_argument)
                 }
             }
         }
-    }   
+    }
     catch(invalid_argument& ErroData)
     {
         argumento = ErroData.what();
@@ -893,14 +893,14 @@ int Preco::Validar(string Preco) throw (invalid_argument)
         {
             erro--;
             throw invalid_argument("Preco invalido\n");
-        }    
+        }
 
-    } 
+    }
     catch(invalid_argument& ErroPreco)
     {
         argumento = ErroPreco.what();
     }
-    
+
     return erro;
 }
 
@@ -990,17 +990,101 @@ void Account::Imprime()
 
 void Banco::SetCodigoBanco(int CodigoBanco)
 {
-    codigobanco = CodigoBanco;
+    int validar = Validar(CodigoBanco);
+    if (validar == 0){
+        codigobanco = CodigoBanco;
+    } else (cout << "Erro no campo Codigo do Banco: " << argumento);
 }
+
+int Banco::Validar(int CodigoBanco) throw (invalid_argument)
+{
+    int erro={0}, TamanhoMax={999}, TamanhoMin={100};
+    try
+    {
+        if(CodigoBanco < TamanhoMin || CodigoBanco > TamanhoMax)
+        {
+            erro--;
+            throw invalid_argument("Codigo de Banco invalido\n");
+        }
+    }
+    catch(invalid_argument& ErroCodigo)
+    {
+        argumento = ErroCodigo.what();
+    }
+    return erro;
+}
+
 
 void Agencia::SetAgencia(string Agencia)
 {
-    agencia = Agencia;
+    int validar = Validar(Agencia);
+    if (validar == 0){
+        agencia = Agencia;
+    } else (cout << "Erro no campo Numero da Agencia: " << argumento);
 }
+
+int Agencia::Validar(string Agencia) throw (invalid_argument)
+{
+    int Tamanho= {6};
+    int erro= {0};
+    int soma= {0},dobro;
+    try
+    {
+        if(Agencia.size() != Tamanho)
+        {
+            erro--;
+            throw invalid_argument("Tamanho de Numero da agencia Invalido\n");
+        }
+        if (Agencia[0] < '0' || Agencia[0] > '9' || Agencia[1] < '0' || Agencia[1] > '9' || Agencia[2] < '0' || Agencia[2] > '9' || Agencia[3] < '0' || Agencia[3] > '9' || Agencia[4] != '-' || Agencia[5] < '0' || Agencia[5] > '9'){
+            erro--;
+            throw invalid_argument("Existencia de caracteres invalidos\n");
+        }
+        if((((int)Agencia[0]-48) + (((((int)Agencia[1]-48)*2)/10) + ((((int)Agencia[1]-48)*2)%10)) + ((int)Agencia[2]-48) + (((((int)Agencia[3]-48)*2)/10) + ((((int)Agencia[3]-48)*2)%10)) + ((int)Agencia[5]-48)) % 10 != 0){
+            erro--;
+            throw invalid_argument("Digito verificador incorreton\n");
+        }
+    }
+    catch (invalid_argument& ErroAgencia)
+    {
+        argumento = ErroAgencia.what();
+    }
+    return erro;
+}
+
 
 void Conta::SetConta(string Conta)
 {
-    conta = Conta;
+     int validar = Validar(Conta);
+    if (validar == 0){
+        conta = Conta;
+    } else (cout << "Erro no campo Numero da Conta: " << argumento);
+}
+
+int Conta::Validar(string Conta) throw (invalid_argument)
+{
+    int Tamanho= {8};
+    int erro= {0};
+    try
+    {
+        if(Conta.size() != Tamanho)
+        {
+            erro--;
+            throw invalid_argument("Tamanho de Numero da conta Invalido\n");
+        }
+        if (Conta[0] < '0' || Conta[0] > '9' || Conta[1] < '0' || Conta[1] > '9' || Conta[2] < '0' || Conta[2] > '9' || Conta[3] < '0' || Conta[3] > '9' || Conta[4] < '0' || Conta[4] > '9' || Conta[5] < '0' || Conta[5] > '9' || Conta[6] != '-' || Conta[7] < '0' || Conta[7] > '9'){
+            erro--;
+            throw invalid_argument("Existencia de caracteres invalidos\n");
+        }
+        if((((int)Conta[0]-48) + ((((int)Conta[1]-48)*2)/10 + (((int)Conta[1]-48)*2)%10) + ((int)Conta[2]-48) + ((((int)Conta[3]-48)*2)/10 + (((int)Conta[3]-48)*2)%10) + ((int)Conta[4]-48) + ((((int)Conta[5]-48)*2)/10 + (((int)Conta[5]-48)*2)%10) + ((int)Conta[7]-48)) % 10 != 0){
+            erro--;
+            throw invalid_argument("Digito verificador incorreton\n");
+        }
+    }
+    catch (invalid_argument& ErroConta)
+    {
+        argumento = ErroConta.what();
+    }
+    return erro;
 }
 
 int Banco::GetCodigoBanco()
