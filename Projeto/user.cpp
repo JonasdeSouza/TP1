@@ -424,10 +424,13 @@ int Assento::Validar(char Assento) throw (invalid_argument)
     int erro={0};
     try
     {
-        if(Assento != 'D' || Assento != 'T')
+        if(Assento != 'D')
         {
-            erro--;
-            throw invalid_argument("Assento Incorreto\n");
+        if (Assento != 'T')
+            {
+                erro--;
+                throw invalid_argument("Assento Incorreto\n");
+            }
         }
     }
     catch(invalid_argument& ErroAssento)
@@ -708,7 +711,7 @@ int EstadoOrigem::Validar(string EstadoOrigem) throw (invalid_argument)
     int erro={0};
     try
     {
-        if(EstadoOrigem != "DF" || EstadoOrigem != "AC" || EstadoOrigem != "AL" || EstadoOrigem != "AP" || EstadoOrigem != "AM" || EstadoOrigem != "BA" || EstadoOrigem != "CE" || EstadoOrigem != "ES" || EstadoOrigem != "GO" || EstadoOrigem != "MA" || EstadoOrigem != "MT" || EstadoOrigem != "MS"|| EstadoOrigem != "MG" || EstadoOrigem != "PA" || EstadoOrigem != "PB" || EstadoOrigem != "PR" || EstadoOrigem != "PE" || EstadoOrigem != "PI" || EstadoOrigem != "RJ" || EstadoOrigem != "RN" || EstadoOrigem != "RS" || EstadoOrigem != "RO" || EstadoOrigem != "RR" || EstadoOrigem != "SC" || EstadoOrigem != "SP" || EstadoOrigem != "SE" || EstadoOrigem != "TO")
+        if(EstadoOrigem != "DF" && EstadoOrigem != "AC" && EstadoOrigem != "AL" && EstadoOrigem != "AP" && EstadoOrigem != "AM" && EstadoOrigem != "BA" && EstadoOrigem != "CE" && EstadoOrigem != "ES" && EstadoOrigem != "GO" && EstadoOrigem != "MA" && EstadoOrigem != "MT" && EstadoOrigem != "MS"&& EstadoOrigem != "MG" && EstadoOrigem != "PA" && EstadoOrigem != "PB" && EstadoOrigem != "PR" && EstadoOrigem != "PE" && EstadoOrigem != "PI" && EstadoOrigem != "RJ" && EstadoOrigem != "RN" && EstadoOrigem != "RS" && EstadoOrigem != "RO" && EstadoOrigem != "RR" && EstadoOrigem != "SC" && EstadoOrigem != "SP" && EstadoOrigem != "SE" && EstadoOrigem != "TO")
         {
             erro--;
             throw invalid_argument("Estado Invalido\n");
@@ -734,7 +737,7 @@ int EstadoDestino::Validar(string EstadoDestino) throw (invalid_argument)
     int erro={0};
     try
     {
-        if(EstadoDestino != "DF" || EstadoDestino != "AC" || EstadoDestino != "AL" || EstadoDestino != "AP" || EstadoDestino != "AM" || EstadoDestino != "BA" || EstadoDestino != "CE" || EstadoDestino != "ES" || EstadoDestino != "GO" || EstadoDestino != "MA" || EstadoDestino != "MT" || EstadoDestino != "MS"|| EstadoDestino != "MG" || EstadoDestino != "PA" || EstadoDestino != "PB" || EstadoDestino != "PR" || EstadoDestino != "PE" || EstadoDestino != "PI" || EstadoDestino != "RJ" || EstadoDestino != "RN" || EstadoDestino != "RS" || EstadoDestino != "RO" || EstadoDestino != "RR" || EstadoDestino != "SC" || EstadoDestino != "SP" || EstadoDestino != "SE" || EstadoDestino != "TO")
+        if(EstadoDestino != "DF" && EstadoDestino != "AC" && EstadoDestino != "AL" && EstadoDestino != "AP" && EstadoDestino != "AM" && EstadoDestino != "BA" && EstadoDestino != "CE" && EstadoDestino != "ES" && EstadoDestino != "GO" && EstadoDestino != "MA" && EstadoDestino != "MT" && EstadoDestino != "MS"&& EstadoDestino != "MG" && EstadoDestino != "PA" && EstadoDestino != "PB" && EstadoDestino != "PR" && EstadoDestino != "PE" && EstadoDestino != "PI" && EstadoDestino != "RJ" && EstadoDestino != "RN" && EstadoDestino != "RS" && EstadoDestino != "RO" && EstadoDestino != "RR" && EstadoDestino != "SC" && EstadoDestino != "SP" && EstadoDestino != "SE" && EstadoDestino != "TO")
         {
             erro--;
             throw invalid_argument("Estado Invalido\n");
