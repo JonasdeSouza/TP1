@@ -1044,7 +1044,7 @@ int Agencia::Validar(string Agencia) throw (invalid_argument)
         }
         if((((int)Agencia[0]-48) + (((((int)Agencia[1]-48)*2)/10) + ((((int)Agencia[1]-48)*2)%10)) + ((int)Agencia[2]-48) + (((((int)Agencia[3]-48)*2)/10) + ((((int)Agencia[3]-48)*2)%10)) + ((int)Agencia[5]-48)) % 10 != 0){
             erro--;
-            throw invalid_argument("Digito verificador incorreton\n");
+            throw invalid_argument("Digito verificador incorreto\n");
         }
     }
     catch (invalid_argument& ErroAgencia)
@@ -1080,7 +1080,7 @@ int Conta::Validar(string Conta) throw (invalid_argument)
         }
         if((((int)Conta[0]-48) + ((((int)Conta[1]-48)*2)/10 + (((int)Conta[1]-48)*2)%10) + ((int)Conta[2]-48) + ((((int)Conta[3]-48)*2)/10 + (((int)Conta[3]-48)*2)%10) + ((int)Conta[4]-48) + ((((int)Conta[5]-48)*2)/10 + (((int)Conta[5]-48)*2)%10) + ((int)Conta[7]-48)) % 10 != 0){
             erro--;
-            throw invalid_argument("Digito verificador incorreton\n");
+            throw invalid_argument("Digito verificador incorreto\n");
         }
     }
     catch (invalid_argument& ErroConta)
