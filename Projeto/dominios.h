@@ -4,7 +4,7 @@
 #include <stdexcept>
 using namespace std;
 
-    class Nome{
+class Nome{
         private:
             string nome;
             string argumento;
@@ -55,17 +55,6 @@ using namespace std;
             string GetCpf();
     };
 
-    class User{
-        private:
-            Nome nome;
-            Telefone telefone;
-            Email email;
-            Senha senha;
-            Cpf cpf;
-        public:
-            void CadastrarUsuario(string, string, string, string, string);
-            void Imprime();
-    };
 
 //-----------------------------------------------------------------------------------------------
 
@@ -75,7 +64,7 @@ using namespace std;
             string argumento;
 
         public:
-            int Validar(int) throw (invalid_argument); 
+            int Validar(int) throw (invalid_argument);
             void SetBagagem(int);
             int GetBagagem();
     };
@@ -98,16 +87,6 @@ using namespace std;
             int Validar(int) throw (invalid_argument);
             void SetCodigoReserva(int);
             int GetCodigoReserva();
-    };
-
-    class Booking{
-        private:
-            CodigoReserva codigo;
-            Assento assento;
-            Bagagem bagagem;
-        public:
-            void ReservarCarona(int, int, char);
-            void Imprime();
     };
 
 //-----------------------------------------------------------------------------------------------------
@@ -203,22 +182,6 @@ using namespace std;
             string GetPreco();
     };
 
-    class Ride{
-        private:
-            CodigoCarona codigocarona;
-            CidadeOrigem cidadeorigem;
-            CidadeDestino cidadedestino;
-            EstadoOrigem estadoorigem;
-            EstadoDestino estadodestino;
-            Data data;
-            Duracao duracao;
-            Vagas vagas;
-            Preco preco;
-        public:
-            void CadastrarCarona(int, int, int, string, string, string, string, string, string);
-            void Imprime();
-    };
-
 //---------------------------------------------------------------------------------
 
     class Banco{
@@ -251,13 +214,4 @@ using namespace std;
             string GetConta();
     };
 
-    class Account{
-        private:
-            Banco banco;
-            Agencia agencia;
-            Conta conta;
-        public:
-            void CadastrarInfoBancarias(int, string, string);
-            void Imprime();
-    };
 #endif
