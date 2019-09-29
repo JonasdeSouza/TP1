@@ -10,7 +10,7 @@ void Nome::SetNome(string Nome)
     if (erro == 0)
     {
         nome = Nome;
-    } else (cout << "Erro no campo Usuario: " << argumento);
+    } 
 }
 
 int Nome::Validar(string Nome) throw (invalid_argument)
@@ -58,7 +58,7 @@ int Nome::Validar(string Nome) throw (invalid_argument)
     }
     catch (invalid_argument& ErroNome)
     {
-        argumento = ErroNome.what();
+        excecao = ErroNome.what();
     }
     return erro;
 }
@@ -69,7 +69,7 @@ void Telefone::SetTelefone(string Telefone)
     if (validar == 0)
     {
         telefone = Telefone;
-    } else (cout << "Erro no campo Usuario: " << argumento);
+    } 
 }
 
 int Telefone::Validar(string Telefone) throw (invalid_argument)
@@ -101,7 +101,7 @@ int Telefone::Validar(string Telefone) throw (invalid_argument)
     }
     catch (invalid_argument& ErroTelefone)
     {
-        argumento = ErroTelefone.what();
+        excecao = ErroTelefone.what();
     }
     return erro;
 }
@@ -112,7 +112,7 @@ void Email::SetEmail(string Email)
     if (erro == 0)
     {
         email = Email;
-    } else (cout << "Erro no campo Usuario: " << argumento);
+    } 
 }
 
 int Email::Validar(string Email) throw (invalid_argument)
@@ -153,7 +153,7 @@ int Email::Validar(string Email) throw (invalid_argument)
     }
     catch (invalid_argument& ErroEmail)
     {
-        argumento = ErroEmail.what();
+        excecao = ErroEmail.what();
     }
 
     return erro;
@@ -166,7 +166,7 @@ void Senha::SetSenha(string Senha)
     if(erro == 0)
     {
         senha = Senha;
-    } else (cout << "Erro no campo Usuario: " << argumento);
+    } 
 }
 
 int Senha::Validar(string Senha) throw (invalid_argument)
@@ -217,7 +217,7 @@ int Senha::Validar(string Senha) throw (invalid_argument)
 
     catch (invalid_argument& ErroSenha)
     {
-        argumento = ErroSenha.what();
+        excecao = ErroSenha.what();
     }
     return erro;
 }
@@ -228,7 +228,7 @@ void Cpf::SetCpf(string Cpf)
     if(validar == 0)
     {
         cpf = Cpf;
-    } else (cout << "Erro no campo Usuario: " << argumento);
+    } 
 }
 
 int Cpf::Validar(string Cpf) throw (invalid_argument)
@@ -252,7 +252,7 @@ int Cpf::Validar(string Cpf) throw (invalid_argument)
     }
     catch (invalid_argument& ErroCpf)
     {
-        argumento = ErroCpf.what();
+        excecao = ErroCpf.what();
     }
     return erro;
 }
@@ -306,7 +306,7 @@ int Cpf::ValidarDigitoVerificador(string Cpf) throw (invalid_argument)
     }
     catch (invalid_argument& VerificaCpf)
     {
-        argumento = VerificaCpf.what();
+        excecao = VerificaCpf.what();
     }
     return erro;
 }
@@ -336,6 +336,31 @@ string Cpf::GetCpf()
     return cpf;
 }
 
+string Nome::GetExcecao()
+{
+    return excecao;
+}
+
+string Telefone::GetExcecao()
+{
+    return excecao;
+}
+
+string Email::GetExcecao()
+{
+    return excecao;
+}
+
+string Senha::GetExcecao()
+{
+    return excecao;
+}
+
+string Cpf::GetExcecao()
+{
+    return excecao;
+}
+
 //-----------------------------------------------------------------------------------------
 
 void Bagagem::SetBagagem(int Bagagem)
@@ -343,7 +368,7 @@ void Bagagem::SetBagagem(int Bagagem)
     int validar = Validar(Bagagem);
     if (validar == 0){
         bagagem = Bagagem;
-    } else (cout << "Erro no campo Reserva: " << argumento);
+    } 
 }
 
 int Bagagem::Validar(int Bagagem) throw (invalid_argument)
@@ -360,7 +385,7 @@ int Bagagem::Validar(int Bagagem) throw (invalid_argument)
     }
     catch (invalid_argument& ErroBagagem)
     {
-        argumento = ErroBagagem.what();
+        excecao = ErroBagagem.what();
     }
     return erro;
 }
@@ -371,7 +396,7 @@ void Assento::SetAssento(char Assento)
     if(validar == 0)
     {
         assento = Assento;
-    } else (cout << "Erro no campo Reserva: " << argumento);
+    }
 }
 
 int Assento::Validar(char Assento) throw (invalid_argument)
@@ -390,17 +415,18 @@ int Assento::Validar(char Assento) throw (invalid_argument)
     }
     catch(invalid_argument& ErroAssento)
     {
-        argumento = ErroAssento.what();
+        excecao = ErroAssento.what();
     }
     return erro;
 }
+
 
 void CodigoReserva::SetCodigoReserva(int Codigo)
 {
     int validar = Validar(Codigo);
     if(validar == 0){
         codigoreserva = Codigo;
-    } else (cout << "Erro no campo Codigo: " << argumento);
+    } 
 }
 
 int CodigoReserva::Validar(int Codigo) throw (invalid_argument)
@@ -416,7 +442,7 @@ int CodigoReserva::Validar(int Codigo) throw (invalid_argument)
     }
     catch(invalid_argument& ErroCodigo)
     {
-        argumento = ErroCodigo.what();
+        excecao = ErroCodigo.what();
     }
     return erro;
 }
@@ -436,6 +462,20 @@ int CodigoReserva::GetCodigoReserva()
     return codigoreserva;
 }
 
+string Assento::GetExcecao()
+{
+    return excecao;
+}
+
+string Bagagem::GetExcecao()
+{
+    return excecao;
+}
+string CodigoReserva::GetExcecao()
+{
+    return excecao;
+}
+
 //------------------------------------------------------------
 
 void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem)
@@ -443,7 +483,7 @@ void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem)
     int validar = Validar(CidadeOrigem);
     if (validar == 0){
         cidadeorigem = CidadeOrigem;
-    } else (cout << "Erro no campo Cidade de Origem: " << argumento);
+    } 
 }
 
 int CidadeOrigem::Validar(string CidadeOrigem) throw (invalid_argument)
@@ -485,7 +525,7 @@ int CidadeOrigem::Validar(string CidadeOrigem) throw (invalid_argument)
     }
     catch(invalid_argument& ErroCidadeOrigem)
     {
-        argumento = ErroCidadeOrigem.what();
+        excecao = ErroCidadeOrigem.what();
     }
     return erro;
 }
@@ -495,7 +535,7 @@ void CidadeDestino::SetCidadeDestino(string CidadeDestino)
     int validar = Validar(CidadeDestino);
     if (validar == 0){
         cidadedestino = CidadeDestino;
-    } else (cout << "Erro no campo Cidade Destino: " << argumento);
+    } 
 }
 
 int CidadeDestino::Validar(string CidadeDestino) throw (invalid_argument)
@@ -537,7 +577,7 @@ int CidadeDestino::Validar(string CidadeDestino) throw (invalid_argument)
     }
     catch(invalid_argument& ErroCidadeDestino)
     {
-        argumento = ErroCidadeDestino.what();
+        excecao = ErroCidadeDestino.what();
     }
     return erro;
 }
@@ -547,7 +587,7 @@ void Vagas::SetVagas(int Vagas)
     int validar = Validar(Vagas);
     if (validar == 0) {
         vagas = Vagas;
-    } else (cout << "Erro no campo Vagas: " << argumento);
+    } 
 }
 
 int Vagas::Validar(int Vagas) throw (invalid_argument)
@@ -563,7 +603,7 @@ int Vagas::Validar(int Vagas) throw (invalid_argument)
     }
     catch(invalid_argument& ErroVagas)
     {
-        argumento = ErroVagas.what();
+        excecao = ErroVagas.what();
     }
     return erro;
 }
@@ -573,7 +613,7 @@ void Duracao::SetDuracao(int Duracao)
     int validar = Validar(Duracao);
     if (validar == 0){
         duracao = Duracao;
-    } else (cout << "Erro no campo Duracao: " << argumento);
+    } 
 }
 
 int Duracao::Validar(int Duracao) throw (invalid_argument)
@@ -589,7 +629,7 @@ int Duracao::Validar(int Duracao) throw (invalid_argument)
     }
     catch(invalid_argument& ErroDuracao)
     {
-        argumento = ErroDuracao.what();
+        excecao = ErroDuracao.what();
     }
     return erro;
 }
@@ -599,7 +639,7 @@ void CodigoCarona::SetCodigoCarona(int CodigoCarona)
     int validar = Validar(CodigoCarona);
     if(validar == 0){
         codigocarona = CodigoCarona;
-    } else (cout << "Erro no campo Codigo de Carona: " << argumento);
+    } 
 }
 
 int CodigoCarona::Validar(int CodigoCarona) throw (invalid_argument)
@@ -615,7 +655,7 @@ int CodigoCarona::Validar(int CodigoCarona) throw (invalid_argument)
     }
     catch(invalid_argument& ErroCodigo)
     {
-        argumento = ErroCodigo.what();
+        excecao = ErroCodigo.what();
     }
     return erro;
 }
@@ -625,7 +665,7 @@ void EstadoOrigem::SetEstadoOrigem(string EstadoOrigem)
     int validar = Validar(EstadoOrigem);
     if (validar == 0){
         estadoorigem = EstadoOrigem;
-    } else (cout << "Erro no campo Estado de Origem: " << argumento);
+    } 
 }
 
 
@@ -642,7 +682,7 @@ int EstadoOrigem::Validar(string EstadoOrigem) throw (invalid_argument)
     }
     catch(invalid_argument& ErroEstado)
     {
-        argumento = ErroEstado.what();
+        excecao = ErroEstado.what();
     }
     return erro;
 }
@@ -652,7 +692,7 @@ void EstadoDestino::SetEstadoDestino(string EstadoDestino)
     int validar = Validar(EstadoDestino);
     if(validar == 0){
         estadodestino = EstadoDestino;
-    } else (cout << "Erro no campo Estado Destino: " << argumento);
+    } 
 }
 
 int EstadoDestino::Validar(string EstadoDestino) throw (invalid_argument)
@@ -668,7 +708,7 @@ int EstadoDestino::Validar(string EstadoDestino) throw (invalid_argument)
     }
     catch(invalid_argument& ErroEstado)
     {
-        argumento = ErroEstado.what();
+        excecao = ErroEstado.what();
     }
     return erro;
 }
@@ -678,7 +718,7 @@ void Data::SetData(string Data)
     int validar = Validar(Data);
     if (validar == 0){
         data = Data;
-    } else (cout << "Erro no campo Data: " << argumento);
+    }
 }
 
 int Data::Validar(string Data) throw (invalid_argument)
@@ -796,7 +836,7 @@ int Data::Validar(string Data) throw (invalid_argument)
     }
     catch(invalid_argument& ErroData)
     {
-        argumento = ErroData.what();
+        excecao = ErroData.what();
     }
     return erro;
 }
@@ -806,7 +846,7 @@ void Preco::SetPreco(string Preco)
     int validar = Validar(Preco);
     if (validar == 0){
         preco = Preco;
-   } else (cout << "Erro no campo Preco: " << argumento);
+   } 
 }
 
 int Preco::Validar(string Preco) throw (invalid_argument)
@@ -824,7 +864,7 @@ int Preco::Validar(string Preco) throw (invalid_argument)
     }
     catch(invalid_argument& ErroPreco)
     {
-        argumento = ErroPreco.what();
+        excecao = ErroPreco.what();
     }
 
     return erro;
@@ -893,6 +933,50 @@ string Preco::GetPreco()
     return preco;
 }
 
+string EstadoDestino::GetExcecao()
+{
+    return excecao;
+}
+
+string EstadoOrigem::GetExcecao()
+{
+    return excecao;
+}
+
+string CidadeDestino::GetExcecao()
+{
+    return excecao;
+}
+
+string CidadeOrigem::GetExcecao()
+{
+    return excecao;
+}
+
+string CodigoCarona::GetExcecao()
+{
+    return excecao;
+}
+
+string Data::GetExcecao()
+{
+    return excecao;
+}
+
+string Duracao::GetExcecao()
+{
+    return excecao;
+}
+
+string Vagas::GetExcecao()
+{
+    return excecao;
+}
+
+string Preco::GetExcecao()
+{
+    return excecao;
+}
 //-------------------------------------------------------------------------------------------
 
 void Banco::SetCodigoBanco(int CodigoBanco)
@@ -900,7 +984,7 @@ void Banco::SetCodigoBanco(int CodigoBanco)
     int validar = Validar(CodigoBanco);
     if (validar == 0){
         codigobanco = CodigoBanco;
-    } else (cout << "Erro no campo Codigo do Banco: " << argumento);
+    } 
 }
 
 int Banco::Validar(int CodigoBanco) throw (invalid_argument)
@@ -916,7 +1000,7 @@ int Banco::Validar(int CodigoBanco) throw (invalid_argument)
     }
     catch(invalid_argument& ErroCodigo)
     {
-        argumento = ErroCodigo.what();
+        excecao = ErroCodigo.what();
     }
     return erro;
 }
@@ -927,7 +1011,7 @@ void Agencia::SetAgencia(string Agencia)
     int validar = Validar(Agencia);
     if (validar == 0){
         agencia = Agencia;
-    } else (cout << "Erro no campo Numero da Agencia: " << argumento);
+    } 
 }
 
 int Agencia::Validar(string Agencia) throw (invalid_argument)
@@ -953,7 +1037,7 @@ int Agencia::Validar(string Agencia) throw (invalid_argument)
     }
     catch (invalid_argument& ErroAgencia)
     {
-        argumento = ErroAgencia.what();
+        excecao = ErroAgencia.what();
     }
     return erro;
 }
@@ -964,7 +1048,7 @@ void Conta::SetConta(string Conta)
      int validar = Validar(Conta);
     if (validar == 0){
         conta = Conta;
-    } else (cout << "Erro no campo Numero da Conta: " << argumento);
+    } 
 }
 
 int Conta::Validar(string Conta) throw (invalid_argument)
@@ -989,7 +1073,7 @@ int Conta::Validar(string Conta) throw (invalid_argument)
     }
     catch (invalid_argument& ErroConta)
     {
-        argumento = ErroConta.what();
+        excecao = ErroConta.what();
     }
     return erro;
 }
@@ -1009,3 +1093,17 @@ string Conta::GetConta()
     return conta;
 }
 
+string Conta::GetExcecao()
+{
+    return excecao;
+}
+
+string Agencia::GetExcecao()
+{
+    return excecao;
+}
+
+string Banco::GetExcecao()
+{
+    return excecao;
+}

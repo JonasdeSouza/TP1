@@ -49,3 +49,25 @@
 	<iostream>
 	"user.h"
 
+1569769424 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1569769544 c:\users\jonas\documents\tp1\tp1\projeto\dominios.h
+	<string>
+	<stdexcept>
+
+1569766072 source:c:\users\jonas\documents\tp1\tp1\projeto\entidades.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+	"entidades.h"
+
+1569766072 c:\users\jonas\documents\tp1\tp1\projeto\entidades.h
+	<string>
+	<stdexcept>
+	"dominios.h"
+

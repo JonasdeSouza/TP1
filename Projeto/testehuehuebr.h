@@ -1,297 +1,369 @@
-#ifndef TESTES_H_INCLUDED
-#define TESTES_H_INCLUDED
+#ifndef TESTES_H
+#define TESTES_H
 
 #include "dominios.h"
-#incluide <string>
+#include <string>
 
 using namespace std;
 
-class TUAssento(
+class TUAssento{
     private:
-        const static string VALOR_INVALIDO = A;
-        const static string VALOR_VALIDO = D;
+        const static char VALOR_VALIDO = 'D';
+        const static char VALOR_INVALIDO = 'A';
         Assento *assento;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
-        const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        const static int SUCESSO = 0;
+        int Run();
+        string GetExcecao();
+};
 
-class TUBagagem(
+class TUBagagem{
     private:
         const static int VALOR_INVALIDO = 5;
         const static int VALOR_VALIDO = 1;
         Bagagem *bagagem;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUCodigo_Banco(
+class TUCodigoBanco{
     private:
-        const static string VALOR_INVALIDO = E23A56;
-        const static string VALOR_VALIDO = 123;
+        const static int VALOR_INVALIDO = 321321;
+        const static int VALOR_VALIDO = 123;
         Banco *codigo;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUCodigo_Carona(
+class TUCodigoCarona{
     private:
-        const static string VALOR_INVALIDO = A23;
-        const static string VALOR_VALIDO = 5467;
+        const static int VALOR_INVALIDO = 10000;
+        const static int VALOR_VALIDO = 5467;
         CodigoCarona *codigo;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUCodigo_Reserva(
+class TUCodigoReserva{
     private:
-        const static string VALOR_INVALIDO = 123R;
-        const static string VALOR_VALIDO = 84965;
+        const static int VALOR_INVALIDO = 9999999999;
+        const static int VALOR_VALIDO = 84965;
         CodigoReserva *codigo;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUCidade(
+class TUCidadeOrigem{
     private:
-        const static string VALOR_INVALIDO = .brasilia;
-        const static string VALOR_VALIDO = brasilia;
-        Cidade *cidade;
+        string VALOR_INVALIDO = ".brasilia";
+        string VALOR_VALIDO = "brasilia";
+        CidadeOrigem *cidadeorigem;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUCpf(
+class TUCidadeDestino{
     private:
-        const static string VALOR_INVALIDO = 123.ARD.456012.18;
-        const static string VALOR_VALIDO = 123.456.789-00;
+        string VALOR_INVALIDO = ".brasilia";
+        string VALOR_VALIDO = "brasilia";
+        CidadeDestino *cidadedestino;
+        int estado;
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int Run();
+        string GetExcecao();
+};
+
+class TUCpf{
+    private:
+        string VALOR_INVALIDO = "123.ARD.456012.18";
+        string VALOR_VALIDO = "123.456.789-00";
         Cpf *cpf;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUData(
+class TUData{
     private:
-        const static string VALOR_INVALIDO = 45/30/3456;
-        const static *** VALOR_VALIDO = 18/05/2020;
+        string VALOR_INVALIDO = "45/30/3456";
+        string VALOR_VALIDO = "18/05/2020";
         Data *data;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUDuracao(
+class TUDuracao{
     private:
         const static int VALOR_INVALIDO = 49;
         const static int VALOR_VALIDO = 5;
         Duracao *duracao;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUEstado(
+class TUEstadoOrigem{
     private:
-        const static string VALOR_INVALIDO = KT;
-        const static string VALOR_VALIDO = DF;
-        Estado *estado;
+        string VALOR_INVALIDO = "KT";
+        string VALOR_VALIDO = "DF";
+        EstadoOrigem *estadoorigem;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUEmail(
+class TUEstadoDestino{
     private:
-        const static string VALOR_INVALIDO = abcdefghijklmnopqrstuvxwyz@abcdefghijklmnopqrstuvxwyz;
-        const static *** VALOR_VALIDO = joao@gmail.com;
-        Email *Email;
+        string VALOR_INVALIDO = "KT";
+        string VALOR_VALIDO = "DF";
+        EstadoDestino *estadodestino;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUNome(
+class TUEmail{
     private:
-        const static string VALOR_INVALIDO = .Clodoaldo;
-        const static string VALOR_VALIDO = Washingtonilda;
+        string VALOR_INVALIDO = "abcdefghijklmnopqrstuvxwyz@abcdefghijklmnopqrstuvxwyz";
+        string VALOR_VALIDO = "joao@gmail.com";
+        Email *email;
+        int estado;
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = -1;
+        int Run();
+        string GetExcecao();
+};
+
+class TUNome{
+    private:
+        string VALOR_INVALIDO = ".Clodoaldo";
+        string VALOR_VALIDO = "Washingtonilda";
         Nome *nome;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUNumero_Agencia(
+class TUAgencia{
     private:
-        const static string VALOR_INVALIDO = 633;
-        const static string VALOR_VALIDO = 4598;
+        string VALOR_INVALIDO = "633";
+        string VALOR_VALIDO = "1234-4";
         Agencia * agencia;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUNumero_Conta(
+class TUConta{
     private:
-        const static string VALOR_INVALIDO = 6312;
-        const static string VALOR_VALIDO = 123456;
+        string VALOR_INVALIDO = "6312";
+        string VALOR_VALIDO = "123456-6";
         Conta *numero;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUPreco(
+class TUPreco{
     private:
-        const static float VALOR_INVALIDO = 0;
-        const static float VALOR_VALIDO = 35,50;
-        Preco *Preco;
+        string VALOR_INVALIDO = "0";
+        string VALOR_VALIDO = "35,50";
+        Preco *preco;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUTelefone(
+class TUTelefone{
     private:
-        const static string VALOR_INVALIDO = 61-00-940028922;
-        const static string VALOR_VALIDO = 55-61-940028922;
+        string VALOR_INVALIDO = "61-00-940028922";
+        string VALOR_VALIDO = "55-61-940028922";
         Telefone *telefone;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUSenha(
+class TUSenha{
     private:
-        const static string VALOR_INVALIDO = 11111;
-        const static string VALOR_VALIDO = 123A5;
+        string VALOR_INVALIDO = "11111";
+        string VALOR_VALIDO = "123A5";
         Senha *senha;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
-class TUVagas(
+class TUVagas{
     private:
         const static int VALOR_INVALIDO = 8;
         const static int VALOR_VALIDO = 2;
         Vagas *vagas;
         int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
+        string excecao;
+        void SetUp();
+        void TearDown();
+        void TestarCenarioSucesso();
+        void TestarCenarioFalha();
     public:
         const static int SUCESSO = 0;
         const static int FALHA = -1;
-        int run();
-);
+        int Run();
+        string GetExcecao();
+};
 
 #endif // TESTES_H_INCLUDED

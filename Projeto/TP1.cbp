@@ -31,9 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="dominios.cpp" />
+		<Unit filename="dominios.h" />
+		<Unit filename="entidades.cpp" />
+		<Unit filename="entidades.h" />
 		<Unit filename="main.cc" />
-		<Unit filename="user.cpp" />
-		<Unit filename="user.h" />
+		<Unit filename="testehuehuebr.h" />
+		<Unit filename="testeshuehuebr.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
