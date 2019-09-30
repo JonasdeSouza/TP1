@@ -28,6 +28,15 @@ void User::Imprime()
     cout << nome1 << "\n" << telefone1 << "\n" << email1 << "\n" << senha1 << "\n" << cpf1;
 }
 
+//User::~User()
+//{
+ //   delete email;
+  //  delete telefone;
+   // delete nome;
+   // delete cpf;
+    //delete senha;
+//}
+
 void Booking::ReservarCarona(int codigoreserva, int bagagem, char assento)
 {
 

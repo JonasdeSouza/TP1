@@ -1,7 +1,7 @@
 #include <iostream>
 #include "dominios.h"
 #include "entidades.h"
-#include "testehuehuebr.h"
+#include "testes.h"
 
 using namespace std;
 
@@ -25,15 +25,6 @@ int main(){
     //contaa.Imprime();
     //cout << "\n" << "---------" << "\n";
 
-    TUTelefone teste;
-
-    switch(teste.Run()){
-        case TUNome::SUCESSO: cout << "SUCESSO";
-                                break;
-        case TUNome::FALHA  : cout << "FALHA" << "\n" << teste.GetExcecao();
-                                break;
-    }
-    
-
+    Run run;
     return 0;
 }
