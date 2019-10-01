@@ -1,23 +1,104 @@
 \hypertarget{class_nome}{}\doxysection{Nome Class Reference}
 \label{class_nome}\index{Nome@{Nome}}
+
+
+Responsavel por armazenar e validar a string nome.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}\label{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}} 
-int {\bfseries Validar} (string)  throw (invalid\+\_\+argument)
+int \mbox{\hyperlink{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
-\mbox{\Hypertarget{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}\label{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}} 
-void {\bfseries Set\+Nome} (string)
+void \mbox{\hyperlink{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}{Set\+Nome}} (string)
 \item 
-\mbox{\Hypertarget{class_nome_a1edbc7e93e47896f35a9abdace797799}\label{class_nome_a1edbc7e93e47896f35a9abdace797799}} 
-string {\bfseries Get\+Nome} ()
+string \mbox{\hyperlink{class_nome_a1edbc7e93e47896f35a9abdace797799}{Get\+Nome}} ()
 \item 
-\mbox{\Hypertarget{class_nome_ac3079f3f6b2e097aad8abe6d37ae7919}\label{class_nome_ac3079f3f6b2e097aad8abe6d37ae7919}} 
-string {\bfseries Get\+Erro} ()
-\item 
-\mbox{\Hypertarget{class_nome_a3705798fe093021c5498585b72dd03b6}\label{class_nome_a3705798fe093021c5498585b72dd03b6}} 
-string {\bfseries Get\+Excecao} ()
+string \mbox{\hyperlink{class_nome_a3705798fe093021c5498585b72dd03b6}{Get\+Excecao}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_nome_ac3f8577d2bfac039271cc13c1c570df8}{nome}}
+\item 
+string \mbox{\hyperlink{class_nome_a7947500f81338b3052e64710054b1cff}{excecao}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsavel por armazenar e validar a string nome. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nome_a3705798fe093021c5498585b72dd03b6}\label{class_nome_a3705798fe093021c5498585b72dd03b6}} 
+\index{Nome@{Nome}!GetExcecao@{GetExcecao}}
+\index{GetExcecao@{GetExcecao}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
+{\footnotesize\ttfamily string Nome\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a string excecao \mbox{\Hypertarget{class_nome_a1edbc7e93e47896f35a9abdace797799}\label{class_nome_a1edbc7e93e47896f35a9abdace797799}} 
+\index{Nome@{Nome}!GetNome@{GetNome}}
+\index{GetNome@{GetNome}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{GetNome()}{GetNome()}}
+{\footnotesize\ttfamily string Nome\+::\+Get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a string nome \begin{DoxyReturn}{Returns}
+nome 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}\label{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}} 
+\index{Nome@{Nome}!SetNome@{SetNome}}
+\index{SetNome@{SetNome}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{SetNome()}{SetNome()}}
+{\footnotesize\ttfamily void Nome\+::\+Set\+Nome (\begin{DoxyParamCaption}\item[{string}]{Nome }\end{DoxyParamCaption})}
+
+Chama o método Validar, se não existir excecao, armazena o dado referente a nome na string nome
+\begin{DoxyParams}{Parameters}
+{\em nome} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}{Validar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}\label{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}} 
+\index{Nome@{Nome}!Validar@{Validar}}
+\index{Validar@{Validar}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Nome\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Nome }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
+
+Valida a string nome recebida do usuário e retorna para Set\+Nome
+\begin{DoxyParams}{Parameters}
+{\em nome} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+excecao 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_nome_a7947500f81338b3052e64710054b1cff}\label{class_nome_a7947500f81338b3052e64710054b1cff}} 
+\index{Nome@{Nome}!excecao@{excecao}}
+\index{excecao@{excecao}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{excecao}{excecao}}
+{\footnotesize\ttfamily string Nome\+::excecao\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena a excecao do método Validar, caso haja \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_nome_a8b04424b341ffe02b655cc14f69fd2c3}{Validar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_nome_ac3f8577d2bfac039271cc13c1c570df8}\label{class_nome_ac3f8577d2bfac039271cc13c1c570df8}} 
+\index{Nome@{Nome}!nome@{nome}}
+\index{nome@{nome}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}}
+{\footnotesize\ttfamily string Nome\+::nome\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena o dado recebido por Set\+Nome \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_nome_a7b47fe7c3131f6fc4723bd63199995fe}{Set\+Nome}} 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

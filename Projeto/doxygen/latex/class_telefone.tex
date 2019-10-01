@@ -1,20 +1,102 @@
 \hypertarget{class_telefone}{}\doxysection{Telefone Class Reference}
 \label{class_telefone}\index{Telefone@{Telefone}}
+
+
+Responsavel por armazenar e validar a string telefone.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_telefone_ae25e026d011dcdf89edec9e428c09757}\label{class_telefone_ae25e026d011dcdf89edec9e428c09757}} 
-int {\bfseries Validar} (string)  throw (invalid\+\_\+argument)
+int \mbox{\hyperlink{class_telefone_ae25e026d011dcdf89edec9e428c09757}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
-\mbox{\Hypertarget{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}\label{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}} 
-void {\bfseries Set\+Telefone} (string)
+void \mbox{\hyperlink{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}{Set\+Telefone}} (string)
 \item 
-\mbox{\Hypertarget{class_telefone_af2752743cba91eaf39350d7d5fe9004b}\label{class_telefone_af2752743cba91eaf39350d7d5fe9004b}} 
-string {\bfseries Get\+Telefone} ()
+string \mbox{\hyperlink{class_telefone_af2752743cba91eaf39350d7d5fe9004b}{Get\+Telefone}} ()
 \item 
-\mbox{\Hypertarget{class_telefone_a683d7e42d8200e835cd6cffd95c3e985}\label{class_telefone_a683d7e42d8200e835cd6cffd95c3e985}} 
-string {\bfseries Get\+Excecao} ()
+string \mbox{\hyperlink{class_telefone_a683d7e42d8200e835cd6cffd95c3e985}{Get\+Excecao}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_telefone_a5dc3515f0bfdda2139c0f44e7a2a1538}{telefone}}
+\item 
+string \mbox{\hyperlink{class_telefone_a00a47dba49ce5df47ee2ffeb973b4e55}{excecao}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsavel por armazenar e validar a string telefone. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_telefone_a683d7e42d8200e835cd6cffd95c3e985}\label{class_telefone_a683d7e42d8200e835cd6cffd95c3e985}} 
+\index{Telefone@{Telefone}!GetExcecao@{GetExcecao}}
+\index{GetExcecao@{GetExcecao}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
+{\footnotesize\ttfamily string Telefone\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a string excecao \mbox{\Hypertarget{class_telefone_af2752743cba91eaf39350d7d5fe9004b}\label{class_telefone_af2752743cba91eaf39350d7d5fe9004b}} 
+\index{Telefone@{Telefone}!GetTelefone@{GetTelefone}}
+\index{GetTelefone@{GetTelefone}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{GetTelefone()}{GetTelefone()}}
+{\footnotesize\ttfamily string Telefone\+::\+Get\+Telefone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retorna a string telefone \begin{DoxyReturn}{Returns}
+telefone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}\label{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}} 
+\index{Telefone@{Telefone}!SetTelefone@{SetTelefone}}
+\index{SetTelefone@{SetTelefone}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{SetTelefone()}{SetTelefone()}}
+{\footnotesize\ttfamily void Telefone\+::\+Set\+Telefone (\begin{DoxyParamCaption}\item[{string}]{Telefone }\end{DoxyParamCaption})}
+
+Chama o metodo Validar, caso não exista erros, armazena o dado referente a telefone na string telefone
+\begin{DoxyParams}{Parameters}
+{\em telefone} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_telefone_ae25e026d011dcdf89edec9e428c09757}{Validar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_telefone_ae25e026d011dcdf89edec9e428c09757}\label{class_telefone_ae25e026d011dcdf89edec9e428c09757}} 
+\index{Telefone@{Telefone}!Validar@{Validar}}
+\index{Validar@{Validar}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Telefone\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Telefone }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
+
+Valida a string telefone recebida do usuario e retorna para Set\+Telefone
+\begin{DoxyParams}{Parameters}
+{\em telefone} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+excecao 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_telefone_a00a47dba49ce5df47ee2ffeb973b4e55}\label{class_telefone_a00a47dba49ce5df47ee2ffeb973b4e55}} 
+\index{Telefone@{Telefone}!excecao@{excecao}}
+\index{excecao@{excecao}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{excecao}{excecao}}
+{\footnotesize\ttfamily string Telefone\+::excecao\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena a mensagem de erro do metodo Validar, caso haja \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_telefone_ae25e026d011dcdf89edec9e428c09757}{Validar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_telefone_a5dc3515f0bfdda2139c0f44e7a2a1538}\label{class_telefone_a5dc3515f0bfdda2139c0f44e7a2a1538}} 
+\index{Telefone@{Telefone}!telefone@{telefone}}
+\index{telefone@{telefone}!Telefone@{Telefone}}
+\doxysubsubsection{\texorpdfstring{telefone}{telefone}}
+{\footnotesize\ttfamily string Telefone\+::telefone\hspace{0.3cm}{\ttfamily [private]}}
+
+Armazena o dado recebido por Set\+Telefone \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_telefone_ae87af240fa38067c9b540c8e7a0a87ca}{Set\+Telefone}} 
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
