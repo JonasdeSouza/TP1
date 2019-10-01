@@ -193,18 +193,39 @@ class Nome{
             int duracao;
             string excecao;
         public:
+            /** \brief A classe Duracao armazena a duracao do trajeto
+             *
+             *  Duracao: valor entre 1 e 48 responsavel por identificar a duracao em hora
+             *  do percusso a ser tracado na carona.
+             */
+
             int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao da duracao
+            /** \brief Metodo para validacao da duracao do percusso
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
-             * \param string Duracao co trajeto.
-             * \return int 0 para sucesso -1 para falha.
+             * \param  Duracao do percusso.
+             * \return  0 para sucesso -1 para falha.
              *
              */
             void SetDuracao(int);
+            /** \brief Metodo responsavel por armazenar a duracao
+              *  do percusso caso seja valido.
+              *
+              * \param Numero de vagas no carro.
+              */
             int GetDuracao();
+            /** \brief Metodo responsavel por retornar a duracao do percusso.
+             *
+             * \return Duracao do percusso armazenada.
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao da duracao do percusso.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
 
     class Vagas{
@@ -212,18 +233,38 @@ class Nome{
             int vagas;
             string excecao;
         public:
+            /** \brief A classe vagas armazena o numero de vagas no carro que realizara a carona.
+             *
+             *  Vagas: digito numerico entre 0 e 4 responsavel por identificar quantas vagas ainda
+             *  ha sobrando no carro que dara carona.
+             */
             int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao do numero de vagas
+            /** \brief Metodo para validacao do numero de vagas
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
-             * \param string Numero de vagas.
-             * \return int 0 para sucesso -1 para falha.
+             * \param Numero de vagas.
+             * \return 0 para sucesso -1 para falha.
              *
              */
             void SetVagas(int);
+            /** \brief Metodo responsavel por armazenar o numero
+              *   de vagas caso seja valido.
+              *
+              * \param Numero de vagas no carro.
+              */
             int GetVagas();
+            /** \brief Metodo responsavel por retornar o numero de vagas no carro.
+             *
+             * \return Numero de vagas no carro armazenado.
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao do numero de vagas no carro.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
 
     class Preco{
@@ -231,19 +272,41 @@ class Nome{
             string preco;
             string excecao;
         public:
+            /** \brief A classe preco armazena o valor da carona em reais.
+             *
+             *   Preco: Valor entre 1,00 e 5000,00 usado para identificar
+             *   valor monetario em reais a ser cobrado pelo trajeto da carona.
+             */
+
             int Validar(string) throw (invalid_argument);
-            /** Metodo para validacao do preco do trajeto
+            /** Metodo para validacao do preco da carona
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
-             * \param string Preco do trajeto.
+             * \param string Preco da carona.
              * \return int 0 para sucesso -1 para falha.
              *
              */
             int ConverterPreco(string);
+
             void SetPreco(string);
+            /** \brief Metodo responsavel por armazenar o preco
+              *   da carona caso seja valido.
+              *
+              * \param Preco do trajeto.
+              */
             string GetPreco();
+            /** \brief Metodo responsavel por retornar o preco da carona.
+             *
+             * \return Preco da carona armazenado.
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao do preco da carona.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
 
 //---------------------------------------------------------------------------------
@@ -260,7 +323,7 @@ class Nome{
              */
 
             int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao do codigo do banco financeiro
+            /** \brief Metodo para validacao do codigo do banco financeiro
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
