@@ -6,7 +6,7 @@ using namespace std;
 
 class Nome{
         private:
-            string nome;
+            string nome; 
             string excecao;
         public:
             int Validar(string) throw (invalid_argument);
