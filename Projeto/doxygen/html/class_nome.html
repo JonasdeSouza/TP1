@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Carona (TP1): Nome Class Reference</title>
+<title>Sistema de Carona: Nome Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sistema de Carona (TP1)
+   <div id="projectname">Sistema de Carona
    </div>
   </td>
  </tr>
@@ -63,7 +63,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_nome-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Nome Class Reference</div>  </div>
@@ -85,13 +84,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1edbc7e93e47896f35a9abdace797799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3705798fe093021c5498585b72dd03b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nome.html#a3705798fe093021c5498585b72dd03b6">GetExcecao</a> ()</td></tr>
 <tr class="separator:a3705798fe093021c5498585b72dd03b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:ac3f8577d2bfac039271cc13c1c570df8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nome.html#ac3f8577d2bfac039271cc13c1c570df8">nome</a></td></tr>
-<tr class="separator:ac3f8577d2bfac039271cc13c1c570df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7947500f81338b3052e64710054b1cff"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nome.html#a7947500f81338b3052e64710054b1cff">excecao</a></td></tr>
-<tr class="separator:a7947500f81338b3052e64710054b1cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Responsavel por armazenar e validar a string nome. </p>
@@ -147,7 +139,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Chama o método Validar, se não existir excecao, armazena o dado referente a nome na string nome</p><dl class="params"><dt>Parameters</dt><dd>
+<p>Invoca o método Validar, se não existir excecao, armazena o dado referente a nome na string nome</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td></td></tr>
   </table>
@@ -178,60 +170,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Valida a string nome recebida do usuário e retorna para SetNome</p><dl class="params"><dt>Parameters</dt><dd>
+<p>Valida a string nome recebida do usuário e retorna para SetNome. <a class="el" href="class_nome.html" title="Responsavel por armazenar e validar a string nome.">Nome</a> pode ter até 20 caracteres e não pode haver números</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nome</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>excecao </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a7947500f81338b3052e64710054b1cff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7947500f81338b3052e64710054b1cff">&#9670;&nbsp;</a></span>excecao</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Nome::excecao</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Armazena a excecao do método Validar, caso haja </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nome.html#a8b04424b341ffe02b655cc14f69fd2c3">Validar</a> </dd></dl>
-
-</div>
-</div>
-<a id="ac3f8577d2bfac039271cc13c1c570df8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3f8577d2bfac039271cc13c1c570df8">&#9670;&nbsp;</a></span>nome</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Nome::nome</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Armazena o dado recebido por SetNome </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nome.html#a7b47fe7c3131f6fc4723bd63199995fe">SetNome</a> </dd></dl>
 
 </div>
 </div>

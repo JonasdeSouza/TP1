@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sistema de Carona (TP1): Telefone Class Reference</title>
+<title>Sistema de Carona: Telefone Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sistema de Carona (TP1)
+   <div id="projectname">Sistema de Carona
    </div>
   </td>
  </tr>
@@ -63,7 +63,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_telefone-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Telefone Class Reference</div>  </div>
@@ -85,13 +84,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af2752743cba91eaf39350d7d5fe9004b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683d7e42d8200e835cd6cffd95c3e985"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telefone.html#a683d7e42d8200e835cd6cffd95c3e985">GetExcecao</a> ()</td></tr>
 <tr class="separator:a683d7e42d8200e835cd6cffd95c3e985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a5dc3515f0bfdda2139c0f44e7a2a1538"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telefone.html#a5dc3515f0bfdda2139c0f44e7a2a1538">telefone</a></td></tr>
-<tr class="separator:a5dc3515f0bfdda2139c0f44e7a2a1538"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a47dba49ce5df47ee2ffeb973b4e55"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telefone.html#a00a47dba49ce5df47ee2ffeb973b4e55">excecao</a></td></tr>
-<tr class="separator:a00a47dba49ce5df47ee2ffeb973b4e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Responsavel por armazenar e validar a string telefone. </p>
@@ -147,7 +139,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Chama o metodo Validar, caso não exista erros, armazena o dado referente a telefone na string telefone</p><dl class="params"><dt>Parameters</dt><dd>
+<p>Invoca o metodo Validar, caso não exista erros, armazena o dado referente a telefone na string telefone</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">telefone</td><td></td></tr>
   </table>
@@ -178,60 +170,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Valida a string telefone recebida do usuario e retorna para SetTelefone</p><dl class="params"><dt>Parameters</dt><dd>
+<p>Valida a string telefone recebida do usuario e retorna para SetTelefone. A string tem que ter um formato XX-XX-XXXXXXXXX, onde X é número e não pode ser 0 em todos os campos.</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">telefone</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>excecao </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a00a47dba49ce5df47ee2ffeb973b4e55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a47dba49ce5df47ee2ffeb973b4e55">&#9670;&nbsp;</a></span>excecao</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Telefone::excecao</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Armazena a mensagem de erro do metodo Validar, caso haja </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_telefone.html#ae25e026d011dcdf89edec9e428c09757">Validar</a> </dd></dl>
-
-</div>
-</div>
-<a id="a5dc3515f0bfdda2139c0f44e7a2a1538"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5dc3515f0bfdda2139c0f44e7a2a1538">&#9670;&nbsp;</a></span>telefone</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Telefone::telefone</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Armazena o dado recebido por SetTelefone </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_telefone.html#ae87af240fa38067c9b540c8e7a0a87ca">SetTelefone</a> </dd></dl>
 
 </div>
 </div>
