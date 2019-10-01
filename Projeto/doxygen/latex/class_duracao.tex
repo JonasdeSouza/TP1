@@ -13,13 +13,13 @@ A classe \mbox{\hyperlink{class_duracao}{Duracao}} armazena a duracao do trajeto
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_duracao_a2df7768dccad63c0a54e178763feadcd}{Validar}} (int)  throw (invalid\+\_\+argument)
-\item 
-void \mbox{\hyperlink{class_duracao_aeda74559a6b7e22b6ccf07886b76743e}{Set\+Duracao}} (int)
 \begin{DoxyCompactList}\small\item\em Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e -\/1 em caso de falha. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_duracao_a03b31de18f1860dc5340a76dd76166ce}{Get\+Duracao}} ()
+void \mbox{\hyperlink{class_duracao_aeda74559a6b7e22b6ccf07886b76743e}{Set\+Duracao}} (int)
 \begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar a duracao do percusso caso seja valido. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_duracao_a03b31de18f1860dc5340a76dd76166ce}{Get\+Duracao}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar a duracao do percusso. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_duracao_a42b7c5c07079cfa4795fdfc58ba01411}{Get\+Excecao}} ()
-\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar a duracao do percusso. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da duracao do percusso. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -36,15 +36,12 @@ A classe \mbox{\hyperlink{class_duracao}{Duracao}} armazena a duracao do trajeto
 
 
 
-Metodo responsavel por armazenar a duracao do percusso caso seja valido. 
+Metodo responsavel por retornar a duracao do percusso. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em Numero} & de vagas no carro. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_duracao}{Duracao}} do percusso armazenada. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_duracao_a42b7c5c07079cfa4795fdfc58ba01411}\label{class_duracao_a42b7c5c07079cfa4795fdfc58ba01411}} 
-<<<<<<< HEAD
 \index{Duracao@{Duracao}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!Duracao@{Duracao}}
 \doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
@@ -52,16 +49,31 @@ Metodo responsavel por armazenar a duracao do percusso caso seja valido.
 
 
 
-Metodo responsavel por retornar a duracao do percusso. 
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da duracao do percusso. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_duracao}{Duracao}} do percusso armazenada. 
+Erro de validacao. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_duracao_aeda74559a6b7e22b6ccf07886b76743e}\label{class_duracao_aeda74559a6b7e22b6ccf07886b76743e}} 
 \index{Duracao@{Duracao}!SetDuracao@{SetDuracao}}
 \index{SetDuracao@{SetDuracao}!Duracao@{Duracao}}
 \doxysubsubsection{\texorpdfstring{SetDuracao()}{SetDuracao()}}
 {\footnotesize\ttfamily void Duracao\+::\+Set\+Duracao (\begin{DoxyParamCaption}\item[{int}]{Duracao }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por armazenar a duracao do percusso caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & de vagas no carro. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_duracao_a2df7768dccad63c0a54e178763feadcd}\label{class_duracao_a2df7768dccad63c0a54e178763feadcd}} 
+\index{Duracao@{Duracao}!Validar@{Validar}}
+\index{Validar@{Validar}!Duracao@{Duracao}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Duracao\+::\+Validar (\begin{DoxyParamCaption}\item[{int}]{Duracao }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
 
 
@@ -75,19 +87,9 @@ Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e
 \begin{DoxyReturn}{Returns}
 0 para sucesso -\/1 para falha. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_duracao_a2df7768dccad63c0a54e178763feadcd}\label{class_duracao_a2df7768dccad63c0a54e178763feadcd}} 
-\index{Duracao@{Duracao}!Validar@{Validar}}
-\index{Validar@{Validar}!Duracao@{Duracao}}
-\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
-{\footnotesize\ttfamily int Duracao\+::\+Validar (\begin{DoxyParamCaption}\item[{int}]{Duracao }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
-=======
-string {\bfseries Get\+Excecao} ()
-\end{DoxyCompactItemize}
->>>>>>> master
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

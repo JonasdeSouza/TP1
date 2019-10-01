@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: CidadeDestino Class Reference</title>
-=======
 <title>Sistema de Carona: CidadeDestino Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -77,7 +69,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Responsavel por armazenar e validar a string cidadedestino.  
+<p>A classe <a class="el" href="class_cidade_destino.html" title="A classe CidadeDestino armazena a cidade de onde a carona vai partir.">CidadeDestino</a> armazena a cidade de onde a carona vai partir.  
  <a href="class_cidade_destino.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
@@ -87,14 +79,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a62fc3438b9881404fe3294ef813e29c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cidade_destino.html#a62fc3438b9881404fe3294ef813e29c7">Validar</a> (string)  throw (invalid_argument)</td></tr>
 <tr class="separator:a62fc3438b9881404fe3294ef813e29c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40954397da7db8a6c39b806b372ff00d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cidade_destino.html#a40954397da7db8a6c39b806b372ff00d">SetCidadeDestino</a> (string)</td></tr>
+<tr class="memdesc:a40954397da7db8a6c39b806b372ff00d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar a cidade de destino caso seja valido.  <a href="class_cidade_destino.html#a40954397da7db8a6c39b806b372ff00d">More...</a><br /></td></tr>
 <tr class="separator:a40954397da7db8a6c39b806b372ff00d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36671749342041ed22bf8c1ec029da6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cidade_destino.html#af36671749342041ed22bf8c1ec029da6">GetCidadeDestino</a> ()</td></tr>
+<tr class="memdesc:af36671749342041ed22bf8c1ec029da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar a cidade de destino.  <a href="class_cidade_destino.html#af36671749342041ed22bf8c1ec029da6">More...</a><br /></td></tr>
 <tr class="separator:af36671749342041ed22bf8c1ec029da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afde73dcfc6cb04e15034f7e959ff16dc"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cidade_destino.html#afde73dcfc6cb04e15034f7e959ff16dc">GetExcecao</a> ()</td></tr>
+<tr class="memdesc:afde73dcfc6cb04e15034f7e959ff16dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da cidade de destino.  <a href="class_cidade_destino.html#afde73dcfc6cb04e15034f7e959ff16dc">More...</a><br /></td></tr>
 <tr class="separator:afde73dcfc6cb04e15034f7e959ff16dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Responsavel por armazenar e validar a string cidadedestino. </p>
+<div class="textblock"><p>A classe <a class="el" href="class_cidade_destino.html" title="A classe CidadeDestino armazena a cidade de onde a carona vai partir.">CidadeDestino</a> armazena a cidade de onde a carona vai partir. </p>
+<p>Cidade de origem: sequancia de no minimo 1 e no maximo 10 caracteres podendo cada um deles sendo letra, nao podendo iniciar em ponto final e nem ter espaços em sequancia que ira identificar a area urbana que a carona ira sair. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af36671749342041ed22bf8c1ec029da6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af36671749342041ed22bf8c1ec029da6">&#9670;&nbsp;</a></span>GetCidadeDestino()</h2>
@@ -110,6 +106,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Metodo responsavel por retornar a cidade de destino. </p>
+<dl class="section return"><dt>Returns</dt><dd>Cidade de destino armazenado. </dd></dl>
 
 </div>
 </div>
@@ -128,6 +127,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da cidade de destino. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
+
 </div>
 </div>
 <a id="a40954397da7db8a6c39b806b372ff00d"></a>
@@ -145,6 +147,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Metodo responsavel por armazenar a cidade de destino caso seja valido. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Cidade</td><td>de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -169,12 +179,20 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Metodo para validacao da cidade de destino . retornando 0 em caso de sucesso e -1 em caso de falha.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Cidade</td><td>de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

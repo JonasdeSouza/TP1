@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: Banco Class Reference</title>
-=======
 <title>Sistema de Carona: Banco Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -85,15 +77,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acefb0b11e2dc6b5ab30d77513a7188a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banco.html#acefb0b11e2dc6b5ab30d77513a7188a6">Validar</a> (int)  throw (invalid_argument)</td></tr>
+<tr class="memdesc:acefb0b11e2dc6b5ab30d77513a7188a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_banco.html#acefb0b11e2dc6b5ab30d77513a7188a6">More...</a><br /></td></tr>
 <tr class="separator:acefb0b11e2dc6b5ab30d77513a7188a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67956374ab3d2582448e17eeb21de55d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banco.html#a67956374ab3d2582448e17eeb21de55d">SetCodigoBanco</a> (int)</td></tr>
-<tr class="memdesc:a67956374ab3d2582448e17eeb21de55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_banco.html#a67956374ab3d2582448e17eeb21de55d">More...</a><br /></td></tr>
+<tr class="memdesc:a67956374ab3d2582448e17eeb21de55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido.  <a href="class_banco.html#a67956374ab3d2582448e17eeb21de55d">More...</a><br /></td></tr>
 <tr class="separator:a67956374ab3d2582448e17eeb21de55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf486c3f4b95466aa2b609e9af8ae6d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banco.html#abf486c3f4b95466aa2b609e9af8ae6d9">GetCodigoBanco</a> ()</td></tr>
-<tr class="memdesc:abf486c3f4b95466aa2b609e9af8ae6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido.  <a href="class_banco.html#abf486c3f4b95466aa2b609e9af8ae6d9">More...</a><br /></td></tr>
+<tr class="memdesc:abf486c3f4b95466aa2b609e9af8ae6d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o codigo do banco financeiro.  <a href="class_banco.html#abf486c3f4b95466aa2b609e9af8ae6d9">More...</a><br /></td></tr>
 <tr class="separator:abf486c3f4b95466aa2b609e9af8ae6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae09ec266b7a16e699458e104d13a1d7e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_banco.html#ae09ec266b7a16e699458e104d13a1d7e">GetExcecao</a> ()</td></tr>
-<tr class="memdesc:ae09ec266b7a16e699458e104d13a1d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o codigo do banco financeiro.  <a href="class_banco.html#ae09ec266b7a16e699458e104d13a1d7e">More...</a><br /></td></tr>
+<tr class="memdesc:ae09ec266b7a16e699458e104d13a1d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do codigo do banco financeiro.  <a href="class_banco.html#ae09ec266b7a16e699458e104d13a1d7e">More...</a><br /></td></tr>
 <tr class="separator:ae09ec266b7a16e699458e104d13a1d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -115,13 +108,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Numero</td><td>do banco financeiro. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Metodo responsavel por retornar o codigo do banco financeiro. </p>
+<dl class="section return"><dt>Returns</dt><dd>Numero do banco financeiro armazenado. </dd></dl>
 
 </div>
 </div>
@@ -140,8 +128,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por retornar o codigo do banco financeiro. </p>
-<dl class="section return"><dt>Returns</dt><dd>Numero do banco financeiro armazenado. </dd></dl>
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do codigo do banco financeiro. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
 
 </div>
 </div>
@@ -161,14 +149,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<p>Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">string</td><td>Numero do codigo financeiro. </td></tr>
+    <tr><td class="paramname">Numero</td><td>do banco financeiro. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
@@ -194,11 +181,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>Numero do codigo financeiro. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

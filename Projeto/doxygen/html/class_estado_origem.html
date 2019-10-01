@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: EstadoOrigem Class Reference</title>
-=======
 <title>Sistema de Carona: EstadoOrigem Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -77,7 +69,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Responsavel por armazenar e validar a string estadoorigem.  
+<p>A classe <a class="el" href="class_estado_origem.html" title="A classe EstadoOrigem armazena o estado de ondem a carona vai partir.">EstadoOrigem</a> armazena o estado de ondem a carona vai partir.  
  <a href="class_estado_origem.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
@@ -87,14 +79,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b309f267b44465e010dc3ceb4f4cbf9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_estado_origem.html#a6b309f267b44465e010dc3ceb4f4cbf9">Validar</a> (string)  throw (invalid_argument)</td></tr>
 <tr class="separator:a6b309f267b44465e010dc3ceb4f4cbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf10f78bc43758c91fd1e1caed25716b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_estado_origem.html#adf10f78bc43758c91fd1e1caed25716b">SetEstadoOrigem</a> (string)</td></tr>
+<tr class="memdesc:adf10f78bc43758c91fd1e1caed25716b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o estado de origem caso seja valido.  <a href="class_estado_origem.html#adf10f78bc43758c91fd1e1caed25716b">More...</a><br /></td></tr>
 <tr class="separator:adf10f78bc43758c91fd1e1caed25716b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2945fd4995fab9b5c04c97c6c0158902"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_estado_origem.html#a2945fd4995fab9b5c04c97c6c0158902">GetEstadoOrigem</a> ()</td></tr>
+<tr class="memdesc:a2945fd4995fab9b5c04c97c6c0158902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o estado de origem.  <a href="class_estado_origem.html#a2945fd4995fab9b5c04c97c6c0158902">More...</a><br /></td></tr>
 <tr class="separator:a2945fd4995fab9b5c04c97c6c0158902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3483f865aae75e5e1b6d6dd7e080e209"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_estado_origem.html#a3483f865aae75e5e1b6d6dd7e080e209">GetExcecao</a> ()</td></tr>
+<tr class="memdesc:a3483f865aae75e5e1b6d6dd7e080e209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do estado de origem.  <a href="class_estado_origem.html#a3483f865aae75e5e1b6d6dd7e080e209">More...</a><br /></td></tr>
 <tr class="separator:a3483f865aae75e5e1b6d6dd7e080e209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Responsavel por armazenar e validar a string estadoorigem. </p>
+<div class="textblock"><p>A classe <a class="el" href="class_estado_origem.html" title="A classe EstadoOrigem armazena o estado de ondem a carona vai partir.">EstadoOrigem</a> armazena o estado de ondem a carona vai partir. </p>
+<p>Estado de origem: sigla em maiusculo do estado brasileiro de onde a carona partira. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2945fd4995fab9b5c04c97c6c0158902"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2945fd4995fab9b5c04c97c6c0158902">&#9670;&nbsp;</a></span>GetEstadoOrigem()</h2>
@@ -110,6 +106,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Metodo responsavel por retornar o estado de origem. </p>
+<dl class="section return"><dt>Returns</dt><dd>Estado de origem armazenado. </dd></dl>
 
 </div>
 </div>
@@ -128,6 +127,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do estado de origem. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
+
 </div>
 </div>
 <a id="adf10f78bc43758c91fd1e1caed25716b"></a>
@@ -145,6 +147,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Metodo responsavel por armazenar o estado de origem caso seja valido. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Estado</td><td>de origem. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -169,12 +179,20 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Metodo para validacao do estado de origem . retornando 0 em caso de sucesso e -1 em caso de falha.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Estado</td><td>de origem. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

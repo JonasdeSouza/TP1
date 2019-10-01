@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: Preco Class Reference</title>
-=======
 <title>Sistema de Carona: Preco Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -89,12 +81,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5edca287e64154e897031f0c3eeff09c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preco.html#a5edca287e64154e897031f0c3eeff09c">ConverterPreco</a> (string)</td></tr>
 <tr class="separator:a5edca287e64154e897031f0c3eeff09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe25251fc5053e06322afef86f45dde4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preco.html#afe25251fc5053e06322afef86f45dde4">SetPreco</a> (string)</td></tr>
+<tr class="memdesc:afe25251fc5053e06322afef86f45dde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o preco da carona caso seja valido.  <a href="class_preco.html#afe25251fc5053e06322afef86f45dde4">More...</a><br /></td></tr>
 <tr class="separator:afe25251fc5053e06322afef86f45dde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaafb2bcdec3cdf9503a658d15ca454b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preco.html#aaafb2bcdec3cdf9503a658d15ca454b6">GetPreco</a> ()</td></tr>
-<tr class="memdesc:aaafb2bcdec3cdf9503a658d15ca454b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o preco da carona caso seja valido.  <a href="class_preco.html#aaafb2bcdec3cdf9503a658d15ca454b6">More...</a><br /></td></tr>
+<tr class="memdesc:aaafb2bcdec3cdf9503a658d15ca454b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o preco da carona.  <a href="class_preco.html#aaafb2bcdec3cdf9503a658d15ca454b6">More...</a><br /></td></tr>
 <tr class="separator:aaafb2bcdec3cdf9503a658d15ca454b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb768fef6780fb094d9fc7f7deb0e6a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_preco.html#afcb768fef6780fb094d9fc7f7deb0e6a">GetExcecao</a> ()</td></tr>
-<tr class="memdesc:afcb768fef6780fb094d9fc7f7deb0e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o preco da carona.  <a href="class_preco.html#afcb768fef6780fb094d9fc7f7deb0e6a">More...</a><br /></td></tr>
+<tr class="memdesc:afcb768fef6780fb094d9fc7f7deb0e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do preco da carona.  <a href="class_preco.html#afcb768fef6780fb094d9fc7f7deb0e6a">More...</a><br /></td></tr>
 <tr class="separator:afcb768fef6780fb094d9fc7f7deb0e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -116,14 +109,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Metodo para validacao do preco da carona . retornando 0 em caso de sucesso e -1 em caso de falha.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">string</td><td><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a> da carona. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
@@ -142,8 +127,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por retornar o preco da carona. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a> da carona armazenado. </dd></dl>
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do preco da carona. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
 
 </div>
 </div>
@@ -162,13 +147,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por armazenar o preco da carona caso seja valido. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a></td><td>do trajeto. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Metodo responsavel por retornar o preco da carona. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a> da carona armazenado. </dd></dl>
 
 </div>
 </div>
@@ -187,6 +167,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Metodo responsavel por armazenar o preco da carona caso seja valido. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a></td><td>do trajeto. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,12 +199,20 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Metodo para validacao do preco da carona . retornando 0 em caso de sucesso e -1 em caso de falha.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td><a class="el" href="class_preco.html" title="A classe preco armazena o valor da carona em reais.">Preco</a> da carona. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

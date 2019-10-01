@@ -14,20 +14,14 @@ A classe preco armazena o valor da carona em reais.
 \item 
 int \mbox{\hyperlink{class_preco_a57a5455e41e09fd19c530b0dc1d6d342}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
-<<<<<<< HEAD
 int \mbox{\hyperlink{class_preco_a5edca287e64154e897031f0c3eeff09c}{Converter\+Preco}} (string)
 \item 
 void \mbox{\hyperlink{class_preco_afe25251fc5053e06322afef86f45dde4}{Set\+Preco}} (string)
-\item 
-string \mbox{\hyperlink{class_preco_aaafb2bcdec3cdf9503a658d15ca454b6}{Get\+Preco}} ()
 \begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar o preco da carona caso seja valido. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_preco_aaafb2bcdec3cdf9503a658d15ca454b6}{Get\+Preco}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o preco da carona. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_preco_afcb768fef6780fb094d9fc7f7deb0e6a}{Get\+Excecao}} ()
-\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o preco da carona. \end{DoxyCompactList}\end{DoxyCompactItemize}
-=======
-\mbox{\Hypertarget{class_preco_afcb768fef6780fb094d9fc7f7deb0e6a}\label{class_preco_afcb768fef6780fb094d9fc7f7deb0e6a}} 
-string {\bfseries Get\+Excecao} ()
-\end{DoxyCompactItemize}
->>>>>>> master
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do preco da carona. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -42,16 +36,6 @@ A classe preco armazena o valor da carona em reais.
 \doxysubsubsection{\texorpdfstring{ConverterPreco()}{ConverterPreco()}}
 {\footnotesize\ttfamily int Preco\+::\+Converter\+Preco (\begin{DoxyParamCaption}\item[{string}]{Preco }\end{DoxyParamCaption})}
 
-Metodo para validacao do preco da carona . retornando 0 em caso de sucesso e -\/1 em caso de falha.
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & \mbox{\hyperlink{class_preco}{Preco}} da carona. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 0 para sucesso -\/1 para falha. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_preco_afcb768fef6780fb094d9fc7f7deb0e6a}\label{class_preco_afcb768fef6780fb094d9fc7f7deb0e6a}} 
 \index{Preco@{Preco}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!Preco@{Preco}}
@@ -60,16 +44,29 @@ int 0 para sucesso -\/1 para falha.
 
 
 
-Metodo responsavel por retornar o preco da carona. 
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do preco da carona. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_preco}{Preco}} da carona armazenado. 
+Erro de validacao. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_preco_aaafb2bcdec3cdf9503a658d15ca454b6}\label{class_preco_aaafb2bcdec3cdf9503a658d15ca454b6}} 
 \index{Preco@{Preco}!GetPreco@{GetPreco}}
 \index{GetPreco@{GetPreco}!Preco@{Preco}}
 \doxysubsubsection{\texorpdfstring{GetPreco()}{GetPreco()}}
 {\footnotesize\ttfamily string Preco\+::\+Get\+Preco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por retornar o preco da carona. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_preco}{Preco}} da carona armazenado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_preco_afe25251fc5053e06322afef86f45dde4}\label{class_preco_afe25251fc5053e06322afef86f45dde4}} 
+\index{Preco@{Preco}!SetPreco@{SetPreco}}
+\index{SetPreco@{SetPreco}!Preco@{Preco}}
+\doxysubsubsection{\texorpdfstring{SetPreco()}{SetPreco()}}
+{\footnotesize\ttfamily void Preco\+::\+Set\+Preco (\begin{DoxyParamCaption}\item[{string}]{Preco }\end{DoxyParamCaption})}
 
 
 
@@ -80,21 +77,25 @@ Metodo responsavel por armazenar o preco da carona caso seja valido.
 {\em \mbox{\hyperlink{class_preco}{Preco}}} & do trajeto. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_preco_afe25251fc5053e06322afef86f45dde4}\label{class_preco_afe25251fc5053e06322afef86f45dde4}} 
-\index{Preco@{Preco}!SetPreco@{SetPreco}}
-\index{SetPreco@{SetPreco}!Preco@{Preco}}
-\doxysubsubsection{\texorpdfstring{SetPreco()}{SetPreco()}}
-{\footnotesize\ttfamily void Preco\+::\+Set\+Preco (\begin{DoxyParamCaption}\item[{string}]{Preco }\end{DoxyParamCaption})}
-
 \mbox{\Hypertarget{class_preco_a57a5455e41e09fd19c530b0dc1d6d342}\label{class_preco_a57a5455e41e09fd19c530b0dc1d6d342}} 
 \index{Preco@{Preco}!Validar@{Validar}}
 \index{Validar@{Validar}!Preco@{Preco}}
 \doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
 {\footnotesize\ttfamily int Preco\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Preco }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
+Metodo para validacao do preco da carona . retornando 0 em caso de sucesso e -\/1 em caso de falha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \mbox{\hyperlink{class_preco}{Preco}} da carona. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

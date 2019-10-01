@@ -19,17 +19,9 @@ void \mbox{\hyperlink{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}{Set\+Agen
 \item 
 \mbox{\hyperlink{class_agencia}{Agencia}} \mbox{\hyperlink{class_account_a41bca586db400d957553314863eec3d4}{Get\+Agencia}} () const
 \item 
-<<<<<<< HEAD
 void \mbox{\hyperlink{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}{Set\+Conta}} (const \mbox{\hyperlink{class_conta}{Conta}} \&conta)
 \item 
 \mbox{\hyperlink{class_conta}{Conta}} \mbox{\hyperlink{class_account_a55835586e9f773c3be00cc4257691752}{Get\+Conta}} () const
-=======
-\mbox{\Hypertarget{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}\label{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}} 
-void {\bfseries Set\+Conta} (const \mbox{\hyperlink{class_conta}{Conta}} \&conta)
-\item 
-\mbox{\Hypertarget{class_account_a55835586e9f773c3be00cc4257691752}\label{class_account_a55835586e9f773c3be00cc4257691752}} 
-\mbox{\hyperlink{class_conta}{Conta}} {\bfseries Get\+Conta} () const
->>>>>>> master
 \end{DoxyCompactItemize}
 
 
@@ -40,51 +32,107 @@ void {\bfseries Set\+Conta} (const \mbox{\hyperlink{class_conta}{Conta}} \&conta
 \doxysubsubsection{\texorpdfstring{CadastrarInfoBancarias()}{CadastrarInfoBancarias()}}
 {\footnotesize\ttfamily void Account\+::\+Cadastrar\+Info\+Bancarias (\begin{DoxyParamCaption}\item[{int}]{codigobanco,  }\item[{string}]{agencia,  }\item[{string}]{conta }\end{DoxyParamCaption})}
 
+Recebe um int e duas strings e chama o Set de cada uma
+\begin{DoxyParams}{Parameters}
+{\em banco,agencia,conta} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a2d2057a9b7bbd101690111734b34684e}{Set\+Banco()}}, \mbox{\hyperlink{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}{Set\+Conta()}}, \mbox{\hyperlink{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}{Set\+Agencia()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_a41bca586db400d957553314863eec3d4}\label{class_account_a41bca586db400d957553314863eec3d4}} 
 \index{Account@{Account}!GetAgencia@{GetAgencia}}
 \index{GetAgencia@{GetAgencia}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{GetAgencia()}{GetAgencia()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_agencia}{Agencia}} Account\+::\+Get\+Agencia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Get\+Agencia da classe \mbox{\hyperlink{class_agencia}{Agencia}}
+\begin{DoxyParams}{Parameters}
+{\em agencia} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a41bca586db400d957553314863eec3d4}{Get\+Agencia()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_a53d64ae3a9d9e3ed9033dec565e56638}\label{class_account_a53d64ae3a9d9e3ed9033dec565e56638}} 
 \index{Account@{Account}!GetBanco@{GetBanco}}
 \index{GetBanco@{GetBanco}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{GetBanco()}{GetBanco()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_banco}{Banco}} Account\+::\+Get\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Get\+Banco da classe \mbox{\hyperlink{class_banco}{Banco}}
+\begin{DoxyParams}{Parameters}
+{\em banco} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a53d64ae3a9d9e3ed9033dec565e56638}{Get\+Banco()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_a55835586e9f773c3be00cc4257691752}\label{class_account_a55835586e9f773c3be00cc4257691752}} 
 \index{Account@{Account}!GetConta@{GetConta}}
 \index{GetConta@{GetConta}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{GetConta()}{GetConta()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_conta}{Conta}} Account\+::\+Get\+Conta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Get\+Conta da classe \mbox{\hyperlink{class_conta}{Conta}}
+\begin{DoxyParams}{Parameters}
+{\em conta} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a55835586e9f773c3be00cc4257691752}{Get\+Conta()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_a0bf0100f1c8d063dc56a225e53af38f9}\label{class_account_a0bf0100f1c8d063dc56a225e53af38f9}} 
 \index{Account@{Account}!Imprime@{Imprime}}
 \index{Imprime@{Imprime}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{Imprime()}{Imprime()}}
 {\footnotesize\ttfamily void Account\+::\+Imprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}\label{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}} 
+Imprime todos os argumentos armazenados em memoria da classe \mbox{\hyperlink{class_account}{Account}} \mbox{\Hypertarget{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}\label{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}} 
 \index{Account@{Account}!SetAgencia@{SetAgencia}}
 \index{SetAgencia@{SetAgencia}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{SetAgencia()}{SetAgencia()}}
 {\footnotesize\ttfamily void Account\+::\+Set\+Agencia (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_agencia}{Agencia}} \&}]{agencia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Set\+Agencia da classe \mbox{\hyperlink{class_agencia}{Agencia}}
+\begin{DoxyParams}{Parameters}
+{\em agencia} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}{Set\+Agencia()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_a2d2057a9b7bbd101690111734b34684e}\label{class_account_a2d2057a9b7bbd101690111734b34684e}} 
 \index{Account@{Account}!SetBanco@{SetBanco}}
 \index{SetBanco@{SetBanco}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{SetBanco()}{SetBanco()}}
 {\footnotesize\ttfamily void Account\+::\+Set\+Banco (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_banco}{Banco}} \&}]{banco }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Set\+Banco da classe \mbox{\hyperlink{class_banco}{Banco}}
+\begin{DoxyParams}{Parameters}
+{\em banco} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_a2d2057a9b7bbd101690111734b34684e}{Set\+Banco()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}\label{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}} 
 \index{Account@{Account}!SetConta@{SetConta}}
 \index{SetConta@{SetConta}!Account@{Account}}
 \doxysubsubsection{\texorpdfstring{SetConta()}{SetConta()}}
 {\footnotesize\ttfamily void Account\+::\+Set\+Conta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_conta}{Conta}} \&}]{conta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_account}{Account}} ter acesso ao metodo Set\+Conta da classe \mbox{\hyperlink{class_conta}{Conta}}
+\begin{DoxyParams}{Parameters}
+{\em conta} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}{Set\+Conta()}}
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}

@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: Duracao Class Reference</title>
-=======
 <title>Sistema de Carona: Duracao Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -85,15 +77,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2df7768dccad63c0a54e178763feadcd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_duracao.html#a2df7768dccad63c0a54e178763feadcd">Validar</a> (int)  throw (invalid_argument)</td></tr>
+<tr class="memdesc:a2df7768dccad63c0a54e178763feadcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_duracao.html#a2df7768dccad63c0a54e178763feadcd">More...</a><br /></td></tr>
 <tr class="separator:a2df7768dccad63c0a54e178763feadcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda74559a6b7e22b6ccf07886b76743e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_duracao.html#aeda74559a6b7e22b6ccf07886b76743e">SetDuracao</a> (int)</td></tr>
-<tr class="memdesc:aeda74559a6b7e22b6ccf07886b76743e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_duracao.html#aeda74559a6b7e22b6ccf07886b76743e">More...</a><br /></td></tr>
+<tr class="memdesc:aeda74559a6b7e22b6ccf07886b76743e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar a duracao do percusso caso seja valido.  <a href="class_duracao.html#aeda74559a6b7e22b6ccf07886b76743e">More...</a><br /></td></tr>
 <tr class="separator:aeda74559a6b7e22b6ccf07886b76743e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b31de18f1860dc5340a76dd76166ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_duracao.html#a03b31de18f1860dc5340a76dd76166ce">GetDuracao</a> ()</td></tr>
-<tr class="memdesc:a03b31de18f1860dc5340a76dd76166ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar a duracao do percusso caso seja valido.  <a href="class_duracao.html#a03b31de18f1860dc5340a76dd76166ce">More...</a><br /></td></tr>
+<tr class="memdesc:a03b31de18f1860dc5340a76dd76166ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar a duracao do percusso.  <a href="class_duracao.html#a03b31de18f1860dc5340a76dd76166ce">More...</a><br /></td></tr>
 <tr class="separator:a03b31de18f1860dc5340a76dd76166ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42b7c5c07079cfa4795fdfc58ba01411"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_duracao.html#a42b7c5c07079cfa4795fdfc58ba01411">GetExcecao</a> ()</td></tr>
-<tr class="memdesc:a42b7c5c07079cfa4795fdfc58ba01411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar a duracao do percusso.  <a href="class_duracao.html#a42b7c5c07079cfa4795fdfc58ba01411">More...</a><br /></td></tr>
+<tr class="memdesc:a42b7c5c07079cfa4795fdfc58ba01411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da duracao do percusso.  <a href="class_duracao.html#a42b7c5c07079cfa4795fdfc58ba01411">More...</a><br /></td></tr>
 <tr class="separator:a42b7c5c07079cfa4795fdfc58ba01411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -115,13 +108,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por armazenar a duracao do percusso caso seja valido. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Numero</td><td>de vagas no carro. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Metodo responsavel por retornar a duracao do percusso. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_duracao.html" title="A classe Duracao armazena a duracao do trajeto.">Duracao</a> do percusso armazenada. </dd></dl>
 
 </div>
 </div>
@@ -140,8 +128,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por retornar a duracao do percusso. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_duracao.html" title="A classe Duracao armazena a duracao do trajeto.">Duracao</a> do percusso armazenada. </dd></dl>
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da duracao do percusso. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
 
 </div>
 </div>
@@ -161,14 +149,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<p>Metodo responsavel por armazenar a duracao do percusso caso seja valido. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="class_duracao.html" title="A classe Duracao armazena a duracao do trajeto.">Duracao</a></td><td>do percusso. </td></tr>
+    <tr><td class="paramname">Numero</td><td>de vagas no carro. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
@@ -194,11 +181,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Metodo para validacao da duracao do percusso . retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="class_duracao.html" title="A classe Duracao armazena a duracao do trajeto.">Duracao</a></td><td>do percusso. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 para sucesso -1 para falha. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

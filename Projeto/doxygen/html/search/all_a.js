@@ -1,8 +1,5 @@
 var searchData=
 [
-<<<<<<< HEAD
-  ['preco_52',['Preco',['../class_preco.html',1,'']]]
-=======
-  ['telefone_42',['Telefone',['../class_telefone.html',1,'']]]
->>>>>>> master
+  ['reservarcarona_52',['ReservarCarona',['../class_booking.html#acede3a2e5df90a3fa6ea471af5f23353',1,'Booking']]],
+  ['ride_53',['Ride',['../class_ride.html',1,'']]]
 ];

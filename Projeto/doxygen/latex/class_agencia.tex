@@ -13,13 +13,13 @@ A classe \mbox{\hyperlink{class_agencia}{Agencia}} e responsavel por armazenar o
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_agencia_a740f7aa78f9925e6b1f8f4a983b5772c}{Validar}} (string)  throw (invalid\+\_\+argument)
-\item 
-void \mbox{\hyperlink{class_agencia_a93d095ae1d7052388e64a8976687fd0c}{Set\+Agencia}} (string)
 \begin{DoxyCompactList}\small\item\em Metodo para validacao do numero da agencia . do banco retornando 0 em caso de sucesso e -\/1 em caso de falha. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_agencia_aaac510a42f5b4f7950f88272164ef2b4}{Get\+Agencia}} ()
+void \mbox{\hyperlink{class_agencia_a93d095ae1d7052388e64a8976687fd0c}{Set\+Agencia}} (string)
 \begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar o numero da agencia do banco caso seja valido. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_agencia_aaac510a42f5b4f7950f88272164ef2b4}{Get\+Agencia}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o numero da agencia do banco. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_agencia_a169039ff82137198bbb3ae8b36dad282}{Get\+Excecao}} ()
-\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o numero da agencia do banco. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do numero da agencia do banco. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -36,15 +36,12 @@ Numero da agencia do banco\+: representa uma sequencia de 5 digitos numericos de
 
 
 
-Metodo responsavel por armazenar o numero da agencia do banco caso seja valido. 
+Metodo responsavel por retornar o numero da agencia do banco. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em Numero} & da agencia do banco. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero da agencia do banco armazenado. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_agencia_a169039ff82137198bbb3ae8b36dad282}\label{class_agencia_a169039ff82137198bbb3ae8b36dad282}} 
-<<<<<<< HEAD
 \index{Agencia@{Agencia}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!Agencia@{Agencia}}
 \doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
@@ -52,16 +49,31 @@ Metodo responsavel por armazenar o numero da agencia do banco caso seja valido.
 
 
 
-Metodo responsavel por retornar o numero da agencia do banco. 
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do numero da agencia do banco. 
 
 \begin{DoxyReturn}{Returns}
-Numero da agencia do banco armazenado. 
+Erro de validacao. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_agencia_a93d095ae1d7052388e64a8976687fd0c}\label{class_agencia_a93d095ae1d7052388e64a8976687fd0c}} 
 \index{Agencia@{Agencia}!SetAgencia@{SetAgencia}}
 \index{SetAgencia@{SetAgencia}!Agencia@{Agencia}}
 \doxysubsubsection{\texorpdfstring{SetAgencia()}{SetAgencia()}}
 {\footnotesize\ttfamily void Agencia\+::\+Set\+Agencia (\begin{DoxyParamCaption}\item[{string}]{Agencia }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por armazenar o numero da agencia do banco caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & da agencia do banco. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_agencia_a740f7aa78f9925e6b1f8f4a983b5772c}\label{class_agencia_a740f7aa78f9925e6b1f8f4a983b5772c}} 
+\index{Agencia@{Agencia}!Validar@{Validar}}
+\index{Validar@{Validar}!Agencia@{Agencia}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Agencia\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Agencia }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
 
 
@@ -75,19 +87,9 @@ Metodo para validacao do numero da agencia . do banco retornando 0 em caso de su
 \begin{DoxyReturn}{Returns}
 int 0 para sucesso -\/1 para falha. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_agencia_a740f7aa78f9925e6b1f8f4a983b5772c}\label{class_agencia_a740f7aa78f9925e6b1f8f4a983b5772c}} 
-\index{Agencia@{Agencia}!Validar@{Validar}}
-\index{Validar@{Validar}!Agencia@{Agencia}}
-\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
-{\footnotesize\ttfamily int Agencia\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Agencia }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
-=======
-string {\bfseries Get\+Excecao} ()
-\end{DoxyCompactItemize}
->>>>>>> master
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

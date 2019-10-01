@@ -2,7 +2,7 @@
 \label{class_estado_origem}\index{EstadoOrigem@{EstadoOrigem}}
 
 
-Responsavel por armazenar e validar a string estadoorigem.  
+A classe \mbox{\hyperlink{class_estado_origem}{Estado\+Origem}} armazena o estado de ondem a carona vai partir.  
 
 
 
@@ -15,20 +15,17 @@ Responsavel por armazenar e validar a string estadoorigem.
 int \mbox{\hyperlink{class_estado_origem_a6b309f267b44465e010dc3ceb4f4cbf9}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
 void \mbox{\hyperlink{class_estado_origem_adf10f78bc43758c91fd1e1caed25716b}{Set\+Estado\+Origem}} (string)
-\item 
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar o estado de origem caso seja valido. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_estado_origem_a2945fd4995fab9b5c04c97c6c0158902}{Get\+Estado\+Origem}} ()
-\item 
-<<<<<<< HEAD
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o estado de origem. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_estado_origem_a3483f865aae75e5e1b6d6dd7e080e209}{Get\+Excecao}} ()
-=======
-\mbox{\Hypertarget{class_estado_origem_a3483f865aae75e5e1b6d6dd7e080e209}\label{class_estado_origem_a3483f865aae75e5e1b6d6dd7e080e209}} 
-string {\bfseries Get\+Excecao} ()
->>>>>>> master
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do estado de origem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Responsavel por armazenar e validar a string estadoorigem. 
+A classe \mbox{\hyperlink{class_estado_origem}{Estado\+Origem}} armazena o estado de ondem a carona vai partir. 
+
+Estado de origem\+: sigla em maiusculo do estado brasileiro de onde a carona partira. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_estado_origem_a2945fd4995fab9b5c04c97c6c0158902}\label{class_estado_origem_a2945fd4995fab9b5c04c97c6c0158902}} 
@@ -37,27 +34,60 @@ Responsavel por armazenar e validar a string estadoorigem.
 \doxysubsubsection{\texorpdfstring{GetEstadoOrigem()}{GetEstadoOrigem()}}
 {\footnotesize\ttfamily string Estado\+Origem\+::\+Get\+Estado\+Origem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar o estado de origem. 
+
+\begin{DoxyReturn}{Returns}
+Estado de origem armazenado. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_estado_origem_a3483f865aae75e5e1b6d6dd7e080e209}\label{class_estado_origem_a3483f865aae75e5e1b6d6dd7e080e209}} 
 \index{EstadoOrigem@{EstadoOrigem}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!EstadoOrigem@{EstadoOrigem}}
 \doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
 {\footnotesize\ttfamily string Estado\+Origem\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do estado de origem. 
+
+\begin{DoxyReturn}{Returns}
+Erro de validacao. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_estado_origem_adf10f78bc43758c91fd1e1caed25716b}\label{class_estado_origem_adf10f78bc43758c91fd1e1caed25716b}} 
 \index{EstadoOrigem@{EstadoOrigem}!SetEstadoOrigem@{SetEstadoOrigem}}
 \index{SetEstadoOrigem@{SetEstadoOrigem}!EstadoOrigem@{EstadoOrigem}}
 \doxysubsubsection{\texorpdfstring{SetEstadoOrigem()}{SetEstadoOrigem()}}
 {\footnotesize\ttfamily void Estado\+Origem\+::\+Set\+Estado\+Origem (\begin{DoxyParamCaption}\item[{string}]{Estado\+Origem }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por armazenar o estado de origem caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Estado} & de origem. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_estado_origem_a6b309f267b44465e010dc3ceb4f4cbf9}\label{class_estado_origem_a6b309f267b44465e010dc3ceb4f4cbf9}} 
 \index{EstadoOrigem@{EstadoOrigem}!Validar@{Validar}}
 \index{Validar@{Validar}!EstadoOrigem@{EstadoOrigem}}
 \doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
 {\footnotesize\ttfamily int Estado\+Origem\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Estado\+Origem }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
+Metodo para validacao do estado de origem . retornando 0 em caso de sucesso e -\/1 em caso de falha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Estado} & de origem. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

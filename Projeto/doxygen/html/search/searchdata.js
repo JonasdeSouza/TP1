@@ -1,39 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefgimnprstuv",
+  0: "abcdegimnprstuv",
   1: "abcdenprstuv",
-<<<<<<< HEAD
-  2: "demt",
-  3: "cgimrsv",
-  4: "fs"
-=======
-  2: "gsv"
->>>>>>> master
+  2: "dem",
+  3: "cgimrsv"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-<<<<<<< HEAD
   2: "files",
-  3: "functions",
-  4: "variables"
-=======
-  2: "functions"
->>>>>>> master
+  3: "functions"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-<<<<<<< HEAD
   2: "Files",
-  3: "Functions",
-  4: "Variables"
-=======
-  2: "Functions"
->>>>>>> master
+  3: "Functions"
 };
 

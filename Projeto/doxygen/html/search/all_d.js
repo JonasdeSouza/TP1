@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['telefone_79',['Telefone',['../class_telefone.html',1,'']]],
-  ['testes_2ecpp_80',['testes.cpp',['../testes_8cpp.html',1,'']]],
-  ['testes_2eh_81',['testes.h',['../testes_8h.html',1,'']]],
-  ['tuaccount_82',['TUAccount',['../class_t_u_account.html',1,'']]],
-  ['tuagencia_83',['TUAgencia',['../class_t_u_agencia.html',1,'']]],
-  ['tuassento_84',['TUAssento',['../class_t_u_assento.html',1,'']]],
-  ['tubagagem_85',['TUBagagem',['../class_t_u_bagagem.html',1,'']]],
-  ['tubooking_86',['TUBooking',['../class_t_u_booking.html',1,'']]],
-  ['tucidadedestino_87',['TUCidadeDestino',['../class_t_u_cidade_destino.html',1,'']]],
-  ['tucidadeorigem_88',['TUCidadeOrigem',['../class_t_u_cidade_origem.html',1,'']]],
-  ['tucodigobanco_89',['TUCodigoBanco',['../class_t_u_codigo_banco.html',1,'']]],
-  ['tucodigocarona_90',['TUCodigoCarona',['../class_t_u_codigo_carona.html',1,'']]],
-  ['tucodigoreserva_91',['TUCodigoReserva',['../class_t_u_codigo_reserva.html',1,'']]],
-  ['tuconta_92',['TUConta',['../class_t_u_conta.html',1,'']]],
-  ['tucpf_93',['TUCpf',['../class_t_u_cpf.html',1,'']]],
-  ['tudata_94',['TUData',['../class_t_u_data.html',1,'']]],
-  ['tuduracao_95',['TUDuracao',['../class_t_u_duracao.html',1,'']]],
-  ['tuemail_96',['TUEmail',['../class_t_u_email.html',1,'']]],
-  ['tuestadodestino_97',['TUEstadoDestino',['../class_t_u_estado_destino.html',1,'']]],
-  ['tuestadoorigem_98',['TUEstadoOrigem',['../class_t_u_estado_origem.html',1,'']]],
-  ['tunome_99',['TUNome',['../class_t_u_nome.html',1,'']]],
-  ['tupreco_100',['TUPreco',['../class_t_u_preco.html',1,'']]],
-  ['turide_101',['TURide',['../class_t_u_ride.html',1,'']]],
-  ['tusenha_102',['TUSenha',['../class_t_u_senha.html',1,'']]],
-  ['tutelefone_103',['TUTelefone',['../class_t_u_telefone.html',1,'']]],
-  ['tuuser_104',['TUUser',['../class_t_u_user.html',1,'']]],
-  ['tuvagas_105',['TUVagas',['../class_t_u_vagas.html',1,'']]]
+  ['user_77',['User',['../class_user.html',1,'']]]
 ];

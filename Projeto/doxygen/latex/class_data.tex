@@ -2,6 +2,11 @@
 \label{class_data}\index{Data@{Data}}
 
 
+A classe data armazena a data da carona.  
+
+
+
+
 {\ttfamily \#include $<$dominios.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -9,18 +14,18 @@
 \item 
 int \mbox{\hyperlink{class_data_a768face00607e675dccade92652ac6db}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
-<<<<<<< HEAD
 void \mbox{\hyperlink{class_data_aee1d027409f9ae7944604e3717901b64}{Set\+Data}} (string)
-\item 
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar a data de realizacao do percusso caso seja valido. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_data_a3123863b3b3e535a6c843626a3f5ec8a}{Get\+Data}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar a data de realizacao do percussoo. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_data_aceaa65e36d9c299598d6e5bf0fb1db64}{Get\+Excecao}} ()
-=======
-\mbox{\Hypertarget{class_data_aceaa65e36d9c299598d6e5bf0fb1db64}\label{class_data_aceaa65e36d9c299598d6e5bf0fb1db64}} 
-string {\bfseries Get\+Excecao} ()
->>>>>>> master
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da data de realizacao do percusso. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A classe data armazena a data da carona. 
+
+\mbox{\hyperlink{class_data}{Data}}\+: dia, mes e ano no formato D\+D/\+M\+M/\+A\+A\+AA responsavel por identificar quando a carona comecara e sera finalizada. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_data_a3123863b3b3e535a6c843626a3f5ec8a}\label{class_data_a3123863b3b3e535a6c843626a3f5ec8a}} 
@@ -29,37 +34,60 @@ string {\bfseries Get\+Excecao} ()
 \doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
 {\footnotesize\ttfamily string Data\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar a data de realizacao do percussoo. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_data}{Data}} de realizacao do percusso armazenada. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_data_aceaa65e36d9c299598d6e5bf0fb1db64}\label{class_data_aceaa65e36d9c299598d6e5bf0fb1db64}} 
 \index{Data@{Data}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
 {\footnotesize\ttfamily string Data\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da data de realizacao do percusso. 
+
+\begin{DoxyReturn}{Returns}
+Erro de validacao. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_data_aee1d027409f9ae7944604e3717901b64}\label{class_data_aee1d027409f9ae7944604e3717901b64}} 
 \index{Data@{Data}!SetData@{SetData}}
 \index{SetData@{SetData}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
 {\footnotesize\ttfamily void Data\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{string}]{Data }\end{DoxyParamCaption})}
 
-Metodo para validacao da data . retornando 0 em caso de sucesso e -\/1 em caso de falha.
+
+
+Metodo responsavel por armazenar a data de realizacao do percusso caso seja valido. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em string} & \mbox{\hyperlink{class_data}{Data}}. \\
+{\em \mbox{\hyperlink{class_data}{Data}}} & de realizacao do percusso. \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int 0 para sucesso -\/1 para falha. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_data_a768face00607e675dccade92652ac6db}\label{class_data_a768face00607e675dccade92652ac6db}} 
 \index{Data@{Data}!Validar@{Validar}}
 \index{Validar@{Validar}!Data@{Data}}
 \doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
 {\footnotesize\ttfamily int Data\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Data }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
+Metodo para validacao da data . retornando 0 em caso de sucesso e -\/1 em caso de falha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

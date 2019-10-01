@@ -2,7 +2,7 @@
 \label{class_cidade_destino}\index{CidadeDestino@{CidadeDestino}}
 
 
-Responsavel por armazenar e validar a string cidadedestino.  
+A classe \mbox{\hyperlink{class_cidade_destino}{Cidade\+Destino}} armazena a cidade de onde a carona vai partir.  
 
 
 
@@ -15,20 +15,17 @@ Responsavel por armazenar e validar a string cidadedestino.
 int \mbox{\hyperlink{class_cidade_destino_a62fc3438b9881404fe3294ef813e29c7}{Validar}} (string)  throw (invalid\+\_\+argument)
 \item 
 void \mbox{\hyperlink{class_cidade_destino_a40954397da7db8a6c39b806b372ff00d}{Set\+Cidade\+Destino}} (string)
-\item 
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar a cidade de destino caso seja valido. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_cidade_destino_af36671749342041ed22bf8c1ec029da6}{Get\+Cidade\+Destino}} ()
-\item 
-<<<<<<< HEAD
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar a cidade de destino. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_cidade_destino_afde73dcfc6cb04e15034f7e959ff16dc}{Get\+Excecao}} ()
-=======
-\mbox{\Hypertarget{class_cidade_destino_afde73dcfc6cb04e15034f7e959ff16dc}\label{class_cidade_destino_afde73dcfc6cb04e15034f7e959ff16dc}} 
-string {\bfseries Get\+Excecao} ()
->>>>>>> master
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da cidade de destino. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Responsavel por armazenar e validar a string cidadedestino. 
+A classe \mbox{\hyperlink{class_cidade_destino}{Cidade\+Destino}} armazena a cidade de onde a carona vai partir. 
+
+Cidade de origem\+: sequancia de no minimo 1 e no maximo 10 caracteres podendo cada um deles sendo letra, nao podendo iniciar em ponto final e nem ter espaços em sequancia que ira identificar a area urbana que a carona ira sair. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_cidade_destino_af36671749342041ed22bf8c1ec029da6}\label{class_cidade_destino_af36671749342041ed22bf8c1ec029da6}} 
@@ -37,27 +34,60 @@ Responsavel por armazenar e validar a string cidadedestino.
 \doxysubsubsection{\texorpdfstring{GetCidadeDestino()}{GetCidadeDestino()}}
 {\footnotesize\ttfamily string Cidade\+Destino\+::\+Get\+Cidade\+Destino (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar a cidade de destino. 
+
+\begin{DoxyReturn}{Returns}
+Cidade de destino armazenado. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_cidade_destino_afde73dcfc6cb04e15034f7e959ff16dc}\label{class_cidade_destino_afde73dcfc6cb04e15034f7e959ff16dc}} 
 \index{CidadeDestino@{CidadeDestino}!GetExcecao@{GetExcecao}}
 \index{GetExcecao@{GetExcecao}!CidadeDestino@{CidadeDestino}}
 \doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
 {\footnotesize\ttfamily string Cidade\+Destino\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao da cidade de destino. 
+
+\begin{DoxyReturn}{Returns}
+Erro de validacao. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_cidade_destino_a40954397da7db8a6c39b806b372ff00d}\label{class_cidade_destino_a40954397da7db8a6c39b806b372ff00d}} 
 \index{CidadeDestino@{CidadeDestino}!SetCidadeDestino@{SetCidadeDestino}}
 \index{SetCidadeDestino@{SetCidadeDestino}!CidadeDestino@{CidadeDestino}}
 \doxysubsubsection{\texorpdfstring{SetCidadeDestino()}{SetCidadeDestino()}}
 {\footnotesize\ttfamily void Cidade\+Destino\+::\+Set\+Cidade\+Destino (\begin{DoxyParamCaption}\item[{string}]{Cidade\+Destino }\end{DoxyParamCaption})}
 
+
+
+Metodo responsavel por armazenar a cidade de destino caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cidade} & de destino. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_cidade_destino_a62fc3438b9881404fe3294ef813e29c7}\label{class_cidade_destino_a62fc3438b9881404fe3294ef813e29c7}} 
 \index{CidadeDestino@{CidadeDestino}!Validar@{Validar}}
 \index{Validar@{Validar}!CidadeDestino@{CidadeDestino}}
 \doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
 {\footnotesize\ttfamily int Cidade\+Destino\+::\+Validar (\begin{DoxyParamCaption}\item[{string}]{Cidade\+Destino }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
 
+Metodo para validacao da cidade de destino . retornando 0 em caso de sucesso e -\/1 em caso de falha.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cidade} & de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

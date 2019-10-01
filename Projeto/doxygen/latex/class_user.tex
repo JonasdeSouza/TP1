@@ -19,7 +19,6 @@ void \mbox{\hyperlink{class_user_a7d88397d7c664ff3ecc4b11a81e7fb09}{Set\+Telefon
 \item 
 \mbox{\hyperlink{class_telefone}{Telefone}} \mbox{\hyperlink{class_user_a634e3680c00685497b24904e1c4204d0}{Get\+Telefone}} () const
 \item 
-<<<<<<< HEAD
 void \mbox{\hyperlink{class_user_a2b5e6f7e4a5f30f7aa6f144fc5d6b2d9}{Set\+Email}} (const \mbox{\hyperlink{class_email}{Email}} \&email)
 \item 
 \mbox{\hyperlink{class_email}{Email}} \mbox{\hyperlink{class_user_a7e548ca7bd102ddd21ad5c6fb8a4490f}{Get\+Email}} () const
@@ -31,10 +30,6 @@ void \mbox{\hyperlink{class_user_a85870be78b9959759746c2111e367412}{Set\+Senha}}
 void \mbox{\hyperlink{class_user_ae2446950947ae6de77672747c5dc7524}{Set\+Cpf}} (const \mbox{\hyperlink{class_cpf}{Cpf}} \&cpf)
 \item 
 \mbox{\hyperlink{class_cpf}{Cpf}} \mbox{\hyperlink{class_user_a89d8d91f118eebe56f6575ad4af313dc}{Get\+Cpf}} () const
-=======
-\mbox{\Hypertarget{class_user_a89d8d91f118eebe56f6575ad4af313dc}\label{class_user_a89d8d91f118eebe56f6575ad4af313dc}} 
-\mbox{\hyperlink{class_cpf}{Cpf}} {\bfseries Get\+Cpf} () const
->>>>>>> master
 \end{DoxyCompactItemize}
 
 
@@ -45,75 +40,153 @@ void \mbox{\hyperlink{class_user_ae2446950947ae6de77672747c5dc7524}{Set\+Cpf}} (
 \doxysubsubsection{\texorpdfstring{CadastrarUsuario()}{CadastrarUsuario()}}
 {\footnotesize\ttfamily void User\+::\+Cadastrar\+Usuario (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{telefone,  }\item[{string}]{email,  }\item[{string}]{senha,  }\item[{string}]{cpf }\end{DoxyParamCaption})}
 
+Metodo para cadastrar usuario, recebe 5 strings e invoca o metodo Set de cada uma delas
+\begin{DoxyParams}{Parameters}
+{\em nome,email,telefone,senha,cpf} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_user_a89d8d91f118eebe56f6575ad4af313dc}\label{class_user_a89d8d91f118eebe56f6575ad4af313dc}} 
 \index{User@{User}!GetCpf@{GetCpf}}
 \index{GetCpf@{GetCpf}!User@{User}}
 \doxysubsubsection{\texorpdfstring{GetCpf()}{GetCpf()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_cpf}{Cpf}} User\+::\+Get\+Cpf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Get\+Cpf da classe \mbox{\hyperlink{class_cpf}{Cpf}} \begin{DoxyReturn}{Returns}
+cpf 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a89d8d91f118eebe56f6575ad4af313dc}{Get\+Cpf()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a7e548ca7bd102ddd21ad5c6fb8a4490f}\label{class_user_a7e548ca7bd102ddd21ad5c6fb8a4490f}} 
 \index{User@{User}!GetEmail@{GetEmail}}
 \index{GetEmail@{GetEmail}!User@{User}}
 \doxysubsubsection{\texorpdfstring{GetEmail()}{GetEmail()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_email}{Email}} User\+::\+Get\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Get\+Email da classe \mbox{\hyperlink{class_email}{Email}} \begin{DoxyReturn}{Returns}
+email 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a7e548ca7bd102ddd21ad5c6fb8a4490f}{Get\+Email()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a15a054c0fd44c54625810623efa3a095}\label{class_user_a15a054c0fd44c54625810623efa3a095}} 
 \index{User@{User}!GetNome@{GetNome}}
 \index{GetNome@{GetNome}!User@{User}}
 \doxysubsubsection{\texorpdfstring{GetNome()}{GetNome()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_nome}{Nome}} User\+::\+Get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Get\+Nome da classe \mbox{\hyperlink{class_nome}{Nome}} \begin{DoxyReturn}{Returns}
+nome 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a15a054c0fd44c54625810623efa3a095}{Get\+Nome()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a1bb2d099b9eb1db51f29679e756a3ba8}\label{class_user_a1bb2d099b9eb1db51f29679e756a3ba8}} 
 \index{User@{User}!GetSenha@{GetSenha}}
 \index{GetSenha@{GetSenha}!User@{User}}
 \doxysubsubsection{\texorpdfstring{GetSenha()}{GetSenha()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_senha}{Senha}} User\+::\+Get\+Senha (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Get\+Senha da classe \mbox{\hyperlink{class_senha}{Senha}} \begin{DoxyReturn}{Returns}
+senha 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a1bb2d099b9eb1db51f29679e756a3ba8}{Get\+Senha()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a634e3680c00685497b24904e1c4204d0}\label{class_user_a634e3680c00685497b24904e1c4204d0}} 
 \index{User@{User}!GetTelefone@{GetTelefone}}
 \index{GetTelefone@{GetTelefone}!User@{User}}
 \doxysubsubsection{\texorpdfstring{GetTelefone()}{GetTelefone()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_telefone}{Telefone}} User\+::\+Get\+Telefone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Get\+Telefone da classe \mbox{\hyperlink{class_telefone}{Telefone}} \begin{DoxyReturn}{Returns}
+telefone 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a634e3680c00685497b24904e1c4204d0}{Get\+Telefone()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a72f5159ec0c6712e6a099d891b791e40}\label{class_user_a72f5159ec0c6712e6a099d891b791e40}} 
 \index{User@{User}!Imprime@{Imprime}}
 \index{Imprime@{Imprime}!User@{User}}
 \doxysubsubsection{\texorpdfstring{Imprime()}{Imprime()}}
 {\footnotesize\ttfamily void User\+::\+Imprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Imprime na tela todos os valores dos dominios pertencentes a entidade \mbox{\hyperlink{class_user}{User}} alocados em memoria \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_acc0ac9a9e2310d4f83fc857126aba35a}{Cadastrar\+Usuario()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_ae2446950947ae6de77672747c5dc7524}\label{class_user_ae2446950947ae6de77672747c5dc7524}} 
 \index{User@{User}!SetCpf@{SetCpf}}
 \index{SetCpf@{SetCpf}!User@{User}}
 \doxysubsubsection{\texorpdfstring{SetCpf()}{SetCpf()}}
 {\footnotesize\ttfamily void User\+::\+Set\+Cpf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cpf}{Cpf}} \&}]{cpf }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Set\+Cpf da classe \mbox{\hyperlink{class_cpf}{Cpf}}
+\begin{DoxyParams}{Parameters}
+{\em cpf} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_ae2446950947ae6de77672747c5dc7524}{Set\+Cpf()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a2b5e6f7e4a5f30f7aa6f144fc5d6b2d9}\label{class_user_a2b5e6f7e4a5f30f7aa6f144fc5d6b2d9}} 
 \index{User@{User}!SetEmail@{SetEmail}}
 \index{SetEmail@{SetEmail}!User@{User}}
 \doxysubsubsection{\texorpdfstring{SetEmail()}{SetEmail()}}
 {\footnotesize\ttfamily void User\+::\+Set\+Email (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_email}{Email}} \&}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_email}{Email}} ter acesso ao metodo Set\+Email da classe \mbox{\hyperlink{class_email}{Email}}
+\begin{DoxyParams}{Parameters}
+{\em email} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a2b5e6f7e4a5f30f7aa6f144fc5d6b2d9}{Set\+Email()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a24bb662374cbf3a01502c5afb94d639a}\label{class_user_a24bb662374cbf3a01502c5afb94d639a}} 
 \index{User@{User}!SetNome@{SetNome}}
 \index{SetNome@{SetNome}!User@{User}}
 \doxysubsubsection{\texorpdfstring{SetNome()}{SetNome()}}
 {\footnotesize\ttfamily void User\+::\+Set\+Nome (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_nome}{Nome}} \&}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Set\+Nome da classe \mbox{\hyperlink{class_nome}{Nome}}
+\begin{DoxyParams}{Parameters}
+{\em nome} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a24bb662374cbf3a01502c5afb94d639a}{Set\+Nome()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a85870be78b9959759746c2111e367412}\label{class_user_a85870be78b9959759746c2111e367412}} 
 \index{User@{User}!SetSenha@{SetSenha}}
 \index{SetSenha@{SetSenha}!User@{User}}
 \doxysubsubsection{\texorpdfstring{SetSenha()}{SetSenha()}}
 {\footnotesize\ttfamily void User\+::\+Set\+Senha (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_senha}{Senha}} \&}]{senha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Set\+Senha da classe \mbox{\hyperlink{class_senha}{Senha}}
+\begin{DoxyParams}{Parameters}
+{\em senha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a85870be78b9959759746c2111e367412}{Set\+Senha()}}
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_user_a7d88397d7c664ff3ecc4b11a81e7fb09}\label{class_user_a7d88397d7c664ff3ecc4b11a81e7fb09}} 
 \index{User@{User}!SetTelefone@{SetTelefone}}
 \index{SetTelefone@{SetTelefone}!User@{User}}
 \doxysubsubsection{\texorpdfstring{SetTelefone()}{SetTelefone()}}
 {\footnotesize\ttfamily void User\+::\+Set\+Telefone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_telefone}{Telefone}} \&}]{telefone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Funcao para a entidade \mbox{\hyperlink{class_user}{User}} ter acesso ao metodo Set\+Telefone da classe \mbox{\hyperlink{class_telefone}{Telefone}}
+\begin{DoxyParams}{Parameters}
+{\em telefone} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_user_a7d88397d7c664ff3ecc4b11a81e7fb09}{Set\+Telefone()}}
+\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
-C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
+C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}

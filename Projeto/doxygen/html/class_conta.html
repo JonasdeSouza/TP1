@@ -5,11 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<<<<<<< HEAD
-<title>Documentação TP1: Conta Class Reference</title>
-=======
 <title>Sistema de Carona: Conta Class Reference</title>
->>>>>>> master
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,11 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-<<<<<<< HEAD
-   <div id="projectname">Documentação TP1
-=======
    <div id="projectname">Sistema de Carona
->>>>>>> master
    </div>
   </td>
  </tr>
@@ -85,15 +77,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d38679b4b39b0e6a1c1abf11015a618"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conta.html#a8d38679b4b39b0e6a1c1abf11015a618">Validar</a> (string)  throw (invalid_argument)</td></tr>
+<tr class="memdesc:a8d38679b4b39b0e6a1c1abf11015a618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao do numero da . conta bancaria retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_conta.html#a8d38679b4b39b0e6a1c1abf11015a618">More...</a><br /></td></tr>
 <tr class="separator:a8d38679b4b39b0e6a1c1abf11015a618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39abe0230854573a95b584d263603011"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conta.html#a39abe0230854573a95b584d263603011">SetConta</a> (string)</td></tr>
-<tr class="memdesc:a39abe0230854573a95b584d263603011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo para validacao do numero da . conta bancaria retornando 0 em caso de sucesso e -1 em caso de falha.  <a href="class_conta.html#a39abe0230854573a95b584d263603011">More...</a><br /></td></tr>
+<tr class="memdesc:a39abe0230854573a95b584d263603011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o numero da conta bancaria caso seja valido.  <a href="class_conta.html#a39abe0230854573a95b584d263603011">More...</a><br /></td></tr>
 <tr class="separator:a39abe0230854573a95b584d263603011"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a375705a90026bfcc52bba6133a8ebf39"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conta.html#a375705a90026bfcc52bba6133a8ebf39">GetConta</a> ()</td></tr>
-<tr class="memdesc:a375705a90026bfcc52bba6133a8ebf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por armazenar o numero da conta bancaria caso seja valido.  <a href="class_conta.html#a375705a90026bfcc52bba6133a8ebf39">More...</a><br /></td></tr>
+<tr class="memdesc:a375705a90026bfcc52bba6133a8ebf39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o numero da conta bancaria.  <a href="class_conta.html#a375705a90026bfcc52bba6133a8ebf39">More...</a><br /></td></tr>
 <tr class="separator:a375705a90026bfcc52bba6133a8ebf39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07b89667d97f48187cf77d48cd9c922"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_conta.html#ab07b89667d97f48187cf77d48cd9c922">GetExcecao</a> ()</td></tr>
-<tr class="memdesc:ab07b89667d97f48187cf77d48cd9c922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o numero da conta bancaria.  <a href="class_conta.html#ab07b89667d97f48187cf77d48cd9c922">More...</a><br /></td></tr>
+<tr class="memdesc:ab07b89667d97f48187cf77d48cd9c922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do numero da conta bancaria.  <a href="class_conta.html#ab07b89667d97f48187cf77d48cd9c922">More...</a><br /></td></tr>
 <tr class="separator:ab07b89667d97f48187cf77d48cd9c922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -115,13 +108,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por armazenar o numero da conta bancaria caso seja valido. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Numero</td><td>da conta bancaria. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Metodo responsavel por retornar o numero da conta bancaria. </p>
+<dl class="section return"><dt>Returns</dt><dd>Numero da conta armazenado. </dd></dl>
 
 </div>
 </div>
@@ -140,8 +128,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo responsavel por retornar o numero da conta bancaria. </p>
-<dl class="section return"><dt>Returns</dt><dd>Numero da conta armazenado. </dd></dl>
+<p>Metodo responsavel por retornar o erro que foi encontrado ao fazer a validacao do numero da conta bancaria. </p>
+<dl class="section return"><dt>Returns</dt><dd>Erro de validacao. </dd></dl>
 
 </div>
 </div>
@@ -161,14 +149,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Metodo para validacao do numero da . conta bancaria retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<p>Metodo responsavel por armazenar o numero da conta bancaria caso seja valido. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Numero</td><td>da conta bancaria. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 para sucesso -1 para falha. </dd></dl>
 
 </div>
 </div>
@@ -194,11 +181,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Metodo para validacao do numero da . conta bancaria retornando 0 em caso de sucesso e -1 em caso de falha. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Numero</td><td>da conta bancaria. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 para sucesso -1 para falha. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
-<li>C:/Users/joaop/OneDrive/Documents/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8h_source.html">dominios.h</a></li>
+<li>C:/Users/Particular/Documents/Tp1/TP1/Projeto/<a class="el" href="dominios_8cpp.html">dominios.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
