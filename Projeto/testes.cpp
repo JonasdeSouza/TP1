@@ -8,23 +8,204 @@ using namespace std;
 
 Run::Run()
 {
-TUCpf teste;
-
-    switch(teste.Run()){
-        case TUCpf::SUCESSO: cout << "SUCESSO";
+int estado={0};
+string excecao;
+TUCpf TesteCpf;
+    switch(TesteCpf.Run()){
+        case TUCpf::SUCESSO: estado = estado; 
                                 break;
-        case TUCpf::FALHA  : cout << "FALHA";
+        case TUCpf::FALHA  : estado--;
+                                break;
+    }
+
+TUNome TesteNome;
+    switch(TesteNome.Run()){
+        case TUNome::SUCESSO: estado = estado; 
+                                break;
+        case TUNome::FALHA  : estado--;
                                 break;
     }
 
-TUNome teste1;
-
-    switch(teste.Run()){
-        case TUNome::SUCESSO: cout << "SUCESSO";
+TUTelefone TesteTelefone;
+    switch(TesteTelefone.Run()){
+        case TUTelefone::SUCESSO: estado = estado; 
                                 break;
-        case TUNome::FALHA  : cout << "FALHA";
+        case TUTelefone::FALHA  : estado--;
                                 break;
     }
+
+TUSenha TesteSenha;
+    switch(TesteSenha.Run()){
+        case TUSenha::SUCESSO: estado = estado;
+                                break;
+        case TUSenha::FALHA  : estado--;
+                                break;
+    }
+
+TUEmail TesteEmail;
+    switch(TesteEmail.Run()){
+        case TUEmail::SUCESSO: estado = estado;
+                                break;
+        case TUEmail::FALHA  : estado--;
+                                break;
+    }
+
+TUAssento TesteAssento;
+    switch(TesteAssento.Run()){
+        case TUAssento::SUCESSO: estado = estado;
+                                break;
+        case TUAssento::FALHA  : estado--;
+                                break;
+    }
+
+TUCodigoReserva TesteCodigoReserva;
+    switch(TesteCodigoReserva.Run()){
+        case TUCodigoReserva::SUCESSO: estado = estado;
+                                break;
+        case TUCodigoReserva::FALHA  : estado--;
+                                break;
+    }
+
+TUBagagem TesteBagagem;
+    switch(TesteBagagem.Run()){
+        case TUBagagem::SUCESSO: estado = estado; 
+                                break;
+        case TUBagagem::FALHA  : estado--;
+                                break;
+    }
+
+TUCodigoCarona TesteCodigoCarona;
+    switch(TesteCodigoCarona.Run()){
+        case TUCodigoCarona::SUCESSO: estado = estado; 
+                                break;
+        case TUCodigoCarona::FALHA  : estado--;
+                                break;
+    }
+
+TUCidadeOrigem TesteCidadeOrigem;
+    switch(TesteCidadeOrigem.Run()){
+        case TUCidadeOrigem::SUCESSO: estado = estado; 
+                                break;
+        case TUCidadeOrigem::FALHA  : estado--;
+                                break;
+    }
+
+TUCidadeDestino TesteCidadeDestino;
+    switch(TesteCidadeDestino.Run()){
+        case TUCidadeDestino::SUCESSO: estado = estado; 
+                                break;
+        case TUCidadeDestino::FALHA  : estado--;
+                                break;
+    }
+
+TUEstadoOrigem TesteEstadoOrigem;
+    switch(TesteEstadoOrigem.Run()){
+        case TUEstadoOrigem::SUCESSO: estado = estado; 
+                                break;
+        case TUEstadoOrigem::FALHA  : estado--;
+                                break;
+    }
+
+TUEstadoDestino TesteEstadoDestino;
+    switch(TesteEstadoDestino.Run()){
+        case TUEstadoDestino::SUCESSO: estado = estado; 
+                                break;
+        case TUEstadoDestino::FALHA  : estado--;
+                                break;
+    }
+
+TUVagas TesteVagas;
+    switch(TesteVagas.Run()){
+        case TUVagas::SUCESSO: estado = estado; 
+                                break;
+        case TUVagas::FALHA  : estado--;
+                                break;
+    }
+
+TUPreco TestePreco;
+    switch(TestePreco.Run()){
+        case TUPreco::SUCESSO: estado = estado; 
+                                break;
+        case TUPreco::FALHA  : estado--;
+                                break;
+    }
+
+TUDuracao TesteDuracao;
+    switch(TesteDuracao.Run()){
+        case TUDuracao::SUCESSO: estado = estado; 
+                                break;
+        case TUDuracao::FALHA  : estado--;
+                                break;
+    }
+
+TUData TesteData;
+    switch(TesteData.Run()){
+        case TUData::SUCESSO: estado = estado; 
+                                break;
+        case TUData::FALHA  : estado--;
+                                break;
+    }
+
+TUCodigoBanco TesteCodigoBanco;
+    switch(TesteCodigoBanco.Run()){
+        case TUCodigoBanco::SUCESSO: estado = estado; 
+                                break;
+        case TUCodigoBanco::FALHA  : estado--;
+                                break;
+    }
+
+TUAgencia TesteAgencia;
+    switch(TesteAgencia.Run()){
+        case TUAgencia::SUCESSO: estado = estado; 
+                                break;
+        case TUAgencia::FALHA  : estado--;
+                                break;
+    }
+
+TUConta TesteConta;
+    switch(TesteConta.Run()){
+        case TUConta::SUCESSO: estado = estado; 
+                                break;
+        case TUConta::FALHA  : estado--;
+                                break;
+    }
+
+TUUser TesteUser;
+    switch(TesteUser.Run()){
+        case TUUser::SUCESSO: estado = estado; 
+                                break;
+        case TUUser::FALHA  : estado--;
+                                break;
+    }
+    
+TUBooking TesteBooking;
+    switch(TesteBooking.Run()){
+        case TUBooking::SUCESSO: estado = estado; 
+                                break;
+        case TUBooking::FALHA  : estado--;
+                                break;
+    }
+    
+TURide TesteRide;
+    switch(TesteRide.Run()){
+        case TURide::SUCESSO: estado = estado; 
+                                break;
+        case TURide::FALHA  : estado--;
+                                break;
+    }
+
+TUAccount TesteAccount;
+    switch(TesteAccount.Run()){
+        case TUAccount::SUCESSO: estado = estado; 
+                                break;
+        case TUAccount::FALHA  : estado--;
+                                break;
+    }
+
+if(estado != 0)
+{
+    cout << "FALHA";
+} else cout << "SUCESSO";
 
 }
 
@@ -77,6 +258,7 @@ void TUAssento::TestarCenarioFalha()
     {
         estado = FALHA;
     }
+
 }
 
 int TUAssento::Run()

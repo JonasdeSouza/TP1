@@ -2,7 +2,7 @@
 #define TESTES_H
 
 #include "dominios.h"
-#include "dominios.h"
+#include "entidades.h"
 #include <string>
 
 using namespace std;
