@@ -1,47 +1,82 @@
 \hypertarget{class_account}{}\doxysection{Account Class Reference}
 \label{class_account}\index{Account@{Account}}
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_account_a7b0eaf1a958244563201fc13c969dd53}{Cadastrar\+Info\+Bancarias}} (int, string, string)
+\item 
+void \mbox{\hyperlink{class_account_a0bf0100f1c8d063dc56a225e53af38f9}{Imprime}} ()
+\item 
+void \mbox{\hyperlink{class_account_a2d2057a9b7bbd101690111734b34684e}{Set\+Banco}} (const \mbox{\hyperlink{class_banco}{Banco}} \&banco)
+\item 
+\mbox{\hyperlink{class_banco}{Banco}} \mbox{\hyperlink{class_account_a53d64ae3a9d9e3ed9033dec565e56638}{Get\+Banco}} () const
+\item 
+void \mbox{\hyperlink{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}{Set\+Agencia}} (const \mbox{\hyperlink{class_agencia}{Agencia}} \&agencia)
+\item 
+\mbox{\hyperlink{class_agencia}{Agencia}} \mbox{\hyperlink{class_account_a41bca586db400d957553314863eec3d4}{Get\+Agencia}} () const
+\item 
+void \mbox{\hyperlink{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}{Set\+Conta}} (const \mbox{\hyperlink{class_conta}{Conta}} \&conta)
+\item 
+\mbox{\hyperlink{class_conta}{Conta}} \mbox{\hyperlink{class_account_a55835586e9f773c3be00cc4257691752}{Get\+Conta}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_account_a7b0eaf1a958244563201fc13c969dd53}\label{class_account_a7b0eaf1a958244563201fc13c969dd53}} 
-void {\bfseries Cadastrar\+Info\+Bancarias} (int, string, string)
-\item 
-\mbox{\Hypertarget{class_account_a0bf0100f1c8d063dc56a225e53af38f9}\label{class_account_a0bf0100f1c8d063dc56a225e53af38f9}} 
-void {\bfseries Imprime} ()
-\item 
-\mbox{\Hypertarget{class_account_a2d2057a9b7bbd101690111734b34684e}\label{class_account_a2d2057a9b7bbd101690111734b34684e}} 
-void {\bfseries Set\+Banco} (const \mbox{\hyperlink{class_banco}{Banco}} \&banco)
-\item 
-\mbox{\Hypertarget{class_account_a53d64ae3a9d9e3ed9033dec565e56638}\label{class_account_a53d64ae3a9d9e3ed9033dec565e56638}} 
-\mbox{\hyperlink{class_banco}{Banco}} {\bfseries Get\+Banco} () const
-\item 
-\mbox{\Hypertarget{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}\label{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}} 
-void {\bfseries Set\+Agencia} (const \mbox{\hyperlink{class_agencia}{Agencia}} \&agencia)
-\item 
+\index{Account@{Account}!CadastrarInfoBancarias@{CadastrarInfoBancarias}}
+\index{CadastrarInfoBancarias@{CadastrarInfoBancarias}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{CadastrarInfoBancarias()}{CadastrarInfoBancarias()}}
+{\footnotesize\ttfamily void Account\+::\+Cadastrar\+Info\+Bancarias (\begin{DoxyParamCaption}\item[{int}]{codigobanco,  }\item[{string}]{agencia,  }\item[{string}]{conta }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_account_a41bca586db400d957553314863eec3d4}\label{class_account_a41bca586db400d957553314863eec3d4}} 
-\mbox{\hyperlink{class_agencia}{Agencia}} {\bfseries Get\+Agencia} () const
-\item 
-\mbox{\Hypertarget{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}\label{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}} 
-void {\bfseries Set\+Conta} (const \mbox{\hyperlink{class_conta}{Conta}} \&conta)
-\item 
+\index{Account@{Account}!GetAgencia@{GetAgencia}}
+\index{GetAgencia@{GetAgencia}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{GetAgencia()}{GetAgencia()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agencia}{Agencia}} Account\+::\+Get\+Agencia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_account_a53d64ae3a9d9e3ed9033dec565e56638}\label{class_account_a53d64ae3a9d9e3ed9033dec565e56638}} 
+\index{Account@{Account}!GetBanco@{GetBanco}}
+\index{GetBanco@{GetBanco}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{GetBanco()}{GetBanco()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_banco}{Banco}} Account\+::\+Get\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_account_a55835586e9f773c3be00cc4257691752}\label{class_account_a55835586e9f773c3be00cc4257691752}} 
-\mbox{\hyperlink{class_conta}{Conta}} {\bfseries Get\+Conta} () const
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_account_aa43cf1b1a2fc01212f387d39896248cf}\label{class_account_aa43cf1b1a2fc01212f387d39896248cf}} 
-\mbox{\hyperlink{class_banco}{Banco}} {\bfseries banco}
-\item 
-\mbox{\Hypertarget{class_account_a24692ae56f169e3b9ecac3ac0b02db0d}\label{class_account_a24692ae56f169e3b9ecac3ac0b02db0d}} 
-\mbox{\hyperlink{class_agencia}{Agencia}} {\bfseries agencia}
-\item 
-\mbox{\Hypertarget{class_account_af9ede9266b58de20cf12f8474b587544}\label{class_account_af9ede9266b58de20cf12f8474b587544}} 
-\mbox{\hyperlink{class_conta}{Conta}} {\bfseries conta}
-\end{DoxyCompactItemize}
+\index{Account@{Account}!GetConta@{GetConta}}
+\index{GetConta@{GetConta}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{GetConta()}{GetConta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_conta}{Conta}} Account\+::\+Get\+Conta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_account_a0bf0100f1c8d063dc56a225e53af38f9}\label{class_account_a0bf0100f1c8d063dc56a225e53af38f9}} 
+\index{Account@{Account}!Imprime@{Imprime}}
+\index{Imprime@{Imprime}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{Imprime()}{Imprime()}}
+{\footnotesize\ttfamily void Account\+::\+Imprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}\label{class_account_a16d4fb64b3c108f1bf87a39fdd3812b1}} 
+\index{Account@{Account}!SetAgencia@{SetAgencia}}
+\index{SetAgencia@{SetAgencia}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{SetAgencia()}{SetAgencia()}}
+{\footnotesize\ttfamily void Account\+::\+Set\+Agencia (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_agencia}{Agencia}} \&}]{agencia }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_account_a2d2057a9b7bbd101690111734b34684e}\label{class_account_a2d2057a9b7bbd101690111734b34684e}} 
+\index{Account@{Account}!SetBanco@{SetBanco}}
+\index{SetBanco@{SetBanco}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{SetBanco()}{SetBanco()}}
+{\footnotesize\ttfamily void Account\+::\+Set\+Banco (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_banco}{Banco}} \&}]{banco }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}\label{class_account_ad616f9eb5fb88e38c4634b44cb368d8f}} 
+\index{Account@{Account}!SetConta@{SetConta}}
+\index{SetConta@{SetConta}!Account@{Account}}
+\doxysubsubsection{\texorpdfstring{SetConta()}{SetConta()}}
+{\footnotesize\ttfamily void Account\+::\+Set\+Conta (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_conta}{Conta}} \&}]{conta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/entidades.\+h\item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/entidades.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}

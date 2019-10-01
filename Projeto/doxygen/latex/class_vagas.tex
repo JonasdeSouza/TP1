@@ -2,7 +2,7 @@
 \label{class_vagas}\index{Vagas@{Vagas}}
 
 
-Responsavel por armazenar e validar o inteiro vagas.  
+A classe vagas armazena o numero de vagas no carro que realizara a carona.  
 
 
 
@@ -12,33 +12,77 @@ Responsavel por armazenar e validar o inteiro vagas.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vagas_adf92f01f43baf7f8f074030a9774f635}\label{class_vagas_adf92f01f43baf7f8f074030a9774f635}} 
-int {\bfseries Validar} (int)  throw (invalid\+\_\+argument)
+int \mbox{\hyperlink{class_vagas_adf92f01f43baf7f8f074030a9774f635}{Validar}} (int)  throw (invalid\+\_\+argument)
 \item 
-\mbox{\Hypertarget{class_vagas_a7f4c373da39743c5534fc49b3736e551}\label{class_vagas_a7f4c373da39743c5534fc49b3736e551}} 
-void {\bfseries Set\+Vagas} (int)
-\item 
-\mbox{\Hypertarget{class_vagas_a07b56a23ee7fd9f2bced64c0f677cf8a}\label{class_vagas_a07b56a23ee7fd9f2bced64c0f677cf8a}} 
-int {\bfseries Get\+Vagas} ()
-\item 
-\mbox{\Hypertarget{class_vagas_aa62b87f4769ebda61a617267a54378b2}\label{class_vagas_aa62b87f4769ebda61a617267a54378b2}} 
-string {\bfseries Get\+Excecao} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_vagas_a357d8cd7332b4439d7c637e1bc69c8f3}\label{class_vagas_a357d8cd7332b4439d7c637e1bc69c8f3}} 
-int {\bfseries vagas}
-\item 
-\mbox{\Hypertarget{class_vagas_a8f72e6e8c8e051bde05c95317eda3aa4}\label{class_vagas_a8f72e6e8c8e051bde05c95317eda3aa4}} 
-string {\bfseries excecao}
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_vagas_a7f4c373da39743c5534fc49b3736e551}{Set\+Vagas}} (int)
+\begin{DoxyCompactList}\small\item\em Metodo para validacao do numero de vagas . retornando 0 em caso de sucesso e -\/1 em caso de falha. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_vagas_a07b56a23ee7fd9f2bced64c0f677cf8a}{Get\+Vagas}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar o numero de vagas caso seja valido. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vagas_aa62b87f4769ebda61a617267a54378b2}{Get\+Excecao}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o numero de vagas no carro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Responsavel por armazenar e validar o inteiro vagas. 
+A classe vagas armazena o numero de vagas no carro que realizara a carona. 
+
+\mbox{\hyperlink{class_vagas}{Vagas}}\+: digito numerico entre 0 e 4 responsavel por identificar quantas vagas ainda ha sobrando no carro que dara carona. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vagas_aa62b87f4769ebda61a617267a54378b2}\label{class_vagas_aa62b87f4769ebda61a617267a54378b2}} 
+\index{Vagas@{Vagas}!GetExcecao@{GetExcecao}}
+\index{GetExcecao@{GetExcecao}!Vagas@{Vagas}}
+\doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
+{\footnotesize\ttfamily string Vagas\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por retornar o numero de vagas no carro. 
+
+\begin{DoxyReturn}{Returns}
+Numero de vagas no carro armazenado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vagas_a07b56a23ee7fd9f2bced64c0f677cf8a}\label{class_vagas_a07b56a23ee7fd9f2bced64c0f677cf8a}} 
+\index{Vagas@{Vagas}!GetVagas@{GetVagas}}
+\index{GetVagas@{GetVagas}!Vagas@{Vagas}}
+\doxysubsubsection{\texorpdfstring{GetVagas()}{GetVagas()}}
+{\footnotesize\ttfamily int Vagas\+::\+Get\+Vagas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por armazenar o numero de vagas caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & de vagas no carro. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vagas_a7f4c373da39743c5534fc49b3736e551}\label{class_vagas_a7f4c373da39743c5534fc49b3736e551}} 
+\index{Vagas@{Vagas}!SetVagas@{SetVagas}}
+\index{SetVagas@{SetVagas}!Vagas@{Vagas}}
+\doxysubsubsection{\texorpdfstring{SetVagas()}{SetVagas()}}
+{\footnotesize\ttfamily void Vagas\+::\+Set\+Vagas (\begin{DoxyParamCaption}\item[{int}]{Vagas }\end{DoxyParamCaption})}
+
+
+
+Metodo para validacao do numero de vagas . retornando 0 em caso de sucesso e -\/1 em caso de falha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & de vagas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vagas_adf92f01f43baf7f8f074030a9774f635}\label{class_vagas_adf92f01f43baf7f8f074030a9774f635}} 
+\index{Vagas@{Vagas}!Validar@{Validar}}
+\index{Validar@{Validar}!Vagas@{Vagas}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Vagas\+::\+Validar (\begin{DoxyParamCaption}\item[{int}]{Vagas }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/dominios.\+h\item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/dominios.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}

@@ -1,47 +1,82 @@
 \hypertarget{class_booking}{}\doxysection{Booking Class Reference}
 \label{class_booking}\index{Booking@{Booking}}
+
+
+{\ttfamily \#include $<$entidades.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_booking_acede3a2e5df90a3fa6ea471af5f23353}\label{class_booking_acede3a2e5df90a3fa6ea471af5f23353}} 
-void {\bfseries Reservar\+Carona} (int, int, char)
+void \mbox{\hyperlink{class_booking_acede3a2e5df90a3fa6ea471af5f23353}{Reservar\+Carona}} (int, int, char)
 \item 
-\mbox{\Hypertarget{class_booking_a472e489cdbaa513fdb918777aefd05e7}\label{class_booking_a472e489cdbaa513fdb918777aefd05e7}} 
-void {\bfseries Imprime} ()
+void \mbox{\hyperlink{class_booking_a472e489cdbaa513fdb918777aefd05e7}{Imprime}} ()
 \item 
-\mbox{\Hypertarget{class_booking_ac4ee59c21addbbc6abef3e8879e7ea9d}\label{class_booking_ac4ee59c21addbbc6abef3e8879e7ea9d}} 
-void {\bfseries Set\+Codigo\+Reserva} (const \mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} \&codigo)
+void \mbox{\hyperlink{class_booking_ac4ee59c21addbbc6abef3e8879e7ea9d}{Set\+Codigo\+Reserva}} (const \mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} \&codigo)
 \item 
-\mbox{\Hypertarget{class_booking_ac42dee813734df1b093561276f8cd64b}\label{class_booking_ac42dee813734df1b093561276f8cd64b}} 
-\mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} {\bfseries Get\+Codigo\+Reserva} () const
+\mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} \mbox{\hyperlink{class_booking_ac42dee813734df1b093561276f8cd64b}{Get\+Codigo\+Reserva}} () const
 \item 
-\mbox{\Hypertarget{class_booking_a97adeb9f2967b0f4aa302dfbfb621900}\label{class_booking_a97adeb9f2967b0f4aa302dfbfb621900}} 
-void {\bfseries Set\+Assento} (const \mbox{\hyperlink{class_assento}{Assento}} \&assento)
+void \mbox{\hyperlink{class_booking_a97adeb9f2967b0f4aa302dfbfb621900}{Set\+Assento}} (const \mbox{\hyperlink{class_assento}{Assento}} \&assento)
 \item 
+\mbox{\hyperlink{class_assento}{Assento}} \mbox{\hyperlink{class_booking_aa05364b52aee0e32d5c2656482218a85}{Get\+Assento}} () const
+\item 
+void \mbox{\hyperlink{class_booking_a70cd1cefaf6c2910e350412bc320a182}{Set\+Bagagem}} (const \mbox{\hyperlink{class_bagagem}{Bagagem}} \&bagagem)
+\item 
+\mbox{\hyperlink{class_bagagem}{Bagagem}} \mbox{\hyperlink{class_booking_a04aee30da846d6189b635770d294b96a}{Get\+Bagagem}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_booking_aa05364b52aee0e32d5c2656482218a85}\label{class_booking_aa05364b52aee0e32d5c2656482218a85}} 
-\mbox{\hyperlink{class_assento}{Assento}} {\bfseries Get\+Assento} () const
-\item 
-\mbox{\Hypertarget{class_booking_a70cd1cefaf6c2910e350412bc320a182}\label{class_booking_a70cd1cefaf6c2910e350412bc320a182}} 
-void {\bfseries Set\+Bagagem} (const \mbox{\hyperlink{class_bagagem}{Bagagem}} \&bagagem)
-\item 
+\index{Booking@{Booking}!GetAssento@{GetAssento}}
+\index{GetAssento@{GetAssento}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{GetAssento()}{GetAssento()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_assento}{Assento}} Booking\+::\+Get\+Assento (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{class_booking_a04aee30da846d6189b635770d294b96a}\label{class_booking_a04aee30da846d6189b635770d294b96a}} 
-\mbox{\hyperlink{class_bagagem}{Bagagem}} {\bfseries Get\+Bagagem} () const
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_booking_a99264b3515d9433e611a61459f535536}\label{class_booking_a99264b3515d9433e611a61459f535536}} 
-\mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} {\bfseries codigo}
-\item 
-\mbox{\Hypertarget{class_booking_a9bcf335ed3443d66551eedcfc5408bc1}\label{class_booking_a9bcf335ed3443d66551eedcfc5408bc1}} 
-\mbox{\hyperlink{class_assento}{Assento}} {\bfseries assento}
-\item 
-\mbox{\Hypertarget{class_booking_ac42041d3a88e8dcb3268f3dde6b4eef9}\label{class_booking_ac42041d3a88e8dcb3268f3dde6b4eef9}} 
-\mbox{\hyperlink{class_bagagem}{Bagagem}} {\bfseries bagagem}
-\end{DoxyCompactItemize}
+\index{Booking@{Booking}!GetBagagem@{GetBagagem}}
+\index{GetBagagem@{GetBagagem}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{GetBagagem()}{GetBagagem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bagagem}{Bagagem}} Booking\+::\+Get\+Bagagem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_booking_ac42dee813734df1b093561276f8cd64b}\label{class_booking_ac42dee813734df1b093561276f8cd64b}} 
+\index{Booking@{Booking}!GetCodigoReserva@{GetCodigoReserva}}
+\index{GetCodigoReserva@{GetCodigoReserva}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{GetCodigoReserva()}{GetCodigoReserva()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} Booking\+::\+Get\+Codigo\+Reserva (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_booking_a472e489cdbaa513fdb918777aefd05e7}\label{class_booking_a472e489cdbaa513fdb918777aefd05e7}} 
+\index{Booking@{Booking}!Imprime@{Imprime}}
+\index{Imprime@{Imprime}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{Imprime()}{Imprime()}}
+{\footnotesize\ttfamily void Booking\+::\+Imprime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_booking_acede3a2e5df90a3fa6ea471af5f23353}\label{class_booking_acede3a2e5df90a3fa6ea471af5f23353}} 
+\index{Booking@{Booking}!ReservarCarona@{ReservarCarona}}
+\index{ReservarCarona@{ReservarCarona}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{ReservarCarona()}{ReservarCarona()}}
+{\footnotesize\ttfamily void Booking\+::\+Reservar\+Carona (\begin{DoxyParamCaption}\item[{int}]{codigoreserva,  }\item[{int}]{bagagem,  }\item[{char}]{assento }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_booking_a97adeb9f2967b0f4aa302dfbfb621900}\label{class_booking_a97adeb9f2967b0f4aa302dfbfb621900}} 
+\index{Booking@{Booking}!SetAssento@{SetAssento}}
+\index{SetAssento@{SetAssento}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{SetAssento()}{SetAssento()}}
+{\footnotesize\ttfamily void Booking\+::\+Set\+Assento (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_assento}{Assento}} \&}]{assento }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_booking_a70cd1cefaf6c2910e350412bc320a182}\label{class_booking_a70cd1cefaf6c2910e350412bc320a182}} 
+\index{Booking@{Booking}!SetBagagem@{SetBagagem}}
+\index{SetBagagem@{SetBagagem}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{SetBagagem()}{SetBagagem()}}
+{\footnotesize\ttfamily void Booking\+::\+Set\+Bagagem (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_bagagem}{Bagagem}} \&}]{bagagem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_booking_ac4ee59c21addbbc6abef3e8879e7ea9d}\label{class_booking_ac4ee59c21addbbc6abef3e8879e7ea9d}} 
+\index{Booking@{Booking}!SetCodigoReserva@{SetCodigoReserva}}
+\index{SetCodigoReserva@{SetCodigoReserva}!Booking@{Booking}}
+\doxysubsubsection{\texorpdfstring{SetCodigoReserva()}{SetCodigoReserva()}}
+{\footnotesize\ttfamily void Booking\+::\+Set\+Codigo\+Reserva (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo_reserva}{Codigo\+Reserva}} \&}]{codigo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/entidades.\+h\item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/entidades.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8h}{entidades.\+h}}\item 
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{entidades_8cpp}{entidades.\+cpp}}\end{DoxyCompactItemize}

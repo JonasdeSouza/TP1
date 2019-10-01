@@ -133,41 +133,129 @@ class Nome{
             string GetExcecao();
     };
 
-/** \brief Responsavel por armazenar e validar a string cidadedestino*/
+    /** \brief A classe CidadeDestino armazena a cidade de onde a carona vai partir.
+    *
+    *  Cidade de origem: sequancia de no minimo 1 e no maximo 10 caracteres podendo cada um
+    *  deles sendo letra, nao podendo iniciar em ponto final e nem ter espaços em sequancia
+    *  que ira identificar a area urbana que a carona ira sair.
+    */
     class CidadeDestino{
         private:
             string cidadedestino;
             string excecao;
         public:
             int Validar(string) throw (invalid_argument);
+            /** Metodo para validacao da cidade de destino
+             *. retornando 0 em caso de sucesso e -1 em
+             *  caso de falha.
+             *
+             * \param Cidade de destino.
+             * \return int 0 para sucesso -1 para falha.
+             *
+             */
             void SetCidadeDestino(string);
+            /** \brief Metodo responsavel por armazenar a cidade
+              *  de destino caso seja valido.
+              *
+              * \param Cidade de destino.
+              */
             string GetCidadeDestino();
+            /** \brief Metodo responsavel por retornar a cidade de destino.
+             *
+             * \return Cidade de destino armazenado.
+             *
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao da cidade de destino.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
 
-/** \brief Responsavel por armazenar e validar a string estadoorigem*/
+    /** \brief A classe EstadoOrigem armazena o estado de ondem a carona vai partir.
+    *
+    *   Estado de origem: sigla em maiusculo do estado brasileiro de onde a carona partira.
+    */
     class EstadoOrigem{
         private:
             string estadoorigem;
             string excecao;
         public:
             int Validar(string) throw (invalid_argument);
+            /** Metodo para validacao do estado de origem
+             *. retornando 0 em caso de sucesso e -1 em
+             *  caso de falha.
+             *
+             * \param Estado de origem.
+             * \return int 0 para sucesso -1 para falha.
+             *
+             */
             void SetEstadoOrigem(string);
+            /** \brief Metodo responsavel por armazenar o estado
+              *  de origem caso seja valido.
+              *
+              * \param Estado de origem.
+              */
             string GetEstadoOrigem();
+            /** \brief Metodo responsavel por retornar o estado de origem.
+             *
+             * \return Estado de origem armazenado.
+             *
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao do estado de origem.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
 
-/** \brief Responsavel por armazenar e validar a string estadodestino*/
+    /** \brief A classe EstadoDestino armazena o estado de onde a carona chegara.
+    *
+    *  Estado de destino: sigla em maiusculo do estado brasileiro de onde a carona chegara.
+    */
     class EstadoDestino{
         private:
             string estadodestino;
             string excecao;
         public:
             int Validar(string) throw (invalid_argument);
+            /** Metodo para validacao do estado de destino
+             *. retornando 0 em caso de sucesso e -1 em
+             *  caso de falha.
+             *
+             * \param Estado de destino.
+             * \return 0 para sucesso -1 para falha.
+             *
+             */
             void SetEstadoDestino(string);
+            /** \brief Metodo responsavel por armazenar o estado
+              *  de destino caso seja valido.
+              *
+              * \param Estado de destino.
+              */
             string GetEstadoDestino();
+            /** \brief Metodo responsavel por retornar o estado de destino.
+             *
+             * \return Estado de destino armazenado.
+             *
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao do estado de destino.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
+    /** \brief A classe data armazena a data da carona.
+     *
+     *  Data: dia, mes e ano no formato DD/MM/AAAA responsavel por identificar
+     *  quando a carona comecara e sera finalizada.
+     */
 
     class Data{
         private:
@@ -179,13 +267,29 @@ class Nome{
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
-             * \param string Data.
-             * \return int 0 para sucesso -1 para falha.
+             * \param Data.
+             * \return 0 para sucesso -1 para falha.
              *
              */
             void SetData(string);
+            /** \brief Metodo responsavel por armazenar a data
+              *  de realizacao do percusso caso seja valido.
+              *
+              * \param Data de realizacao do percusso.
+              */
             string GetData();
+            /** \brief Metodo responsavel por retornar a data de realizacao do percussoo.
+             *
+             * \return Data de realizacao do percusso armazenada.
+             *
+             */
             string GetExcecao();
+            /** \brief Metodo responsavel por retornar o erro que foi
+             *  encontrado ao fazer a validacao da data de realizacao do percusso.
+             *
+             * \return Erro de validacao.
+             *
+             */
     };
     /** \brief A classe Duracao armazena a duracao do trajeto
     *
@@ -216,6 +320,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar a duracao do percusso.
              *
              * \return Duracao do percusso armazenada.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi
@@ -254,6 +359,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar o numero de vagas no carro.
              *
              * \return Numero de vagas no carro armazenado.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi
@@ -294,6 +400,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar o preco da carona.
              *
              * \return Preco da carona armazenado.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi
@@ -334,6 +441,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar o codigo do banco financeiro.
              *
              * \return Numero do banco financeiro armazenado.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi
@@ -375,6 +483,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar o numero da agencia do banco.
              *
              * \return Numero da agencia do banco armazenado.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi
@@ -416,6 +525,7 @@ class Nome{
             /** \brief Metodo responsavel por retornar o numero da conta bancaria.
              *
              * \return Numero da conta armazenado.
+             *
              */
             string GetExcecao();
             /** \brief Metodo responsavel por retornar o erro que foi

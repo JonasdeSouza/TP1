@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['getexcecao_55',['GetExcecao',['../class_nome.html#a3705798fe093021c5498585b72dd03b6',1,'Nome::GetExcecao()'],['../class_telefone.html#a683d7e42d8200e835cd6cffd95c3e985',1,'Telefone::GetExcecao()']]],
-  ['getnome_56',['GetNome',['../class_nome.html#a1edbc7e93e47896f35a9abdace797799',1,'Nome']]],
-  ['gettelefone_57',['GetTelefone',['../class_telefone.html#af2752743cba91eaf39350d7d5fe9004b',1,'Telefone']]]
+  ['cadastrarcarona_166',['CadastrarCarona',['../class_ride.html#ab8cff1ef93778029f6b3ecbb6489eb4b',1,'Ride']]],
+  ['cadastrarinfobancarias_167',['CadastrarInfoBancarias',['../class_account.html#a7b0eaf1a958244563201fc13c969dd53',1,'Account']]],
+  ['cadastrarusuario_168',['CadastrarUsuario',['../class_user.html#acc0ac9a9e2310d4f83fc857126aba35a',1,'User']]],
+  ['converterpreco_169',['ConverterPreco',['../class_preco.html#a5edca287e64154e897031f0c3eeff09c',1,'Preco']]]
 ];

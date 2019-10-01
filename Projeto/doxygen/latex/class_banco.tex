@@ -2,7 +2,7 @@
 \label{class_banco}\index{Banco@{Banco}}
 
 
-Responsavel por armazenar e validar o inteiro codigobanco.  
+A classe banco e responsavel por armazenar o codigo de banco financeiro.  
 
 
 
@@ -12,33 +12,77 @@ Responsavel por armazenar e validar o inteiro codigobanco.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_banco_acefb0b11e2dc6b5ab30d77513a7188a6}\label{class_banco_acefb0b11e2dc6b5ab30d77513a7188a6}} 
-int {\bfseries Validar} (int)  throw (invalid\+\_\+argument)
+int \mbox{\hyperlink{class_banco_acefb0b11e2dc6b5ab30d77513a7188a6}{Validar}} (int)  throw (invalid\+\_\+argument)
 \item 
-\mbox{\Hypertarget{class_banco_a67956374ab3d2582448e17eeb21de55d}\label{class_banco_a67956374ab3d2582448e17eeb21de55d}} 
-void {\bfseries Set\+Codigo\+Banco} (int)
-\item 
-\mbox{\Hypertarget{class_banco_abf486c3f4b95466aa2b609e9af8ae6d9}\label{class_banco_abf486c3f4b95466aa2b609e9af8ae6d9}} 
-int {\bfseries Get\+Codigo\+Banco} ()
-\item 
-\mbox{\Hypertarget{class_banco_ae09ec266b7a16e699458e104d13a1d7e}\label{class_banco_ae09ec266b7a16e699458e104d13a1d7e}} 
-string {\bfseries Get\+Excecao} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_banco_a55bff416cf2950ebd9c8e841f6031065}\label{class_banco_a55bff416cf2950ebd9c8e841f6031065}} 
-int {\bfseries codigobanco}
-\item 
-\mbox{\Hypertarget{class_banco_ab8d28afd6ba356bed01042ca5fac3470}\label{class_banco_ab8d28afd6ba356bed01042ca5fac3470}} 
-string {\bfseries excecao}
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_banco_a67956374ab3d2582448e17eeb21de55d}{Set\+Codigo\+Banco}} (int)
+\begin{DoxyCompactList}\small\item\em Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -\/1 em caso de falha. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_banco_abf486c3f4b95466aa2b609e9af8ae6d9}{Get\+Codigo\+Banco}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_banco_ae09ec266b7a16e699458e104d13a1d7e}{Get\+Excecao}} ()
+\begin{DoxyCompactList}\small\item\em Metodo responsavel por retornar o codigo do banco financeiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Responsavel por armazenar e validar o inteiro codigobanco. 
+A classe banco e responsavel por armazenar o codigo de banco financeiro. 
+
+Codigo de \mbox{\hyperlink{class_banco}{Banco}}\+: sequancia de 3 digitos numericos de 0-\/9 usados para identificar qual o banco do usuario. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_banco_abf486c3f4b95466aa2b609e9af8ae6d9}\label{class_banco_abf486c3f4b95466aa2b609e9af8ae6d9}} 
+\index{Banco@{Banco}!GetCodigoBanco@{GetCodigoBanco}}
+\index{GetCodigoBanco@{GetCodigoBanco}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{GetCodigoBanco()}{GetCodigoBanco()}}
+{\footnotesize\ttfamily int Banco\+::\+Get\+Codigo\+Banco (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por armazenar o codigo do banco financeiro caso seja valido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Numero} & do banco financeiro. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_banco_ae09ec266b7a16e699458e104d13a1d7e}\label{class_banco_ae09ec266b7a16e699458e104d13a1d7e}} 
+\index{Banco@{Banco}!GetExcecao@{GetExcecao}}
+\index{GetExcecao@{GetExcecao}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{GetExcecao()}{GetExcecao()}}
+{\footnotesize\ttfamily string Banco\+::\+Get\+Excecao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo responsavel por retornar o codigo do banco financeiro. 
+
+\begin{DoxyReturn}{Returns}
+Numero do banco financeiro armazenado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_banco_a67956374ab3d2582448e17eeb21de55d}\label{class_banco_a67956374ab3d2582448e17eeb21de55d}} 
+\index{Banco@{Banco}!SetCodigoBanco@{SetCodigoBanco}}
+\index{SetCodigoBanco@{SetCodigoBanco}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{SetCodigoBanco()}{SetCodigoBanco()}}
+{\footnotesize\ttfamily void Banco\+::\+Set\+Codigo\+Banco (\begin{DoxyParamCaption}\item[{int}]{Codigo\+Banco }\end{DoxyParamCaption})}
+
+
+
+Metodo para validacao do codigo do banco financeiro . retornando 0 em caso de sucesso e -\/1 em caso de falha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Numero do codigo financeiro. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 para sucesso -\/1 para falha. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_banco_acefb0b11e2dc6b5ab30d77513a7188a6}\label{class_banco_acefb0b11e2dc6b5ab30d77513a7188a6}} 
+\index{Banco@{Banco}!Validar@{Validar}}
+\index{Validar@{Validar}!Banco@{Banco}}
+\doxysubsubsection{\texorpdfstring{Validar()}{Validar()}}
+{\footnotesize\ttfamily int Banco\+::\+Validar (\begin{DoxyParamCaption}\item[{int}]{Codigo\+Banco }\end{DoxyParamCaption}) throw ( invalid\+\_\+argument) }
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/dominios.\+h\item 
-C\+:/\+Users/\+Particular/\+Documents/\+Tp1/\+T\+P1/\+Projeto/dominios.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8h}{dominios.\+h}}\item 
+C\+:/\+Users/joaop/\+One\+Drive/\+Documents/\+T\+P1/\+Projeto/\mbox{\hyperlink{dominios_8cpp}{dominios.\+cpp}}\end{DoxyCompactItemize}
