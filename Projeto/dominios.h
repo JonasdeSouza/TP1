@@ -144,7 +144,6 @@ class Nome{
             string cidadedestino;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
             /** Metodo para validacao da cidade de destino
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -153,25 +152,26 @@ class Nome{
              * \return int 0 para sucesso -1 para falha.
              *
              */
-            void SetCidadeDestino(string);
-            /** \brief Metodo responsavel por armazenar a cidade
+            int Validar(string) throw (invalid_argument);
+              /** \brief Metodo responsavel por armazenar a cidade
               *  de destino caso seja valido.
               *
               * \param Cidade de destino.
               */
-            string GetCidadeDestino();
-            /** \brief Metodo responsavel por retornar a cidade de destino.
+            void SetCidadeDestino(string);
+              /** \brief Metodo responsavel por retornar a cidade de destino.
              *
              * \return Cidade de destino armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetCidadeDestino();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao da cidade de destino.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
 
     /** \brief A classe EstadoOrigem armazena o estado de ondem a carona vai partir.
@@ -183,8 +183,7 @@ class Nome{
             string estadoorigem;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
-            /** Metodo para validacao do estado de origem
+             /** Metodo para validacao do estado de origem
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
              *
@@ -192,25 +191,26 @@ class Nome{
              * \return int 0 para sucesso -1 para falha.
              *
              */
-            void SetEstadoOrigem(string);
-            /** \brief Metodo responsavel por armazenar o estado
+            int Validar(string) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar o estado
               *  de origem caso seja valido.
               *
               * \param Estado de origem.
               */
-            string GetEstadoOrigem();
-            /** \brief Metodo responsavel por retornar o estado de origem.
+            void SetEstadoOrigem(string);
+              /** \brief Metodo responsavel por retornar o estado de origem.
              *
              * \return Estado de origem armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetEstadoOrigem();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do estado de origem.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
 
     /** \brief A classe EstadoDestino armazena o estado de onde a carona chegara.
@@ -222,7 +222,6 @@ class Nome{
             string estadodestino;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
             /** Metodo para validacao do estado de destino
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -231,25 +230,26 @@ class Nome{
              * \return 0 para sucesso -1 para falha.
              *
              */
-            void SetEstadoDestino(string);
-            /** \brief Metodo responsavel por armazenar o estado
+            int Validar(string) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar o estado
               *  de destino caso seja valido.
               *
               * \param Estado de destino.
               */
-            string GetEstadoDestino();
+            void SetEstadoDestino(string);
             /** \brief Metodo responsavel por retornar o estado de destino.
              *
              * \return Estado de destino armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetEstadoDestino();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do estado de destino.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe data armazena a data da carona.
      *
@@ -262,7 +262,6 @@ class Nome{
             string data;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
             /** Metodo para validacao da data
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -271,25 +270,26 @@ class Nome{
              * \return 0 para sucesso -1 para falha.
              *
              */
-            void SetData(string);
-            /** \brief Metodo responsavel por armazenar a data
+            int Validar(string) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar a data
               *  de realizacao do percusso caso seja valido.
               *
               * \param Data de realizacao do percusso.
               */
-            string GetData();
+            void SetData(string);
             /** \brief Metodo responsavel por retornar a data de realizacao do percussoo.
              *
              * \return Data de realizacao do percusso armazenada.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetData();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao da data de realizacao do percusso.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe Duracao armazena a duracao do trajeto
     *
@@ -301,7 +301,6 @@ class Nome{
             int duracao;
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao da duracao do percusso
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -310,25 +309,26 @@ class Nome{
              * \return  0 para sucesso -1 para falha.
              *
              */
-            void SetDuracao(int);
-            /** \brief Metodo responsavel por armazenar a duracao
+            int Validar(int) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar a duracao
               *  do percusso caso seja valido.
               *
               * \param Numero de vagas no carro.
               */
-            int GetDuracao();
-            /** \brief Metodo responsavel por retornar a duracao do percusso.
+            void SetDuracao(int);
+              /** \brief Metodo responsavel por retornar a duracao do percusso.
              *
              * \return Duracao do percusso armazenada.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            int GetDuracao();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao da duracao do percusso.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe vagas armazena o numero de vagas no carro que realizara a carona.
     *
@@ -340,7 +340,6 @@ class Nome{
             int vagas;/**<  */
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao do numero de vagas
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -349,25 +348,26 @@ class Nome{
              * \return 0 para sucesso -1 para falha.
              *
              */
-            void SetVagas(int);
-            /** \brief Metodo responsavel por armazenar o numero
+            int Validar(int) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar o numero
               *   de vagas caso seja valido.
               *
               * \param Numero de vagas no carro.
               */
-            int GetVagas();
-            /** \brief Metodo responsavel por retornar o numero de vagas no carro.
+            void SetVagas(int);
+              /** \brief Metodo responsavel por retornar o numero de vagas no carro.
              *
              * \return Numero de vagas no carro armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            int GetVagas();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do numero de vagas no carro.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe preco armazena o valor da carona em reais.
     *
@@ -379,7 +379,6 @@ class Nome{
             string preco;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
             /** Metodo para validacao do preco da carona
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -388,27 +387,27 @@ class Nome{
              * \return int 0 para sucesso -1 para falha.
              *
              */
+            int Validar(string) throw (invalid_argument);
             int ConverterPreco(string);
-
-            void SetPreco(string);
             /** \brief Metodo responsavel por armazenar o preco
               *   da carona caso seja valido.
               *
               * \param Preco do trajeto.
               */
-            string GetPreco();
+            void SetPreco(string);
             /** \brief Metodo responsavel por retornar o preco da carona.
              *
              * \return Preco da carona armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetPreco();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do preco da carona.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
 
 //---------------------------------------------------------------------------------
@@ -422,7 +421,6 @@ class Nome{
             int codigobanco;
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao do codigo do banco financeiro
              *. retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -431,26 +429,27 @@ class Nome{
              * \return int 0 para sucesso -1 para falha.
              *
              */
-            void SetCodigoBanco(int);
-            /** \brief Metodo responsavel por armazenar o codigo
+            int Validar(int) throw (invalid_argument);
+             /** \brief Metodo responsavel por armazenar o codigo
               *   do banco financeiro caso seja valido.
               *
               * \param Numero do banco financeiro.
               */
-            int GetCodigoBanco();
-            /** \brief Metodo responsavel por retornar o codigo do banco financeiro.
+            void SetCodigoBanco(int);
+              /** \brief Metodo responsavel por retornar o codigo do banco financeiro.
              *
              * \return Numero do banco financeiro armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            int GetCodigoBanco();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do codigo do banco
              *  financeiro.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe Agencia e responsavel por armazenar o numero da agencia do banco.
     *
@@ -464,7 +463,6 @@ class Nome{
             string agencia;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
             /** \brief Metodo para validacao do numero da agencia
              *. do banco retornando 0 em caso de sucesso e -1 em
              *  caso de falha.
@@ -473,26 +471,27 @@ class Nome{
              * \return int 0 para sucesso -1 para falha.
              *
              */
-            void SetAgencia(string);
-            /** \brief Metodo responsavel por armazenar o numero
+            int Validar(string) throw (invalid_argument);
+              /** \brief Metodo responsavel por armazenar o numero
               *   da agencia do banco caso seja valido.
               *
               * \param Numero da agencia do banco.
               */
-            string GetAgencia();
-            /** \brief Metodo responsavel por retornar o numero da agencia do banco.
+            void SetAgencia(string);
+              /** \brief Metodo responsavel por retornar o numero da agencia do banco.
              *
              * \return Numero da agencia do banco armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetAgencia();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do numero da agencia do
              *  banco.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
     /** \brief A classe conta e responsavel por armazenar o numero da conta bancaria.
     *
@@ -506,8 +505,7 @@ class Nome{
             string conta;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
-            /** \brief Metodo para validacao do numero da
+             /** \brief Metodo para validacao do numero da
              *. conta bancaria retornando 0 em caso de
              *  sucesso e -1 em caso de falha.
              *
@@ -515,26 +513,27 @@ class Nome{
              * \return 0 para sucesso -1 para falha.
              *
              */
-            void SetConta(string);
+            int Validar(string) throw (invalid_argument);
              /** \brief Metodo responsavel por armazenar o numero
               *   da conta bancaria caso seja valido.
               *
               * \param Numero da conta bancaria.
               */
-            string GetConta();
-            /** \brief Metodo responsavel por retornar o numero da conta bancaria.
+            void SetConta(string);
+              /** \brief Metodo responsavel por retornar o numero da conta bancaria.
              *
              * \return Numero da conta armazenado.
              *
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
+            string GetConta();
+             /** \brief Metodo responsavel por retornar o erro que foi
              *  encontrado ao fazer a validacao do numero da conta
              *  bancaria.
              *
              * \return Erro de validacao.
              *
              */
+            string GetExcecao();
     };
 
 #endif
