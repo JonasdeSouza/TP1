@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['telefone_132',['Telefone',['../class_telefone.html',1,'']]],
   ['tuaccount_133',['TUAccount',['../class_t_u_account.html',1,'']]],
   ['tuagencia_134',['TUAgencia',['../class_t_u_agencia.html',1,'']]],
@@ -25,4 +26,7 @@ var searchData=
   ['tutelefone_154',['TUTelefone',['../class_t_u_telefone.html',1,'']]],
   ['tuuser_155',['TUUser',['../class_t_u_user.html',1,'']]],
   ['tuvagas_156',['TUVagas',['../class_t_u_vagas.html',1,'']]]
+=======
+  ['telefone_68',['Telefone',['../class_telefone.html',1,'']]]
+>>>>>>> master
 ];

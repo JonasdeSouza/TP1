@@ -1,5 +1,6 @@
 var searchData=
 [
+<<<<<<< HEAD
   ['getagencia_26',['GetAgencia',['../class_agencia.html#aaac510a42f5b4f7950f88272164ef2b4',1,'Agencia::GetAgencia()'],['../class_account.html#a41bca586db400d957553314863eec3d4',1,'Account::GetAgencia()']]],
   ['getassento_27',['GetAssento',['../class_assento.html#a51031bde114a1670b48c9009ec24bd5b',1,'Assento::GetAssento()'],['../class_booking.html#aa05364b52aee0e32d5c2656482218a85',1,'Booking::GetAssento()']]],
   ['getbagagem_28',['GetBagagem',['../class_bagagem.html#a9bfbd80a0a4886bc75b37a5e63799dcb',1,'Bagagem::GetBagagem()'],['../class_booking.html#a04aee30da846d6189b635770d294b96a',1,'Booking::GetBagagem()']]],
@@ -22,4 +23,7 @@ var searchData=
   ['getsenha_45',['GetSenha',['../class_senha.html#ae6322e8ae69f925b6adcd2858544c875',1,'Senha::GetSenha()'],['../class_user.html#a1bb2d099b9eb1db51f29679e756a3ba8',1,'User::GetSenha()']]],
   ['gettelefone_46',['GetTelefone',['../class_telefone.html#af2752743cba91eaf39350d7d5fe9004b',1,'Telefone::GetTelefone()'],['../class_user.html#a634e3680c00685497b24904e1c4204d0',1,'User::GetTelefone()']]],
   ['getvagas_47',['GetVagas',['../class_vagas.html#a07b56a23ee7fd9f2bced64c0f677cf8a',1,'Vagas::GetVagas()'],['../class_ride.html#aa15dd786591fb9e0cdb375ea78562230',1,'Ride::GetVagas()']]]
+=======
+  ['nome_28',['Nome',['../class_nome.html',1,'']]]
+>>>>>>> master
 ];
