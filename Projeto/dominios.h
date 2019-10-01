@@ -46,26 +46,26 @@ class Nome{
 /** \brief Responsavel por armazenar e validar a string senha*/
     class Senha{
         private:
-            string senha;
-            string excecao;
+            string senha; /**< Armazena o dado recebido por SetSenha @see SetSenha*/
+            string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
-            int Validar(string) throw (invalid_argument);
-            void SetSenha(string);
-            string GetSenha();
-            string GetExcecao();
+            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetSenha, onde senha tem formato XXXXX e X pode ser alfanumérico, #, $, % ou & @see SetSenha @return excecao*/ 
+            void SetSenha(string); /**< Invoca o metodo Validar, e espera o retorno, caso não haja excecao lançada, armazena o dado referente a senha na string senha @see Validar @param senha */
+            string GetSenha();  /**< Retorna a string senha @return senha*/
+            string GetExcecao(); /**< Retorna a string excecao @return excecao */
     };
 
 /** \brief Responsavel por armazenar e validar a string cpf*/
     class Cpf{
         private:
-            string cpf;
-            string excecao;
+            string cpf; /**< Armazena o dado recebido por SetCpf @see SetCpf*/
+            string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
-            int Validar(string) throw (invalid_argument);
-            int ValidarDigitoVerificador(string) throw (invalid_argument);
-            void SetCpf(string);
-            string GetCpf();
-            string GetExcecao();
+            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetCpf, onde Cpf tem o formato XXX.XXX.XXX-XX e X é numerico*/ 
+            int ValidarDigitoVerificador(string) throw (invalid_argument); /**< Valida o digito verificador via algoritmo Modulo 11 */
+            void SetCpf(string);  /**< Invoca o metodo Validar, e espera o retorno, caso não haja excecao lançada, armazena o dado referente a cpf na string cpf @see Validar @param cpf */
+            string GetCpf(); /**< Retorna a string cpf @return cpf*/
+            string GetExcecao(); /**< Retorna a string argumento @return argumento*/
     };
 
 
@@ -74,38 +74,38 @@ class Nome{
 /** \brief Responsavel por armazenar e validar o inteiro bagagem */
     class Bagagem {
         private:
-            int bagagem;
-            string excecao;
+            int bagagem; /**< Armazena o dado recebido por SetBagagem @see SetBagagem*/
+            string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
 
         public:
-            int Validar(int) throw (invalid_argument);
-            void SetBagagem(int);
-            int GetBagagem();
-            string GetExcecao();
+            int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetBagagem, onde bagagem pode ser numerico até 4 @see Validar @param bagagem @return excecao*/ 
+            void SetBagagem(int); /**< Invoca o metodo Validar, caso nao haja excecao, armazena o dado referente a quantidade de bagagens no inteiro bagagem @see Validar @param bagagem*/
+            int GetBagagem(); /**< Retorna o inteiro bagagem @return bagagem*/
+            string GetExcecao(); /**< Retorna a string argumento @return argumento*/
     };
 
 /** \brief Responsavel por armazenar e validar o char assento */
     class Assento{
         private:
-            char assento; /**< teste assento*/
-            string excecao;
+            char assento; /**< Armazena o dado recebido por SetAssento @see SetAssento */
+            string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
-            int Validar(char) throw (invalid_argument);
-            void SetAssento(char);
-            char GetAssento();
-            string GetExcecao();
+            int Validar(char) throw (invalid_argument); /**< Valida o dado recebido por SetAssento, somente assume a forma de char 'T' ou 'D' @see SetAssento @param assento @return excecao*/
+            void SetAssento(char); /**< Invoca o metodo Validar, caso não haja lançamento de excecao, armazena o dado referente a preferencia de assento no char assento @see Validar @param assento*/ 
+            char GetAssento(); /**< Retorna o char assento @return assento*/
+            string GetExcecao();  /**< Retorna a string argumento @return argumento*/
     };
 
 /** \brief Responsavel por armazenar e validar o inteiro codigoreserva */
     class CodigoReserva{
         private:
-            int codigoreserva;
+            int codigoreserva; 
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
-            void SetCodigoReserva(int);
-            int GetCodigoReserva();
-            string GetExcecao();
+            int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetCodigoReserva, formatado em XXXXX, onde X é número @param codigoreserva @return excecao @see SetCodigoReserva*/
+            void SetCodigoReserva(int); /**< Invoca o metodo Validar, caso não haja erro, armazena o dado referente a código de reserva, em um inteiro codigoreserva @param codigoreserva @see Validar*/
+            int GetCodigoReserva(); /**< Retorna o valor do inteiro codigoreserva @return codigoreserva*/
+            string GetExcecao(); /**< Retorna o valor da string excecao @return excecao, onde fica alocada a excecao lancada pelo metodo Validar @see Validar*/
     };
 
 //-----------------------------------------------------------------------------------------------------
@@ -113,13 +113,25 @@ class Nome{
 /** \brief Responsavel por armazenar e validar o inteiro codigocarona */
     class CodigoCarona{
         private:
-            int codigocarona;
+            int codigocarona; 
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
-            void SetCodigoCarona(int);
-            int GetCodigoCarona();
-            string GetExcecao();
+            int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetCodigoCarona, onde codigocarona esta formatado como XXXX, onde X é número @see SetCodigoCarona @param codigocarona @return excecao onde ficam alocados as excecoes do metodo*/
+            void SetCodigoCarona(int); /**< Invoca o metodo Validar, se nao houver excecoes, armazena em um inteiro o valor referente a codigo de carona @see Validar @param codigocarona*/
+            int GetCodigoCarona(); /**< Retorna o valor de codigocarona @return codigocarona um inteiro que guarda o valor validado de SetCodigoCarona*/ 
+            string GetExcecao(); /**< Retorna a string excecao @return excecao */
+    };
+
+/** \brief Responsavel por armazenar e validar a string cidadeorigem*/
+    class CidadeOrigem{
+        private:
+            string cidadeorigem;
+            string excecao;
+        public:
+            int Validar(string) throw (invalid_argument); /**< Valida a string cidadeorigem recebida por SetCidadeOrigem, onde cidadeorigem pode ter ate 10 caracteres que podem ser: letra, ponto ou espaco @param cidadeorigem @return excecao @see SetCidadeOrigem */ 
+            void SetCidadeOrigem(string); /**< Invoca o metodo Validar, se nao houver excecoes, armazena o dado referente a cidade de origem na string cidadeorigem @param cidadeorigem @see Validar*/
+            string GetCidadeOrigem(); /**< Retorna a string cidadeorigem @return cidadeorigem*/
+            string GetExcecao(); /**< Retorna a string excecao @return excecao string onde fica alocada a mensagem de erro lancada pelo metodo Validar @see Validar*/
     };
 
     /** \brief A classe CidadeDestino armazena a cidade de onde a carona vai partir.
@@ -706,14 +718,22 @@ class Nome{
             string data;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
-            /** Metodo para validacao da data
-             *. retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Data.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            int Validar(string) throw (invalid_argument);
+
+            /** Metodo para validacao da data
+
+             *. retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Data.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
              */
             void SetData(string);
             string GetData();
@@ -725,14 +745,22 @@ class Nome{
             int duracao;
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao da duracao
-             *. retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Duracao co trajeto.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            int Validar(int) throw (invalid_argument);
+
+            /** Metodo para validacao da duracao
+
+             *. retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Duracao co trajeto.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
              */
             void SetDuracao(int);
             int GetDuracao();
@@ -744,14 +772,22 @@ class Nome{
             int vagas;
             string excecao;
         public:
-            int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao do numero de vagas
-             *. retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Numero de vagas.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            int Validar(int) throw (invalid_argument);
+
+            /** Metodo para validacao do numero de vagas
+
+             *. retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Numero de vagas.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
              */
             void SetVagas(int);
             int GetVagas();
@@ -763,14 +799,22 @@ class Nome{
             string preco;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument);
-            /** Metodo para validacao do preco do trajeto
-             *. retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Preco do trajeto.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            int Validar(string) throw (invalid_argument);
+
+            /** Metodo para validacao do preco do trajeto
+
+             *. retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Preco do trajeto.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
              */
             int ConverterPreco(string);
             void SetPreco(string);
@@ -784,40 +828,70 @@ class Nome{
         private:
             int codigobanco;
             string excecao;
-        public:
-            /** \brief A classe banco e responsavel por armazenar o codigo de banco financeiro.
-             *
-             *  Codigo de Banco: sequancia de 3 digitos numericos de 0-9 usados para
-             *  identificar qual o banco do usuario.
-             */
+        public:
 
-            int Validar(int) throw (invalid_argument);
-            /** Metodo para validacao do codigo do banco financeiro
-             *. retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Numero do codigo financeiro.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            /** \brief A classe banco e responsavel por armazenar o codigo de banco financeiro.
+
+             *
+
+             *  Codigo de Banco: sequancia de 3 digitos numericos de 0-9 usados para
+
+             *  identificar qual o banco do usuario.
+
              */
-            void SetCodigoBanco(int);
-            /** \brief Metodo responsavel por armazenar o codigo
-              *   do banco financeiro caso seja valido.
-              *
-              * \param Numero do banco financeiro.
+
+
+            int Validar(int) throw (invalid_argument);
+
+            /** Metodo para validacao do codigo do banco financeiro
+
+             *. retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Numero do codigo financeiro.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
+             */
+            void SetCodigoBanco(int);
+
+            /** \brief Metodo responsavel por armazenar o codigo
+
+              *   do banco financeiro caso seja valido.
+
+              *
+
+              * \param Numero do banco financeiro.
+
               */
-            int GetCodigoBanco();
-            /** \brief Metodo responsavel por retornar o codigo do banco financeiro.
-             *
-             * \return Numero do banco financeiro armazenado.
+            int GetCodigoBanco();
+
+            /** \brief Metodo responsavel por retornar o codigo do banco financeiro.
+
+             *
+
+             * \return Numero do banco financeiro armazenado.
+
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
-             *  encontrado ao fazer a validacao do codigo do banco
-             *  financeiro.
-             *
-             * \return Erro de validacao.
-             *
+            string GetExcecao();
+
+            /** \brief Metodo responsavel por retornar o erro que foi
+
+             *  encontrado ao fazer a validacao do codigo do banco
+
+             *  financeiro.
+
+             *
+
+             * \return Erro de validacao.
+
+             *
+
              */
     };
 
@@ -825,42 +899,74 @@ class Nome{
         private:
             string agencia;
             string excecao;
-        public:
-            /** \brief A classe Agencia e responsavel por armazenar o numero da agencia do banco.
-             *
-             *  Numero da agencia do banco: representa uma sequencia de 5 digitos numericos
-             *  de 0 ate 9 usados para identificar a agencia do banco do usuario.
-             *  O ultimo digito e um digito verificador calculado pelo algoritmo
-             *  de Luhn e e separado pelo caractere "-".
-             */
+        public:
 
-            int Validar(string) throw (invalid_argument);
-            /** \brief Metodo para validacao do numero da agencia
-             *. do banco retornando 0 em caso de sucesso e -1 em
-             *  caso de falha.
-             *
-             * \param string Numero da agencia do banco.
-             * \return int 0 para sucesso -1 para falha.
-             *
+            /** \brief A classe Agencia e responsavel por armazenar o numero da agencia do banco.
+
+             *
+
+             *  Numero da agencia do banco: representa uma sequencia de 5 digitos numericos
+
+             *  de 0 ate 9 usados para identificar a agencia do banco do usuario.
+
+             *  O ultimo digito e um digito verificador calculado pelo algoritmo
+
+             *  de Luhn e e separado pelo caractere "-".
+
              */
-            void SetAgencia(string);
-            /** \brief Metodo responsavel por armazenar o numero
-              *   da agencia do banco caso seja valido.
-              *
-              * \param Numero da agencia do banco.
+
+
+            int Validar(string) throw (invalid_argument);
+
+            /** \brief Metodo para validacao do numero da agencia
+
+             *. do banco retornando 0 em caso de sucesso e -1 em
+
+             *  caso de falha.
+
+             *
+
+             * \param string Numero da agencia do banco.
+
+             * \return int 0 para sucesso -1 para falha.
+
+             *
+
+             */
+            void SetAgencia(string);
+
+            /** \brief Metodo responsavel por armazenar o numero
+
+              *   da agencia do banco caso seja valido.
+
+              *
+
+              * \param Numero da agencia do banco.
+
               */
-            string GetAgencia();
-            /** \brief Metodo responsavel por retornar o numero da agencia do banco.
-             *
-             * \return Numero da agencia do banco armazenado.
+            string GetAgencia();
+
+            /** \brief Metodo responsavel por retornar o numero da agencia do banco.
+
+             *
+
+             * \return Numero da agencia do banco armazenado.
+
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
-             *  encontrado ao fazer a validacao do numero da agencia do
-             *  banco.
-             *
-             * \return Erro de validacao.
-             *
+            string GetExcecao();
+
+            /** \brief Metodo responsavel por retornar o erro que foi
+
+             *  encontrado ao fazer a validacao do numero da agencia do
+
+             *  banco.
+
+             *
+
+             * \return Erro de validacao.
+
+             *
+
              */
     };
 
@@ -868,41 +974,73 @@ class Nome{
         private:
             string conta;
             string excecao;
-        public:
-            /** \brief A classe conta e responsavel por armazenar o numero da conta bancaria.
-            *
-            *  Numero da conta: representa uma sequencia de 7 digitos numericos
-            *  de 0 ate 9 usados para identificar a conta bancaria do usuario.
-            *  O ultimo digito e um digito verificador calculado pelo algoritmo
-            *  de Luhn e e separado pelo caractere "-".
-            */
-            int Validar(string) throw (invalid_argument);
-            /** \brief Metodo para validacao do numero da
-             *. conta bancaria retornando 0 em caso de
-             *  sucesso e -1 em caso de falha.
-             *
-             * \param Numero da conta bancaria.
-             * \return 0 para sucesso -1 para falha.
-             *
+        public:
+
+            /** \brief A classe conta e responsavel por armazenar o numero da conta bancaria.
+
+            *
+
+            *  Numero da conta: representa uma sequencia de 7 digitos numericos
+
+            *  de 0 ate 9 usados para identificar a conta bancaria do usuario.
+
+            *  O ultimo digito e um digito verificador calculado pelo algoritmo
+
+            *  de Luhn e e separado pelo caractere "-".
+
+            */
+
+            int Validar(string) throw (invalid_argument);
+
+            /** \brief Metodo para validacao do numero da
+
+             *. conta bancaria retornando 0 em caso de
+
+             *  sucesso e -1 em caso de falha.
+
+             *
+
+             * \param Numero da conta bancaria.
+
+             * \return 0 para sucesso -1 para falha.
+
+             *
+
              */
-            void SetConta(string);
-             /** \brief Metodo responsavel por armazenar o numero
-              *   da conta bancaria caso seja valido.
-              *
-              * \param Numero da conta bancaria.
+            void SetConta(string);
+
+             /** \brief Metodo responsavel por armazenar o numero
+
+              *   da conta bancaria caso seja valido.
+
+              *
+
+              * \param Numero da conta bancaria.
+
               */
-            string GetConta();
-            /** \brief Metodo responsavel por retornar o numero da conta bancaria.
-             *
-             * \return Numero da conta armazenado.
+            string GetConta();
+
+            /** \brief Metodo responsavel por retornar o numero da conta bancaria.
+
+             *
+
+             * \return Numero da conta armazenado.
+
              */
-            string GetExcecao();
-            /** \brief Metodo responsavel por retornar o erro que foi
-             *  encontrado ao fazer a validacao do numero da conta
-             *  bancaria.
-             *
-             * \return Erro de validacao.
-             *
+            string GetExcecao();
+
+            /** \brief Metodo responsavel por retornar o erro que foi
+
+             *  encontrado ao fazer a validacao do numero da conta
+
+             *  bancaria.
+
+             *
+
+             * \return Erro de validacao.
+
+             *
+
              */
     };
 

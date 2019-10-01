@@ -14,40 +14,40 @@ class User{
             Cpf cpf;
 
         public:
-            void CadastrarUsuario(string, string, string, string, string);
-            void Imprime();
-            void SetNome(const Nome &nome){
+            void CadastrarUsuario(string, string, string, string, string); /**< Metodo para cadastrar usuario, recebe 5 strings e invoca o metodo Set de cada uma delas @param nome, email, telefone, senha, cpf */
+            void Imprime(); /**< Imprime na tela todos os valores dos dominios pertencentes a entidade User alocados em memoria @see CadastrarUsuario()*/ 
+            void SetNome(const Nome &nome){ /** Funcao para a entidade User ter acesso ao metodo SetNome da classe Nome @param nome @see SetNome()*/
                 this->nome = nome;
             }
-            Nome GetNome() const {
+            Nome GetNome() const { /** Funcao para a entidade User ter acesso ao metodo GetNome da classe Nome @return nome @see GetNome()*/
                 return nome;
             }
 
-            void SetTelefone(const Telefone &telefone){
+            void SetTelefone(const Telefone &telefone){  /** Funcao para a entidade User ter acesso ao metodo SetTelefone da classe Telefone @param telefone @see SetTelefone()*/
                 this->telefone = telefone;
             }
-            Telefone GetTelefone() const {
+            Telefone GetTelefone() const { /** Funcao para a entidade User ter acesso ao metodo GetTelefone da classe Telefone @return telefone @see GetTelefone()*/
                 return telefone;
             }
 
-            void SetEmail(const Email &email){
+            void SetEmail(const Email &email){  /** Funcao para a entidade Email ter acesso ao metodo SetEmail da classe Email @param email @see SetEmail()*/
                 this->email = email;
             }
-            Email GetEmail() const {
+            Email GetEmail() const { /** Funcao para a entidade User ter acesso ao metodo GetEmail da classe Email @return email @see GetEmail()*/
                 return email;
             }
 
-            void SetSenha(const Senha &senha){
+            void SetSenha(const Senha &senha){  /** Funcao para a entidade User ter acesso ao metodo SetSenha da classe Senha @param senha @see SetSenha()*/
                 this->senha = senha;
             }
-            Senha GetSenha() const {
+            Senha GetSenha() const { /** Funcao para a entidade User ter acesso ao metodo GetSenha da classe Senha @return senha @see GetSenha()*/
                 return senha;
             }
 
-            void SetCpf(const Cpf &cpf){
+            void SetCpf(const Cpf &cpf){  /** Funcao para a entidade User ter acesso ao metodo SetCpf da classe Cpf @param cpf @see SetCpf()*/
                 this->cpf = cpf;
             }
-            Cpf GetCpf() const {
+            Cpf GetCpf() const { /** Funcao para a entidade User ter acesso ao metodo GetCpf da classe Cpf @return cpf @see GetCpf()*/
                 return cpf;
             }
             //~User();
