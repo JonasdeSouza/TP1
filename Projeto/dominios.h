@@ -187,18 +187,16 @@ class Nome{
             string GetData();
             string GetExcecao();
     };
-
+    /** \brief A classe Duracao armazena a duracao do trajeto
+    *
+    *  Duracao: valor entre 1 e 48 responsavel por identificar a duracao em hora
+    *  do percusso a ser tracado na carona.
+    */
     class Duracao{
         private:
             int duracao;
             string excecao;
         public:
-            /** \brief A classe Duracao armazena a duracao do trajeto
-             *
-             *  Duracao: valor entre 1 e 48 responsavel por identificar a duracao em hora
-             *  do percusso a ser tracado na carona.
-             */
-
             int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao da duracao do percusso
              *. retornando 0 em caso de sucesso e -1 em
@@ -227,17 +225,16 @@ class Nome{
              *
              */
     };
-
+    /** \brief A classe vagas armazena o numero de vagas no carro que realizara a carona.
+    *
+    *  Vagas: digito numerico entre 0 e 4 responsavel por identificar quantas vagas ainda
+    *  ha sobrando no carro que dara carona.
+    */
     class Vagas{
         private:
-            int vagas;
+            int vagas;/**<  */
             string excecao;
         public:
-            /** \brief A classe vagas armazena o numero de vagas no carro que realizara a carona.
-             *
-             *  Vagas: digito numerico entre 0 e 4 responsavel por identificar quantas vagas ainda
-             *  ha sobrando no carro que dara carona.
-             */
             int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao do numero de vagas
              *. retornando 0 em caso de sucesso e -1 em
@@ -266,18 +263,16 @@ class Nome{
              *
              */
     };
-
+    /** \brief A classe preco armazena o valor da carona em reais.
+    *
+    *   Preco: Valor entre 1,00 e 5000,00 usado para identificar
+    *   valor monetario em reais a ser cobrado pelo trajeto da carona.
+    */
     class Preco{
         private:
             string preco;
             string excecao;
         public:
-            /** \brief A classe preco armazena o valor da carona em reais.
-             *
-             *   Preco: Valor entre 1,00 e 5000,00 usado para identificar
-             *   valor monetario em reais a ser cobrado pelo trajeto da carona.
-             */
-
             int Validar(string) throw (invalid_argument);
             /** Metodo para validacao do preco da carona
              *. retornando 0 em caso de sucesso e -1 em
@@ -310,18 +305,16 @@ class Nome{
     };
 
 //---------------------------------------------------------------------------------
-
+    /** \brief A classe banco e responsavel por armazenar o codigo de banco financeiro.
+    *
+    *  Codigo de Banco: sequancia de 3 digitos numericos de 0-9 usados para
+    *  identificar qual o banco do usuario.
+    */
     class Banco{
         private:
             int codigobanco;
             string excecao;
         public:
-            /** \brief A classe banco e responsavel por armazenar o codigo de banco financeiro.
-             *
-             *  Codigo de Banco: sequancia de 3 digitos numericos de 0-9 usados para
-             *  identificar qual o banco do usuario.
-             */
-
             int Validar(int) throw (invalid_argument);
             /** \brief Metodo para validacao do codigo do banco financeiro
              *. retornando 0 em caso de sucesso e -1 em
@@ -351,20 +344,18 @@ class Nome{
              *
              */
     };
-
+    /** \brief A classe Agencia e responsavel por armazenar o numero da agencia do banco.
+    *
+    *  Numero da agencia do banco: representa uma sequencia de 5 digitos numericos
+    *  de 0 ate 9 usados para identificar a agencia do banco do usuario.
+    *  O ultimo digito e um digito verificador calculado pelo algoritmo
+    *  de Luhn e e separado pelo caractere "-".
+    */
     class Agencia{
         private:
             string agencia;
             string excecao;
         public:
-            /** \brief A classe Agencia e responsavel por armazenar o numero da agencia do banco.
-             *
-             *  Numero da agencia do banco: representa uma sequencia de 5 digitos numericos
-             *  de 0 ate 9 usados para identificar a agencia do banco do usuario.
-             *  O ultimo digito e um digito verificador calculado pelo algoritmo
-             *  de Luhn e e separado pelo caractere "-".
-             */
-
             int Validar(string) throw (invalid_argument);
             /** \brief Metodo para validacao do numero da agencia
              *. do banco retornando 0 em caso de sucesso e -1 em
@@ -394,19 +385,18 @@ class Nome{
              *
              */
     };
-
+    /** \brief A classe conta e responsavel por armazenar o numero da conta bancaria.
+    *
+    *  Numero da conta: representa uma sequencia de 7 digitos numericos
+    *  de 0 ate 9 usados para identificar a conta bancaria do usuario.
+    *  O ultimo digito e um digito verificador calculado pelo algoritmo
+    *  de Luhn e e separado pelo caractere "-".
+    */
     class Conta{
         private:
             string conta;
             string excecao;
         public:
-            /** \brief A classe conta e responsavel por armazenar o numero da conta bancaria.
-            *
-            *  Numero da conta: representa uma sequencia de 7 digitos numericos
-            *  de 0 ate 9 usados para identificar a conta bancaria do usuario.
-            *  O ultimo digito e um digito verificador calculado pelo algoritmo
-            *  de Luhn e e separado pelo caractere "-".
-            */
             int Validar(string) throw (invalid_argument);
             /** \brief Metodo para validacao do numero da
              *. conta bancaria retornando 0 em caso de
