@@ -10,7 +10,7 @@ void Nome::SetNome(string Nome)
     if (erro == 0)
     {
         nome = Nome;
-    } 
+    }
 }
 
 int Nome::Validar(string Nome) throw (invalid_argument)
@@ -69,7 +69,7 @@ void Telefone::SetTelefone(string Telefone)
     if (validar == 0)
     {
         telefone = Telefone;
-    } 
+    }
 }
 
 int Telefone::Validar(string Telefone) throw (invalid_argument)
@@ -112,7 +112,7 @@ void Email::SetEmail(string Email)
     if (erro == 0)
     {
         email = Email;
-    } 
+    }
 }
 
 int Email::Validar(string Email) throw (invalid_argument)
@@ -166,7 +166,7 @@ void Senha::SetSenha(string Senha)
     if(erro == 0)
     {
         senha = Senha;
-    } 
+    }
 }
 
 int Senha::Validar(string Senha) throw (invalid_argument)
@@ -228,7 +228,7 @@ void Cpf::SetCpf(string Cpf)
     if(validar == 0)
     {
         cpf = Cpf;
-    } 
+    }
 }
 
 int Cpf::Validar(string Cpf) throw (invalid_argument)
@@ -368,7 +368,7 @@ void Bagagem::SetBagagem(int Bagagem)
     int validar = Validar(Bagagem);
     if (validar == 0){
         bagagem = Bagagem;
-    } 
+    }
 }
 
 int Bagagem::Validar(int Bagagem) throw (invalid_argument)
@@ -426,7 +426,7 @@ void CodigoReserva::SetCodigoReserva(int Codigo)
     int validar = Validar(Codigo);
     if(validar == 0){
         codigoreserva = Codigo;
-    } 
+    }
 }
 
 int CodigoReserva::Validar(int Codigo) throw (invalid_argument)
@@ -483,7 +483,7 @@ void CidadeOrigem::SetCidadeOrigem(string CidadeOrigem)
     int validar = Validar(CidadeOrigem);
     if (validar == 0){
         cidadeorigem = CidadeOrigem;
-    } 
+    }
 }
 
 int CidadeOrigem::Validar(string CidadeOrigem) throw (invalid_argument)
@@ -535,7 +535,7 @@ void CidadeDestino::SetCidadeDestino(string CidadeDestino)
     int validar = Validar(CidadeDestino);
     if (validar == 0){
         cidadedestino = CidadeDestino;
-    } 
+    }
 }
 
 int CidadeDestino::Validar(string CidadeDestino) throw (invalid_argument)
@@ -587,7 +587,7 @@ void Vagas::SetVagas(int Vagas)
     int validar = Validar(Vagas);
     if (validar == 0) {
         vagas = Vagas;
-    } 
+    }
 }
 
 int Vagas::Validar(int Vagas) throw (invalid_argument)
@@ -613,7 +613,7 @@ void Duracao::SetDuracao(int Duracao)
     int validar = Validar(Duracao);
     if (validar == 0){
         duracao = Duracao;
-    } 
+    }
 }
 
 int Duracao::Validar(int Duracao) throw (invalid_argument)
@@ -639,7 +639,7 @@ void CodigoCarona::SetCodigoCarona(int CodigoCarona)
     int validar = Validar(CodigoCarona);
     if(validar == 0){
         codigocarona = CodigoCarona;
-    } 
+    }
 }
 
 int CodigoCarona::Validar(int CodigoCarona) throw (invalid_argument)
@@ -665,7 +665,7 @@ void EstadoOrigem::SetEstadoOrigem(string EstadoOrigem)
     int validar = Validar(EstadoOrigem);
     if (validar == 0){
         estadoorigem = EstadoOrigem;
-    } 
+    }
 }
 
 
@@ -692,7 +692,7 @@ void EstadoDestino::SetEstadoDestino(string EstadoDestino)
     int validar = Validar(EstadoDestino);
     if(validar == 0){
         estadodestino = EstadoDestino;
-    } 
+    }
 }
 
 int EstadoDestino::Validar(string EstadoDestino) throw (invalid_argument)
@@ -846,7 +846,7 @@ void Preco::SetPreco(string Preco)
     int validar = Validar(Preco);
     if (validar == 0){
         preco = Preco;
-   } 
+   }
 }
 
 int Preco::Validar(string Preco) throw (invalid_argument)
@@ -984,7 +984,7 @@ void Banco::SetCodigoBanco(int CodigoBanco)
     int validar = Validar(CodigoBanco);
     if (validar == 0){
         codigobanco = CodigoBanco;
-    } 
+    }
 }
 
 int Banco::Validar(int CodigoBanco) throw (invalid_argument)
@@ -1011,7 +1011,7 @@ void Agencia::SetAgencia(string Agencia)
     int validar = Validar(Agencia);
     if (validar == 0){
         agencia = Agencia;
-    } 
+    }
 }
 
 int Agencia::Validar(string Agencia) throw (invalid_argument)
@@ -1048,7 +1048,7 @@ void Conta::SetConta(string Conta)
      int validar = Validar(Conta);
     if (validar == 0){
         conta = Conta;
-    } 
+    }
 }
 
 int Conta::Validar(string Conta) throw (invalid_argument)

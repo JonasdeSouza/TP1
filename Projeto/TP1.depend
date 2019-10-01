@@ -13,9 +13,11 @@
 	<stdexcept>
 	"user.h"
 
-1569277006 source:c:\users\jonas\documents\tp1\tp1\projeto\main.cc
+1569889925 source:c:\users\jonas\documents\tp1\tp1\projeto\main.cc
 	<iostream>
-	"user.h"
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
 
 1569276398 c:\users\jonas\documents\tp1\tp1\projeto\user.h
 	<string>
@@ -49,24 +51,24 @@
 	<iostream>
 	"user.h"
 
-1569769424 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
+1569782766 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
 	<iostream>
 	<string>
 	<stdexcept>
 	"dominios.h"
 
-1569769544 c:\users\jonas\documents\tp1\tp1\projeto\dominios.h
+1569782079 c:\users\jonas\documents\tp1\tp1\projeto\dominios.h
 	<string>
 	<stdexcept>
 
-1569766072 source:c:\users\jonas\documents\tp1\tp1\projeto\entidades.cpp
+1569885066 source:c:\users\jonas\documents\tp1\tp1\projeto\entidades.cpp
 	<iostream>
 	<string>
 	<stdexcept>
 	"dominios.h"
 	"entidades.h"
 
-1569766072 c:\users\jonas\documents\tp1\tp1\projeto\entidades.h
+1569885066 c:\users\jonas\documents\tp1\tp1\projeto\entidades.h
 	<string>
 	<stdexcept>
 	"dominios.h"
@@ -80,4 +82,17 @@
 1569859832 c:\users\particular\documents\tp1\tp1\projeto\dominios.h
 	<string>
 	<stdexcept>
+
+1569889747 c:\users\jonas\documents\tp1\tp1\projeto\testes.h
+	"dominios.h"
+	"entidades.h"
+	<string>
+
+1569889720 source:c:\users\jonas\documents\tp1\tp1\projeto\testes.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
 
