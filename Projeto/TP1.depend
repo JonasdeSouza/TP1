@@ -96,3 +96,72 @@
 	"dominios.h"
 	"testes.h"
 
+1571784782 source:c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\dominios.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1572470307 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\dominios.h
+	<string>
+	<stdexcept>
+
+1571784809 source:c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\entidades.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+	"entidades.h"
+
+1571784809 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\entidades.h
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1572470822 source:c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\main.cc
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"testes.h"
+	"controladoras.h"
+	"interfaces.h"
+
+1571784810 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\testes.h
+	"dominios.h"
+	"entidades.h"
+	<string>
+
+1571784810 source:c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\testes.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+
+1572905888 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1572904366 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1572475253 source:c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"entidades.h"
+	"curses.h"
+	<cstring>
+	<vector>
+
+1556320568 c:\users\joaop\onedrive\documents\trabalhotp1\tp1\projeto\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+

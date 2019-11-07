@@ -30,12 +30,22 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 		</Compiler>
+		<Linker>
+			<Add library="C:/Users/joaop/OneDrive/Documents/TRABALHOTP1/TP1/Projeto/pdcurses.lib" />
+		</Linker>
+		<Unit filename="controladoras.cpp" />
+		<Unit filename="controladoras.h" />
+		<Unit filename="curses.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
+		<Unit filename="interfaces.h" />
 		<Unit filename="main.cc" />
+		<Unit filename="telas.cpp" />
+		<Unit filename="telas.h" />
 		<Unit filename="testes.cpp" />
 		<Unit filename="testes.h" />
 		<Extensions>

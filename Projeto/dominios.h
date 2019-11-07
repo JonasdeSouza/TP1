@@ -48,7 +48,7 @@ class Nome{
             string senha; /**< Armazena o dado recebido por SetSenha @see SetSenha*/
             string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
-            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetSenha, onde senha tem formato XXXXX e X pode ser alfanumérico, #, $, % ou & @see SetSenha @return excecao*/ 
+            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetSenha, onde senha tem formato XXXXX e X pode ser alfanumérico, #, $, % ou & @see SetSenha @return excecao*/
             void SetSenha(string); /**< Invoca o metodo Validar, e espera o retorno, caso não haja excecao lançada, armazena o dado referente a senha na string senha @see Validar @param senha */
             string GetSenha();  /**< Retorna a string senha @return senha*/
             string GetExcecao(); /**< Retorna a string excecao @return excecao */
@@ -60,7 +60,7 @@ class Nome{
             string cpf; /**< Armazena o dado recebido por SetCpf @see SetCpf*/
             string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
-            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetCpf, onde Cpf tem o formato XXX.XXX.XXX-XX e X é numerico*/ 
+            int Validar(string) throw (invalid_argument); /**< Valida o dado recebido por SetCpf, onde Cpf tem o formato XXX.XXX.XXX-XX e X é numerico*/
             int ValidarDigitoVerificador(string) throw (invalid_argument); /**< Valida o digito verificador via algoritmo Modulo 11 */
             void SetCpf(string);  /**< Invoca o metodo Validar, e espera o retorno, caso não haja excecao lançada, armazena o dado referente a cpf na string cpf @see Validar @param cpf */
             string GetCpf(); /**< Retorna a string cpf @return cpf*/
@@ -77,7 +77,7 @@ class Nome{
             string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
 
         public:
-            int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetBagagem, onde bagagem pode ser numerico até 4 @see Validar @param bagagem @return excecao*/ 
+            int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetBagagem, onde bagagem pode ser numerico até 4 @see Validar @param bagagem @return excecao*/
             void SetBagagem(int); /**< Invoca o metodo Validar, caso nao haja excecao, armazena o dado referente a quantidade de bagagens no inteiro bagagem @see Validar @param bagagem*/
             int GetBagagem(); /**< Retorna o inteiro bagagem @return bagagem*/
             string GetExcecao(); /**< Retorna a string argumento @return argumento*/
@@ -90,7 +90,7 @@ class Nome{
             string excecao; /**< Armazena a mensagem de erro retornada por Validar, se houver @see Validar*/
         public:
             int Validar(char) throw (invalid_argument); /**< Valida o dado recebido por SetAssento, somente assume a forma de char 'T' ou 'D' @see SetAssento @param assento @return excecao*/
-            void SetAssento(char); /**< Invoca o metodo Validar, caso não haja lançamento de excecao, armazena o dado referente a preferencia de assento no char assento @see Validar @param assento*/ 
+            void SetAssento(char); /**< Invoca o metodo Validar, caso não haja lançamento de excecao, armazena o dado referente a preferencia de assento no char assento @see Validar @param assento*/
             char GetAssento(); /**< Retorna o char assento @return assento*/
             string GetExcecao();  /**< Retorna a string argumento @return argumento*/
     };
@@ -98,7 +98,7 @@ class Nome{
 /** \brief Responsavel por armazenar e validar o inteiro codigoreserva */
     class CodigoReserva{
         private:
-            int codigoreserva; 
+            int codigoreserva;
             string excecao;
         public:
             int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetCodigoReserva, formatado em XXXXX, onde X é número @param codigoreserva @return excecao @see SetCodigoReserva*/
@@ -112,12 +112,12 @@ class Nome{
 /** \brief Responsavel por armazenar e validar o inteiro codigocarona */
     class CodigoCarona{
         private:
-            int codigocarona; 
+            int codigocarona;
             string excecao;
         public:
             int Validar(int) throw (invalid_argument); /**< Valida o dado recebido por SetCodigoCarona, onde codigocarona esta formatado como XXXX, onde X é número @see SetCodigoCarona @param codigocarona @return excecao onde ficam alocados as excecoes do metodo*/
             void SetCodigoCarona(int); /**< Invoca o metodo Validar, se nao houver excecoes, armazena em um inteiro o valor referente a codigo de carona @see Validar @param codigocarona*/
-            int GetCodigoCarona(); /**< Retorna o valor de codigocarona @return codigocarona um inteiro que guarda o valor validado de SetCodigoCarona*/ 
+            int GetCodigoCarona(); /**< Retorna o valor de codigocarona @return codigocarona um inteiro que guarda o valor validado de SetCodigoCarona*/
             string GetExcecao(); /**< Retorna a string excecao @return excecao */
     };
 
@@ -127,7 +127,7 @@ class Nome{
             string cidadeorigem;
             string excecao;
         public:
-            int Validar(string) throw (invalid_argument); /**< Valida a string cidadeorigem recebida por SetCidadeOrigem, onde cidadeorigem pode ter ate 10 caracteres que podem ser: letra, ponto ou espaco @param cidadeorigem @return excecao @see SetCidadeOrigem */ 
+            int Validar(string) throw (invalid_argument); /**< Valida a string cidadeorigem recebida por SetCidadeOrigem, onde cidadeorigem pode ter ate 10 caracteres que podem ser: letra, ponto ou espaco @param cidadeorigem @return excecao @see SetCidadeOrigem */
             void SetCidadeOrigem(string); /**< Invoca o metodo Validar, se nao houver excecoes, armazena o dado referente a cidade de origem na string cidadeorigem @param cidadeorigem @see Validar*/
             string GetCidadeOrigem(); /**< Retorna a string cidadeorigem @return cidadeorigem*/
             string GetExcecao(); /**< Retorna a string excecao @return excecao string onde fica alocada a mensagem de erro lancada pelo metodo Validar @see Validar*/
@@ -535,8 +535,5 @@ class Nome{
              */
             string GetExcecao();
     };
-
-#endif
-
 
 #endif
