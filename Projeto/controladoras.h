@@ -25,7 +25,7 @@ class CntrAprInicializacao {
         void setIAprCarona(IAprCarona *refAprCarona){
             this->refAprCarona = refAprCarona;
         }
-        void Start() throw(runtime_error);
+        int Start() throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrAprAutenticacao:public IAprAutenticacao {
@@ -35,7 +35,7 @@ class CntrAprAutenticacao:public IAprAutenticacao {
         void setIServAutenticacao(IServAutenticacao *refServAutenticacao){
             this->refServAutenticacao = refServAutenticacao;
         }
-        bool Autenticar() throw(runtime_error);
+        bool Autenticar(Email&) throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrAprUsuario:public IAprUsuario {
@@ -46,9 +46,10 @@ class CntrAprUsuario:public IAprUsuario {
             this->refServUsuario = refServUsuario;
         }
         bool Cadastrar() throw(runtime_error);
-        bool Perfil() throw(runtime_error);
-        bool AlterarDados() throw(runtime_error);
-        bool ExcluirConta() throw(runtime_error);
+        int Perfil() throw(runtime_error);
+        bool VisualizarDados() throw(runtime_error);
+        bool AlterarDados(Email&) throw(runtime_error);
+        bool ExcluirConta(Email&) throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrAprCarona:public IAprCarona {
@@ -58,37 +59,37 @@ class CntrAprCarona:public IAprCarona {
         void setIServCarona(IServCarona *refServCarona){
             this->refServCarona = refServCarona;
         }
-        bool Carona() throw(runtime_error);
-        bool Reserva() throw(runtime_error);
-        bool CadastrarCarona() throw(runtime_error);
+        int Carona() throw(runtime_error);
+        int Reserva() throw(runtime_error);
+        bool CadastrarCarona(Email&) throw(runtime_error);
         bool DescadastrarCarona() throw(runtime_error);
         bool ListarReservas() throw(runtime_error);
-        bool CadastrarReserva() throw(runtime_error);
-        bool DescadastrarReserva() throw(runtime_error);
+        bool CadastrarReserva(Email&) throw(runtime_error);
+        bool DescadastrarReserva(Email&) throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrServAutenticacao:public IServAutenticacao {
-    private:
-        const string TRIGGER_FALHA = "joao@gmail.com";
-        const string TRIGGER_ERRO_SISTEMA = "jonas@gmail.com";
     public:
-        bool Autenticar(Email&,Senha&) throw(runtime_error);
+        bool Autenticar(Email&,Email&,Senha&) throw(runtime_error);
 
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrServUsuario:public IServUsuario {
-    private:
-
     public:
-        bool Cadastrar(Nome&,Email&,Cpf&,Telefone&,Banco&,Agencia&,Conta&,Banco&,Agencia&,Conta&,Senha&) throw(runtime_error);
-        bool ExcluirConta() throw(runtime_error);
+        bool Cadastrar(User& ,Account& ,Account&) throw(runtime_error);
+        bool Perfil() throw(runtime_error);
+        bool VisualizarDados(User&,Account&,Account&) throw(runtime_error);
+        bool AlterarDados(Email&, User&, Account&, Account&) throw(runtime_error);
+        bool ExcluirConta(Email&,Senha&) throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrServCarona:public IServCarona {
-    private:
-
     public:
-
+        bool CadastrarCarona(Email&,Ride&) throw(runtime_error);
+        bool DescadastrarCarona(Ride ride) throw(runtime_error);
+        bool ListarReservas() throw(runtime_error);
+        bool CadastrarReserva(Email&,Booking&) throw(runtime_error);
+        bool DescadastrarReserva(Email) throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #endif // CONTROLADORAS_H_INCLUDED

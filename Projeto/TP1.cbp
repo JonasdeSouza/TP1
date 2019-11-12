@@ -12,8 +12,13 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="E:/TP1/Projeto/pdcurses.lib" />
+					<Add library="E:/TP1/Projeto/sqlite3.lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/TP1" prefix_auto="1" extension_auto="1" />
@@ -33,7 +38,8 @@
 			<Add option="-std=c++11" />
 		</Compiler>
 		<Linker>
-			<Add library="C:/Users/joaop/OneDrive/Documents/TRABALHOTP1/TP1/Projeto/pdcurses.lib" />
+			<Add library="E:/TP1/Projeto/pdcurses.lib" />
+			<Add library="E:/TP1/Projeto/sqlite3.lib" />
 		</Linker>
 		<Unit filename="controladoras.cpp" />
 		<Unit filename="controladoras.h" />
@@ -44,6 +50,9 @@
 		<Unit filename="entidades.h" />
 		<Unit filename="interfaces.h" />
 		<Unit filename="main.cc" />
+		<Unit filename="persistencia.cpp" />
+		<Unit filename="persistencia.h" />
+		<Unit filename="sqlite3.h" />
 		<Unit filename="telas.cpp" />
 		<Unit filename="telas.h" />
 		<Unit filename="testes.cpp" />

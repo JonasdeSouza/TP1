@@ -15,13 +15,13 @@ class IAprAutenticacao {
 public:
     virtual void setIServAutenticacao(IServAutenticacao *) = 0;
     virtual ~IAprAutenticacao(){}
-    virtual bool Autenticar() throw(runtime_error) = 0;
+    virtual bool Autenticar(Email&) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class IServAutenticacao {
 public:
     virtual ~IServAutenticacao(){}
-    virtual bool Autenticar (Email&,Senha&) throw(runtime_error) = 0;
+    virtual bool Autenticar (Email&,Email&,Senha&) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class IAprUsuario {
@@ -29,36 +29,43 @@ public:
     virtual void setIServUsuario(IServUsuario *) = 0;
     virtual ~IAprUsuario(){}
     virtual bool Cadastrar() throw(runtime_error) = 0;
-    virtual bool Perfil() throw(runtime_error) = 0;
-    virtual bool AlterarDados() throw(runtime_error) = 0;
-    virtual bool ExcluirConta() throw(runtime_error) = 0;
+    virtual int Perfil() throw(runtime_error) = 0;
+    virtual bool VisualizarDados(User&,Account&,Account&) throw(runtime_error) = 0;
+    virtual bool AlterarDados(Email&) throw(runtime_error) = 0;
+    virtual bool ExcluirConta(Email&) throw(runtime_error) = 0;
 };
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class IServUsuario {
 public:
     virtual ~IServUsuario(){}
-    virtual bool Cadastrar(Nome&,Email&,Cpf&,Telefone&,Banco&,Agencia&,Conta&,Banco&,Agencia&,Conta&,Senha&) throw(runtime_error) = 0;
-    virtual bool ExcluirConta() throw(runtime_error) = 0;
-    virtual bool AlterarDados(Nome&,Email&,Cpf&,Telefone&,Banco&,Agencia&,Conta&,Banco&,Agencia&,Conta&,Senha&) throw(runtime_error) = 0;
+    virtual bool Cadastrar(User& ,Account& ,Account&) throw(runtime_error) = 0;
+    virtual bool ExcluirConta(Email&,Senha&) throw(runtime_error) = 0;
+    virtual bool VisualizarDados() throw(runtime_error) = 0;
+    virtual bool AlterarDados(Email&,User& ,Account& ,Account&) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class IServCarona {
     public:
     virtual ~IServCarona(){}
+    virtual bool CadastrarCarona(Email&,Ride&) throw(runtime_error) = 0;
+    virtual bool DescadastrarCarona(Ride) throw(runtime_error) = 0;
+    virtual bool ListarReservas() throw(runtime_error) = 0;
+    virtual bool CadastrarReserva(Email&,Booking&) throw(runtime_error) = 0;
+    virtual bool DescadastrarReserva(Email) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class IAprCarona {
     public:
     virtual void setIServCarona(IServCarona *) = 0;
     virtual ~IAprCarona(){}
-    virtual bool Carona() throw(runtime_error) = 0;
-    virtual bool CadastrarCarona() throw(runtime_error) = 0;
+    virtual int Carona() throw(runtime_error) = 0;
+    virtual bool CadastrarCarona(Email&) throw(runtime_error) = 0;
     virtual bool DescadastrarCarona() throw(runtime_error) = 0;
     virtual bool ListarReservas() throw(runtime_error) = 0;
-    virtual bool Reserva() throw(runtime_error) = 0;
-    virtual bool CadastrarReserva() throw(runtime_error) = 0;
-    virtual bool DescadastrarReserva() throw(runtime_error) = 0;
+    virtual int Reserva() throw(runtime_error) = 0;
+    virtual bool CadastrarReserva(Email&) throw(runtime_error) = 0;
+    virtual bool DescadastrarReserva(Email&) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #endif // INTERFACES_H_INCLUDED

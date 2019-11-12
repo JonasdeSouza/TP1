@@ -3,364 +3,392 @@
 #include "entidades.h"
 #include "curses.h"
 #include <cstring>
+#include "telas.h"
+#include "persistencia.h"
 //--------------------------------------------------------------------------------------------------------------------------------------------
-void CntrAprInicializacao::Start() throw(runtime_error){
-    bool resultado;
-
-        if(dado==1){
-            resultado = refAprAutenticacao->Autenticar();
-        }
-            else
-                if(dado==2){
-                    resultado = refAprUsuario->Cadastrar();
-                }
-        if(resultado == 1){
-        do{
-            initscr();
-            getmaxyx(stdscr,linha,coluna);
-            mvprintw(linha/2,(coluna-strlen(campo4))/2,"%s",campo1);
-            mvprintw(linha/2 + 2,(coluna-strlen(campo5))/2,"%s",campo2);
-            mvprintw(linha/2 + 2,(coluna-strlen(campo6))/2,"%s",campo3);
-            mvprintw(linha/2 + 2,(coluna-strlen(campo3))/2,"%s",campo4);
-            scanw("%d", &dado2);
-            clear();
-            endwin();
-            if(dado2!=1 && dado2!=2 && dado2!=3){
-            initscr();
-            getmaxyx(stdscr,linha,coluna);
-            mvprintw(linha/2,(coluna-strlen(menserro))/2,"%s", menserro);
-            noecho();
-            getch();
-            echo();
-            clear();
-            endwin();
-            }
-            }while(dado2!=1 && dado2!=2 && dado2!=3);
-            if(dado2==1){
-                resultado = refAprCarona->Carona();
-                }
-                    else
-                        if(dado2==2){
-                            resultado = refAprCarona->Reserva();
-                        }
-                            else{
-                                resultado = refAprUsuario->Perfil();
-                            }
-            }
-                else
-                    if(resultado==0){
-                        dado2=0;
-                }
-    }while(dado2!=1 && dado2!=2);
+int CntrAprInicializacao::Start() throw(runtime_error){
+    TelaInicializacao TLInicializacao;
+    return TLInicializacao.TelaIncial();
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrAprAutenticacao::Autenticar() throw(runtime_error){
+bool CntrAprAutenticacao::Autenticar(Email& usuario) throw(runtime_error){
     Email email;
     Senha senha;
-    char campo1[]="Digite o email: ";
-    char campo2[]="Digite a senha: ";
-    char campo3[]="Digite 1 para continuar ou 0 para voltar:";
-    char menserro[]="Dados Incorretos!";
-    char dado1[80];
-    char dado2[80];
-    int dado3;
-    int linha,coluna;
     bool resultado;
 
+    while(true) {
+
+        try {
+            TelaAutenticar TLAutenticacao;
+            TLAutenticacao.TelaAutenticacao(email, senha);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
     try{
-        while(true){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2-5,(coluna-strlen(campo1))/2,"%s",campo1);
-        getstr(dado1);
-        mvprintw(linha/2-3,(coluna-strlen(campo2))/2,"%s",campo2);
-        getstr(dado2);
-        mvprintw(linha/2-1,(coluna-strlen(campo3))/2,"%s",campo3);
-        scanw("%d",&dado3);
-        clear();
-        endwin();
-        email.SetEmail(dado1);
-        senha.SetSenha(dado2);
-        break;
-        }
+        resultado = refServAutenticacao->Autenticar(usuario, email, senha);
     }
-    catch(const invalid_argument &exp){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2,(coluna-strlen(menserro))/2,"%s",menserro);
-        noecho();
-        getch();
-        echo();
-        clear();
-        endwin();
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
     }
-    if(dado3==0){
-        return 0;
-    }
-        else{
-            resultado = refServAutenticacao->Autenticar(email,senha);
-            return resultado;
-        }
+    return resultado;
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------
 bool CntrAprUsuario::Cadastrar() throw(runtime_error){
-    Nome nome;
-    Email email;
-    Cpf cpf;
-    Telefone telefone;
-    Banco codbanco1,codbanco2;
-    Agencia numagencia1,numagencia2;
-    Conta numconta1,numconta2;
-    Senha senha;
-    char campo1[]="Digite o nome: ";
-    char campo2[]="Digite o email: ";
-    char campo3[]="Digite o cpf: ";
-    char campo4[]="Digite o telefone: ";
-    char campo5[]="Digite o codigo de banco: ";
-    char campo6[]="Digite o numero da agencia: ";
-    char campo7[]="Digite o numero da conta: ";
-    char campo8[]="Digite o codigo de banco(opcional): ";
-    char campo9[]="Digite o numero da agencia(opcional): ";
-    char campo10[]="Digite o numero da conta(opcional): ";
-    char campo11[]="Digite a senha: ";
-    char campo12[]="Digite 1 para continuar ou 0 para voltar:";
-    char menserro[]="Dados Incorretos!";
-    char dado1[80];
-    char dado2[80];
-    char dado3[80];
-    char dado4[80];
-    char dado6[80];
-    char dado7[80];
-    char dado9[80];
-    char dado10[80];
-    char dado11[80];
-    int dado5,dado8,dado12;
-    int linha,coluna;
+    User user;
+    Account acc1,acc2;
     bool resultado;
 
+    while(true) {
+
+        try {
+            TelaUsuario TLCadastro;
+            TLCadastro.TelaCadastro(user, acc1, acc2);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
     try{
-        while(true){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2-11,(coluna-strlen(campo1))/2,"%s",campo1);
-        getstr(dado1);
-        mvprintw(linha/2-9,(coluna-strlen(campo2))/2,"%s",campo2);
-        getstr(dado2);
-        mvprintw(linha/2-7,(coluna-strlen(campo3))/2,"%s",campo3);
-        getstr(dado3);
-        mvprintw(linha/2-5,(coluna-strlen(campo4))/2,"%s",campo3);
-        getstr(dado4);
-        mvprintw(linha/2-3,(coluna-strlen(campo5))/2,"%s",campo3);
-        scanw("%d",&dado5);
-        mvprintw(linha/2-1,(coluna-strlen(campo6))/2,"%s",campo3);
-        getstr(dado6);
-        mvprintw(linha/2+1,(coluna-strlen(campo7))/2,"%s",campo3);
-        getstr(dado7);
-        mvprintw(linha/2+3,(coluna-strlen(campo8))/2,"%s",campo3);
-        scanw("%d",&dado8);
-        mvprintw(linha/2+5,(coluna-strlen(campo9))/2,"%s",campo3);
-        getstr(dado9);
-        mvprintw(linha/2+7,(coluna-strlen(campo10))/2,"%s",campo3);
-        getstr(dado10);
-        mvprintw(linha/2+9,(coluna-strlen(campo11))/2,"%s",campo3);
-        getstr(dado11);
-        mvprintw(linha/2+11,(coluna-strlen(campo12))/2,"%s",campo3);
-        scanw("%d",&dado12);
-        clear();
-        endwin();
-        nome.SetNome(dado1);
-        email.SetEmail(dado2);
-        cpf.SetCpf(dado3);
-        telefone.SetTelefone(dado4);
-        codbanco1.SetCodigoBanco(dado5);
-        numagencia1.SetAgencia(dado6);
-        numconta1.SetConta(dado7);
-        codbanco2.SetCodigoBanco(dado8);
-        numagencia2.SetAgencia(dado9);
-        numconta2.SetConta(dado10);
-        senha.SetSenha(dado11);
-        break;
-        }
+        resultado = refServUsuario->Cadastrar(user, acc1, acc2);
     }
-    catch(const invalid_argument &exp){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2,(coluna-strlen(menserro))/2,"%s",menserro);
-        noecho();
-        getch();
-        echo();
-        clear();
-        endwin();
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
     }
-    if(dado12==0){
-        return 0;
-    }
-        else{
-            resultado = refServUsuario->Cadastrar(nome,email,cpf,telefone,codbanco1,numagencia1,numconta1,codbanco2,numagencia2,numconta2,senha);
-            return resultado;
-        }
+    return resultado;
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrAprUsuario::Perfil() throw(runtime_error){
-    char campo1[]="1-ALTERAR DADOS DE USUARIO.";
-    char campo2[]="2-EXCLUIR CONTA.";
-    char campo3[]="Digite o numero da opcao desejada:";
-    char menserro[]="Opcao invalida!";
-    int dado;
-    bool resultado;
-    int linha,coluna;
-
-    do{
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2,(coluna-strlen(campo1))/2,"%s",campo1);
-        mvprintw(linha/2 + 2,(coluna-strlen(campo2))/2,"%s",campo2);
-        mvprintw(linha/2 + 2,(coluna-strlen(campo3))/2,"%s",campo3);
-        scanw("%d", &dado);
-        clear();
-        endwin();
-        if(dado!=1 && dado!=2 && dado!=3){
-            initscr();
-            getmaxyx(stdscr,linha,coluna);
-            mvprintw(linha/2,(coluna-strlen(menserro))/2,"%s", menserro);
-            noecho();
-            getch();
-            echo();
-            clear();
-            endwin();
-        }
-    }while(dado!=1 && dado!=2);
-    if(dado==1){
-        resultado = 0;
-    }
-        else{
-            resultado = 1;
-        }
+int CntrAprUsuario::Perfil() throw(runtime_error){
+    TelaUsuario TLPerfil;
+    return TLPerfil.TelaOptUsuario();
 }
 //---------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrAprUsuario::AlterarDados() throw(runtime_error){
-    Nome nome;
-    Email email;
-    Cpf cpf;
-    Telefone telefone;
-    Banco codbanco1,codbanco2;
-    Agencia numagencia1,numagencia2;
-    Conta numconta1,numconta2;
-    Senha senha;
-    char campo1[]="Digite o nome: ";
-    char campo2[]="Digite o email: ";
-    char campo3[]="Digite o cpf: ";
-    char campo4[]="Digite o telefone: ";
-    char campo5[]="Digite o codigo de banco: ";
-    char campo6[]="Digite o numero da agencia: ";
-    char campo7[]="Digite o numero da conta: ";
-    char campo8[]="Digite o codigo de banco(opcional): ";
-    char campo9[]="Digite o numero da agencia(opcional): ";
-    char campo10[]="Digite o numero da conta(opcional): ";
-    char campo11[]="Digite a senha: ";
-    char campo12[]="Digite 1 para continuar ou 0 para voltar:";
-    char menserro[]="Dados Incorretos!";
-    char dado1[80];
-    char dado2[80];
-    char dado3[80];
-    char dado4[80];
-    char dado6[80];
-    char dado7[80];
-    char dado9[80];
-    char dado10[80];
-    char dado11[80];
-    int dado5,dado8,dado12;
-    int linha,coluna;
+bool CntrAprUsuario::AlterarDados(Email& usuario) throw(runtime_error){
+    User user;
+    Account acc1,acc2;
     bool resultado;
 
+    while(true) {
+
+        try {
+            TelaUsuario TLDados;
+            TLDados.TelaAlterarDados(user, acc1, acc2);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
     try{
-        while(true){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2-11,(coluna-strlen(campo1))/2,"%s",campo1);
-        getstr(dado1);
-        mvprintw(linha/2-9,(coluna-strlen(campo2))/2,"%s",campo2);
-        getstr(dado2);
-        mvprintw(linha/2-7,(coluna-strlen(campo3))/2,"%s",campo3);
-        getstr(dado3);
-        mvprintw(linha/2-5,(coluna-strlen(campo4))/2,"%s",campo3);
-        getstr(dado4);
-        mvprintw(linha/2-3,(coluna-strlen(campo5))/2,"%s",campo3);
-        scanw("%d",&dado5);
-        mvprintw(linha/2-1,(coluna-strlen(campo6))/2,"%s",campo3);
-        getstr(dado6);
-        mvprintw(linha/2+1,(coluna-strlen(campo7))/2,"%s",campo3);
-        getstr(dado7);
-        mvprintw(linha/2+3,(coluna-strlen(campo8))/2,"%s",campo3);
-        scanw("%d",&dado8);
-        mvprintw(linha/2+5,(coluna-strlen(campo9))/2,"%s",campo3);
-        getstr(dado9);
-        mvprintw(linha/2+7,(coluna-strlen(campo10))/2,"%s",campo3);
-        getstr(dado10);
-        mvprintw(linha/2+9,(coluna-strlen(campo11))/2,"%s",campo3);
-        getstr(dado11);
-        mvprintw(linha/2+11,(coluna-strlen(campo12))/2,"%s",campo3);
-        scanw("%d",&dado12);
-        clear();
-        endwin();
-        nome.SetNome(dado1);
-        email.SetEmail(dado2);
-        cpf.SetCpf(dado3);
-        telefone.SetTelefone(dado4);
-        codbanco1.SetCodigoBanco(dado5);
-        numagencia1.SetAgencia(dado6);
-        numconta1.SetConta(dado7);
-        codbanco2.SetCodigoBanco(dado8);
-        numagencia2.SetAgencia(dado9);
-        numconta2.SetConta(dado10);
-        senha.SetSenha(dado11);
-        break;
-        }
+        resultado = refServUsuario->AlterarDados(usuario, user, acc1, acc2);
     }
-    catch(const invalid_argument &exp){
-        initscr();
-        getmaxyx(stdscr,linha,coluna);
-        mvprintw(linha/2,(coluna-strlen(menserro))/2,"%s",menserro);
-        noecho();
-        getch();
-        echo();
-        clear();
-        endwin();
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
     }
-    if(dado12==0){
-        return 0;
-    }
-        else{
-            resultado = refServUsuario->AlterarDados(nome,email,cpf,telefone,codbanco1,numagencia1,numconta1,codbanco2,numagencia2,numconta2,senha);
-            return resultado;
-        }
-}
-//---------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrAprUsuario::ExcluirConta() throw(runtime_error){
-
+    return resultado;
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrServAutenticacao::Autenticar(Email &email,Senha &senha) throw(runtime_error){
-    cout << endl << "FUNCAO AUTENTICAR DA CAMADA DE SERVICO CHAMADA" << endl;
-    if(email.GetEmail()==TRIGGER_FALHA){
-        return 0;
+bool CntrAprUsuario::ExcluirConta(Email& usuario) throw(runtime_error){
+    Senha senha;
+    bool resultado;
+
+    while(true) {
+
+        try {
+            TelaUsuario TLExcluirConta;
+            TLExcluirConta.TelaExcluirDados(senha);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
     }
-        else
-            if(email.GetEmail()==TRIGGER_ERRO_SISTEMA){
-                throw runtime_error("Erro de sistema.");
-            }
-            else{
-                return 1;
+    try{
+        resultado = refServUsuario->ExcluirConta(usuario,senha);
     }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    return resultado;
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrServUsuario::Cadastrar(Nome&nome,Email&email,Cpf&cpf,Telefone&telefone,Banco&codbanco1,Agencia&numagencia1,Conta&numconta1,Banco&codbanco2,Agencia&numagencia2,Conta&numconta2,Senha&senha) throw(runtime_error){
-    cout << endl << "FUNCAO CADASTRAR DA CAMADA DE SERVICO CHAMADA" << endl;
+bool CntrAprUsuario::VisualizarDados() throw(runtime_error){
+    User usuario;
+    Account acc,acc2;
+    try{
+        resultado = refServUsuario->VisualizarDados(usuario,acc,acc2);
+    }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    TelaUsuario TLVisualizarDados;
+    TLVisualizarDados.TelaVisualizarDados(usuario,acc,acc2);
     return 1;
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
-bool CntrServUsuario::ExcluirConta() throw(runtime_error){
-    cout << endl << "FUNCAO EXCLUIR DA CAMADA DE SERVICO CHAMADA" << endl;
+int CntrAprCarona::Carona() throw(runtime_error){
+    TelaCarona TLCarona;
+    return TLCarona.TelaOptCarona();
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+int CntrAprCarona::Reserva() throw(runtime_error){
+    TelaReserva TLReserva;
+    return TLReserva.TelaOptReserva();
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrAprCarona::CadastrarCarona(Email& usuario) throw(runtime_error){
+    Ride carona;
+    bool resultado;
+
+    while(true) {
+
+        try {
+            TelaCarona TLCadastroCarona;
+            TLCadastroCarona.TelaCadastrarCarona(carona);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
+    try{
+        resultado = refServCarona->CadastrarCarona(usuario,carona);
+    }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    return resultado;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrAprCarona::DescadastrarCarona() throw(runtime_error){
+    Ride carona;
+    bool resultado;
+
+    while(true) {
+
+        try {
+            TelaCarona TLDescadastroCarona;
+            TLDescadastroCarona.TelaDescadastrarCarona(carona);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
+    try{
+        resultado = refServCarona->DescadastrarCarona(carona);
+    }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    return resultado;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrAprCarona::ListarReservas() throw(runtime_error){
+
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrAprCarona::CadastrarReserva(Email& usuario) throw(runtime_error){
+    Booking reserva;
+    bool resultado;
+
+    while(true) {
+
+        try {
+            TelaReserva TLCadastroReserva;
+            TLCadastroReserva.TelaCadastrarReserva(reserva);
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
+    try{
+        resultado = refServCarona->CadastrarReserva(usuario,reserva);
+    }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    return resultado;
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrAprCarona::DescadastrarReserva(Email& email) throw(runtime_error){
+    bool resultado;
+
+    while(true) {
+
+        try {
+            TelaReserva TLDescadastroReserva;
+            TLDescadastroReserva.TelaDescadastrarReserva();
+            break;
+        }
+        catch (const invalid_argument &exp) {
+            TelaMensagem TLMensagem;
+            TLMensagem.TelaMsg("Dado em formato incorreto.");
+        }
+    }
+    try{
+        resultado = refServCarona->DescadastrarReserva(email);
+    }
+    catch(runtime_error){
+        TelaMensagem TLMensagem;
+        TLMensagem.TelaMsg("Erro no banco de dados;");
+    }
+    return resultado;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServAutenticacao::Autenticar(Email& usuario,Email& email,Senha& senha) throw(runtime_error){
+    string SenhaDB;
+    CmdAutenticacao Cmd;
+
+    Cmd.CmdAutenticar(email);
+    Cmd.executar();
+    SenhaDB = Cmd.getResultado();
+    if(SenhaDB==senha.GetSenha()){
+        usuario.SetEmail(email.GetEmail());
+        return 1;
+    }
+        else{
+            return 0;
+        }
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServUsuario::Cadastrar(User& user,Account& acc1,Account& acc2) throw(runtime_error){
+    CmdCadastroUsuario Cmd;
+    Cmd.CmdCadastroUser(user);
+    Cmd.executar();
+    Cmd.CmdCadastroAccount(user,acc1);
+    Cmd.executar();
+    Cmd.CmdCadastroAccount(user,acc2);
+    Cmd.executar();
     return 1;
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServUsuario::VisualizarDados(User& user, Account& acc, Account& acc2) throw(runtime_error){
+    Cpf CpfDB;
+    Nome NomeDB;
+    Telefone TelefoneDB;
+    Conta Conta1DB,Conta2DB;
+    Banco Banco1DB,Banco2DB;
+    Agencia Agencia1DB,Agencia2DB;
+    CmdVisualizarDados Cmd;
+
+    Cmd.CmdGetCpf(email);
+    Cmd.executar();
+    CpfDB.SetCpf(Cmd.GetResultCpf());
+    Cmd.CmdGetNome(email);
+    Cmd.executar();
+    NomeDB.SetNome(Cmd.GetResultNome());
+    Cmd.CmdGetTelefone(email);
+    Cmd.executar();
+    TelefoneDB.SetTelefone(Cmd.GetResultTelefone());
+    Cmd.CmdGetConta1(email);
+    Cmd.executar();
+    Conta1DB.SetConta(Cmd.GetResultConta1());
+    Cmd.CmdGetBanco1(email);
+    Cmd.executar();
+    Banco1DB.SetCodigoBanco(Cmd.GetResultBanco1());
+    Cmd.CmdGetAgencia1(email);
+    Cmd.executar();
+    Agencia1DB.SetAgencia(Cmd.GetResultAgencia1());
+    Cmd.CmdGetConta2(email);
+    Cmd.executar();
+    Conta2DB.SetConta(Cmd.GetResultConta2());
+    Cmd.CmdGetBanco2(email);
+    Cmd.executar();
+    Banco2DB.SetCodigoBanco(Cmd.GetResultBanco2());
+    Cmd.CmdGetAgencia2(email);
+    Cmd.executar();
+    Agencia2DB.SetAgencia(Cmd.GetResultAgencia2());
+    user.SetCpf(CpfDB);
+    user.SetNome(NomeDB);
+    user.SetTelefone(TelefoneDB);
+    acc.SetConta(Conta1DB);
+    acc.SetBanco(Banco1DB);
+    acc.SetAgencia(Agencia1DB);
+    acc2.SetConta(Conta2DB);
+    acc2.SetBanco(Banco2DB);
+    acc2.SetAgencia(Agencia2DB);
+
+}
+//---------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServUsuario::AlterarDados(Email& usuario, User& user, Account& acc1, Account& acc2) throw(runtime_error){
+    CmdAtualizacaoDados Cmd;
+
+    Cmd.CmdAtualizarUser(usuario,user);
+    Cmd.executar();
+    Cmd.CmdAtualizarAccount(usuario,acc1);
+    Cmd.executar();
+    return 1;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServUsuario::ExcluirConta(Email& usuario, Senha& senha) throw(runtime_error){
+    string SenhaDB;
+    CmdExclusaoConta Cmd;
+
+    Cmd.CmdConfirmSenha(usuario);
+    Cmd.executar();
+    SenhaDB = Cmd.getResultado();
+    if(SenhaDB==senha.GetSenha()){
+        Cmd.CmdExcluirConta(usuario);
+        return 1;
+    }
+        else{
+            return 0;
+        }
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServCarona::CadastrarCarona(Email& usuario, Ride& carona) throw(runtime_error){
+    CmdCadastroCarona Cmd;
+
+    Cmd.CmdCadastrarCarona(usuario,carona);
+    Cmd.executar();
+    return 1;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServCarona::DescadastrarCarona(Ride ride) throw(runtime_error){
+    CmdDescadastroCarona Cmd;
+
+    Cmd.CmdDescadastrarCarona(ride);
+    Cmd.executar();
+    return 1;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServCarona::ListarReservas() throw(runtime_error){
+
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServCarona::CadastrarReserva(Email& usuario,Booking& reserva) throw(runtime_error){
+    CmdCadastroReserva Cmd;
+
+    Cmd.CmdCadastrarReserva(usuario,reserva);
+    Cmd.executar();
+    return 1;
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
+bool CntrServCarona::DescadastrarReserva(Email email) throw(runtime_error){
+    CmdDescadastroReserva Cmd;
+
+    Cmd.CmdDescadastrarReserva(email);
+    Cmd.executar();
+    return 1;
+}
