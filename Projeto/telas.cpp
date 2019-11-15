@@ -65,7 +65,7 @@ int TelaInicializacao::TelaOpt(){
     return dado;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaAutenticar::TelaAutenticacao(Email& email, Senha& senha) throw(invalid_argument){
+bool TelaAutenticar::TelaAutenticacao(Email& email, Senha& senha) throw(invalid_argument){
     char campo1[]="Digite o email: ";
     char campo2[]="Digite a senha: ";
     char campo3[]="Digite 1 para continuar ou 0 para voltar:";
@@ -87,10 +87,14 @@ void TelaAutenticar::TelaAutenticacao(Email& email, Senha& senha) throw(invalid_
     if(dado==1){
         email.SetEmail(dado1);
         senha.SetSenha(dado2);
+        return 1;
+    }
+    if(dado==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaUsuario::TelaCadastro(User& user, Account& account1, Account& account2) throw(invalid_argument){
+int TelaUsuario::TelaCadastro(User& user, Account& account1, Account& account2) throw(invalid_argument){
     char campo1[]="Digite o nome: ";
     char campo2[]="Digite o email: ";
     char campo3[]="Digite o cpf: ";
@@ -142,12 +146,14 @@ void TelaUsuario::TelaCadastro(User& user, Account& account1, Account& account2)
     getstr(dado7);
     mvprintw(linha/2+2,9,"%s",campo13);
     scanw("%d",&dado13);
-    mvprintw(linha/2+4,9,"%s",campo8);
-    scanw("%d",&dado8);
-    mvprintw(linha/2+6,9,"%s",campo9);
-    getstr(dado9);
-    mvprintw(linha/2+8,9,"%s",campo10);
-    getstr(dado10);
+    if(dado13==1){
+        mvprintw(linha/2+4,9,"%s",campo8);
+        scanw("%d",&dado8);
+        mvprintw(linha/2+6,9,"%s",campo9);
+        getstr(dado9);
+        mvprintw(linha/2+8,9,"%s",campo10);
+        getstr(dado10);
+    }
     mvprintw(linha/2+10,9,"%s",campo11);
     getstr(dado11);
     mvprintw(linha/2+12,9,"%s",campo12);
@@ -179,6 +185,11 @@ void TelaUsuario::TelaCadastro(User& user, Account& account1, Account& account2)
         }
         senha.SetSenha(dado11);
         user.SetSenha(senha);
+        return 1;
+    }
+    else
+    if(dado12==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -186,7 +197,7 @@ int TelaUsuario::TelaOptUsuario(){
     char campo1[]="1-VISUALIZAR DADOS.";
     char campo2[]="2-ALTERAR DADOS.";
     char campo3[]="3-EXCLUIR CONTA.";
-    char campo4[]="Digite o numero da opcao desejada:";
+    char campo4[]="Digite o numero da opcao desejada ou 0 para voltar:";
     char msgerro[]="Opcao invalida!";
     int dado;
     int linha,coluna;
@@ -201,7 +212,7 @@ int TelaUsuario::TelaOptUsuario(){
         scanw("%d", &dado);
         clear();
         endwin();
-        if(dado!=1 && dado!=2 && dado!=3){
+        if(dado!=1 && dado!=2 && dado!=3 && dado!=0){
             initscr();
             getmaxyx(stdscr,linha,coluna);
             mvprintw(linha/2,(coluna-strlen(msgerro))/2,"%s", msgerro);
@@ -211,7 +222,7 @@ int TelaUsuario::TelaOptUsuario(){
             clear();
             endwin();
         }
-    }while(dado!=1 && dado!=2 && dado!=3);
+    }while(dado!=1 && dado!=2 && dado!=3 && dado!=0);
     return dado;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -230,16 +241,28 @@ void TelaUsuario::TelaVisualizarDados(User& user, Account& account1, Account& ac
 
     initscr();
     getmaxyx(stdscr,linha,coluna);
-    mvprintw(linha/2-10,9,"%s",campo1+user.GetNome().GetNome());
-    mvprintw(linha/-8,9,"%s",campo2+user.GetEmail().GetEmail());
-    mvprintw(linha/2-6,9,"%s",campo3+user.GetCpf().GetCpf());
-    mvprintw(linha/2-4,9,"%s",campo4+user.GetTelefone().GetTelefone());
-    mvprintw(linha/2-2,9,"%s",campo5+account1.GetBanco().GetCodigoBanco());
-    mvprintw(linha/2,9,"%s",campo6+account1.GetAgencia().GetAgencia());
-    mvprintw(linha/2+2,9,"%s",campo7+account1.GetConta().GetConta());
-    mvprintw(linha/2+4,9,"%s",campo8+account2.GetBanco().GetCodigoBanco());
-    mvprintw(linha/2+6,9,"%s",campo9+account2.GetAgencia().GetAgencia());
-    mvprintw(linha/2+8,9,"%s",campo9+account2.GetConta().GetConta());
+    initscr();
+    getmaxyx(stdscr,linha,coluna);
+    mvprintw(linha/2-10,9,"%s",campo1);
+    mvaddstr(linha/2-10,25,user.GetNome().GetNome().c_str());
+    //mvprintw(linha/-8,9,"%s",campo2);
+    //mvaddstr(linha/2-8,25,user.GetEmail().GetEmail().c_str());
+    mvprintw(linha/2-6,9,"%s",campo3);
+    mvaddstr(linha/2-6,25,user.GetCpf().GetCpf().c_str());
+    mvprintw(linha/2-4,9,"%s",campo4);
+    mvaddstr(linha/2-4,25,user.GetTelefone().GetTelefone().c_str());
+    mvprintw(linha/2-2,9,"%s",campo5);
+    mvprintw(linha/2-2,35,"%d",account1.GetBanco().GetCodigoBanco());
+    mvprintw(linha/2,9,"%s",campo6);
+    mvaddstr(linha/2,35,account1.GetAgencia().GetAgencia().c_str());
+    mvprintw(linha/2+2,9,"%s",campo7);
+    mvaddstr(linha/2+2,35,account1.GetConta().GetConta().c_str());
+    mvprintw(linha/2+4,9,"%s",campo8);
+    mvprintw(linha/2+4,40,"%d",account2.GetBanco().GetCodigoBanco());
+    mvprintw(linha/2+6,9,"%s",campo9);
+    mvaddstr(linha/2+6,40,account2.GetAgencia().GetAgencia().c_str());
+    mvprintw(linha/2+8,9,"%s",campo10);
+    mvaddstr(linha/2+8,40,account2.GetConta().GetConta().c_str());
     noecho();
     getch();
     echo();
@@ -247,10 +270,8 @@ void TelaUsuario::TelaVisualizarDados(User& user, Account& account1, Account& ac
     endwin();
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& account2) throw(invalid_argument){
+int TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& account2) throw(invalid_argument){
     char campo1[]="Digite o nome: ";
-    char campo2[]="Digite o email: ";
-    char campo3[]="Digite o cpf: ";
     char campo4[]="Digite o telefone: ";
     char campo5[]="Digite o codigo de banco: ";
     char campo6[]="Digite o numero da agencia: ";
@@ -260,10 +281,8 @@ void TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& accou
     char campo10[]="Digite o numero da conta(opcional): ";
     char campo11[]="Digite a senha: ";
     char campo12[]="Digite 1 para continuar ou 0 para voltar:";
-    char campo13[]="Deseja cadastra uma segunda conta bancaria?Digite 1 para confirmar 0 para cancelar:";
+    char campo13[]="Deseja cadastra uma segunda conta bancaria? Digite 1 para confirmar 0 para cancelar:";
     char dado1[80];
-    char dado2[80];
-    char dado3[80];
     char dado4[80];
     char dado6[80];
     char dado7[80];
@@ -285,26 +304,24 @@ void TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& accou
     getmaxyx(stdscr,linha,coluna);
     mvprintw(linha/2-12,9,"%s",campo1);
     getstr(dado1);
-    mvprintw(linha/2-10,9,"%s",campo2);
-    getstr(dado2);
-    mvprintw(linha/2-8,9,"%s",campo3);
-    getstr(dado3);
-    mvprintw(linha/2-6,9,"%s",campo4);
+    mvprintw(linha/2-10,9,"%s",campo4);
     getstr(dado4);
-    mvprintw(linha/2-4,9,"%s",campo5);
+    mvprintw(linha/2-8,9,"%s",campo5);
     scanw("%d",&dado5);
-    mvprintw(linha/2-2,9,"%s",campo6);
+    mvprintw(linha/2-6,9,"%s",campo6);
     getstr(dado6);
-    mvprintw(linha/2,9,"%s",campo7);
+    mvprintw(linha/2-4,9,"%s",campo7);
     getstr(dado7);
     mvprintw(linha/2+2,9,"%s",campo13);
     scanw("%d",&dado13);
-    mvprintw(linha/2+4,9,"%s",campo8);
-    scanw("%d",&dado8);
-    mvprintw(linha/2+6,9,"%s",campo9);
-    getstr(dado9);
-    mvprintw(linha/2+8,9,"%s",campo10);
-    getstr(dado10);
+    if(dado13==1){
+        mvprintw(linha/2+4,9,"%s",campo8);
+        scanw("%d",&dado8);
+        mvprintw(linha/2+6,9,"%s",campo9);
+        getstr(dado9);
+        mvprintw(linha/2+8,9,"%s",campo10);
+        getstr(dado10);
+    }
     mvprintw(linha/2+10,9,"%s",campo11);
     getstr(dado11);
     mvprintw(linha/2+12,9,"%s",campo12);
@@ -314,10 +331,6 @@ void TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& accou
     if(dado12==1){
         nome.SetNome(dado1);
         user.SetNome(nome);
-        email.SetEmail(dado2);
-        user.SetEmail(email);
-        cpf.SetCpf(dado3);
-        user.SetCpf(cpf);
         telefone.SetTelefone(dado4);
         user.SetTelefone(telefone);
         banco.SetCodigoBanco(dado5);
@@ -336,10 +349,15 @@ void TelaUsuario::TelaAlterarDados(User& user, Account& account1, Account& accou
         }
         senha.SetSenha(dado11);
         user.SetSenha(senha);
+        return 1;
+    }
+    else
+    if(dado12==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaUsuario::TelaExcluirDados(Senha& senha) throw(invalid_argument){
+int TelaUsuario::TelaExcluirDados(Senha& senha) throw(invalid_argument){
     char campo1[]="Digite a senha: ";
     char campo3[]="Digite 1 para continuar ou 0 para voltar:";
     char dado1[80];
@@ -356,6 +374,11 @@ void TelaUsuario::TelaExcluirDados(Senha& senha) throw(invalid_argument){
     endwin();
     if(dado==1){
         senha.SetSenha(dado1);
+        return 1;
+    }
+    else
+    if(dado==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -363,9 +386,9 @@ int TelaCarona::TelaOptCarona(){
     char campo1[]="1-CADASTRAR CARONA.";
     char campo2[]="2-DESCADASTRAR CARONA.";
     char campo3[]="3-RESERVAS DA CARONA.";
-    char campo4[]="Digite o numero da opcao desejada:";
+    char campo4[]="Digite o numero da opcao desejada ou 0 para voltar:";
     char msgerro[]="Opcao invalida!";
-    int dado;
+    int dado = 0;
     int linha,coluna;
 
     do{
@@ -378,7 +401,7 @@ int TelaCarona::TelaOptCarona(){
         scanw("%d", &dado);
         clear();
         endwin();
-        if(dado!=1 && dado!=2 && dado!=3){
+        if(dado!=1 && dado!=2 && dado!=3 && dado!=0){
             initscr();
             getmaxyx(stdscr,linha,coluna);
             mvprintw(linha/2,(coluna-strlen(msgerro))/2,"%s", msgerro);
@@ -388,11 +411,11 @@ int TelaCarona::TelaOptCarona(){
             clear();
             endwin();
         }
-    }while(dado!=1 && dado!=2 && dado!=3);
+    }while(dado!=1 && dado!=2 && dado!=3 && dado!=0);
     return dado;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaCarona::TelaCadastrarCarona(Ride& ride) throw(invalid_argument){
+int TelaCarona::TelaCadastrarCarona(Ride& ride) throw(invalid_argument){
     char campo1[]="Digite o codigo da carona: ";
     char campo2[]="Digite o estado de origem: ";
     char campo3[]="Digite a cidade de origem: ";
@@ -464,10 +487,15 @@ void TelaCarona::TelaCadastrarCarona(Ride& ride) throw(invalid_argument){
         ride.SetVagas(vagas);
         preco.SetPreco(dado9);
         ride.SetPreco(preco);
+        return 1;
+    }
+    else
+    if(dado10==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaCarona::TelaDescadastrarCarona(Ride& ride){
+int TelaCarona::TelaDescadastrarCarona(Ride& ride){
     char campo1[]="Codigo da carona: ";
     char campo2[]="Digite 1 para continuar ou 0 para voltar:";
     int dado1,dado2;
@@ -485,22 +513,71 @@ void TelaCarona::TelaDescadastrarCarona(Ride& ride){
     if(dado2==1){
         codigocarona.SetCodigoCarona(dado1);
         ride.SetCodigoCarona(codigocarona);
+        return 1;
     }
+    else
+        if(dado2==0){
+    return 0;}
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaCarona::TelaListaReservas(Ride& ride){
+void TelaCarona::TelaListaReservas(User& user,Ride& ride,Booking& reserva,Email& aux){
+    char campo1[]="Nome: ";
+    char campo2[]="Email: ";
+    char campo3[]="Codigo de reserva: ";
+    char campo4[]="Assento: ";
+    char campo5[]="Bagagens: ";
+    int linha,coluna;
 
+    initscr();
+    getmaxyx(stdscr,linha,coluna);
+    mvprintw(linha/-10,9,"%s",campo1);
+    mvaddstr(linha/2-10,25,user.GetNome().GetNome().c_str());
+    mvprintw(linha/-8,9,"%s",campo2);
+    mvaddstr(linha/2-8,25,user.GetEmail().GetEmail().c_str());
+    mvprintw(linha/2-6,9,"%s",campo3);
+    mvprintw(linha/2-6,25,"%d",reserva.GetCodigoReserva().GetCodigoReserva());
+    mvprintw(linha/2-4,9,"%s",campo4);
+    mvprintw(linha/2-4,25,"%s",reserva.GetAssento().GetAssento());
+    mvprintw(linha/2-2,9,"%s",campo5);
+    mvprintw(linha/2-2,15,"%d",reserva.GetBagagem().GetBagagem());
+    noecho();
+    getch();
+    echo();
+    clear();
+    endwin();
+}
+//-----------------------------------------------------------------------------------------------------------------------------------
+int TelaCarona::TelaCodigoCarona(Ride& ride){
+    char campo1[]="Digite o codigo da carona: ";
+    char campo3[]="Digite 1 para continuar ou 0 para voltar:";
+    int dado1;
+    int dado;
+    int linha,coluna;
+    CodigoCarona cd;
 
-
-
-
+    initscr();
+    getmaxyx(stdscr,linha,coluna);
+    mvprintw(linha/2-1,9,"%s",campo1);
+    scanw("%d",&dado1);
+    mvprintw(linha/2+1,9,"%s",campo3);
+    scanw("%d",&dado);
+    clear();
+    endwin();
+    if(dado==1){
+        cd.SetCodigoCarona(dado1);
+        ride.SetCodigoCarona(cd);
+        return 1;
+    }
+    else
+    if(dado==0) {
+        return 0;
+    }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
 int TelaReserva::TelaOptReserva(){
     char campo1[]="1-CADASTRAR RESERVA.";
     char campo2[]="2-DESCADASTRAR RESERVA.";
-    char campo3[]="3-VISUALIZAR RESERVA.";
-    char campo4[]="Digite o numero da opcao desejada:";
+    char campo4[]="Digite o numero da opcao desejada ou 0 para voltar:";
     char msgerro[]="Opcao invalida!";
     int dado;
     int linha,coluna;
@@ -510,12 +587,11 @@ int TelaReserva::TelaOptReserva(){
         getmaxyx(stdscr,linha,coluna);
         mvprintw(linha/2-3,9,"%s",campo1);
         mvprintw(linha/2-1,9,"%s",campo2);
-        mvprintw(linha/2+1,9,"%s",campo3);
         mvprintw(linha/2+3,9,"%s",campo4);
         scanw("%d", &dado);
         clear();
         endwin();
-        if(dado!=1 && dado!=2 && dado!=3){
+        if(dado!=1 && dado!=2 && dado!=0){
             initscr();
             getmaxyx(stdscr,linha,coluna);
             mvprintw(linha/2,(coluna-strlen(msgerro))/2,"%s", msgerro);
@@ -525,27 +601,21 @@ int TelaReserva::TelaOptReserva(){
             clear();
             endwin();
         }
-    }while(dado!=1 && dado!=2 && dado!=3);
+    }while(dado!=1 && dado!=2 && dado!=0);
     return dado;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-void TelaReserva::TelaVisualizarReserva(Email& email){
-
-
-
-
-
-}
-//-----------------------------------------------------------------------------------------------------------------------------------
-void TelaReserva::TelaCadastrarReserva(Booking& booking) throw(invalid_argument){
+int TelaReserva::TelaCadastrarReserva(Booking& booking) throw(invalid_argument){
     char campo1[]="Digite o codigo da reserva: ";
+    char campo0[]="Digite o codigo da carona: ";
     char campo2[]="Digite a preferencia de assento(D/T): ";
     char campo3[]="Digite o numero de bagagens: ";
     char campo4[]="Digite 1 para continuar ou 0 para voltar:";
     char dado2;
-    int dado1,dado3,dado4;
+    int dado0,dado1,dado3,dado4;
     int linha,coluna;
     CodigoReserva codigoreserva;
+    //CodigoCarona codigocarona;
     Assento assento;
     Bagagem bagagem;
 
@@ -553,21 +623,30 @@ void TelaReserva::TelaCadastrarReserva(Booking& booking) throw(invalid_argument)
     getmaxyx(stdscr,linha,coluna);
     mvprintw(linha/2-3,9,"%s",campo1);
     scanw("%d",&dado1);
-    mvprintw(linha/2-1,9,"%s",campo2);
+    mvprintw(linha/2-1,9,"%s",campo0);
+    scanw("%d",&dado0);
+    mvprintw(linha/2+1,9,"%s",campo2);
     scanw("%c",&dado2);
-    mvprintw(linha/2+1,9,"%s",campo3);
+    mvprintw(linha/2+3,9,"%s",campo3);
     scanw("%d",&dado3);
-    mvprintw(linha/2+3,9,"%s",campo4);
+    mvprintw(linha/2+5,9,"%s",campo4);
     scanw("%d",&dado4);
     clear();
     endwin();
     if(dado4==1){
         codigoreserva.SetCodigoReserva(dado1);
         booking.SetCodigoReserva(codigoreserva);
+      //  codigocarona.SetCodigoCarona(dado0);
+        //ride.SetCodigoCarona(codigocarona);
         assento.SetAssento(dado2);
         booking.SetAssento(assento);
         bagagem.SetBagagem(dado3);
         booking.SetBagagem(bagagem);
+        return 1;
+    }
+    else
+    if(dado4==0){
+        return 0;
     }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------

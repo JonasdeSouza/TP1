@@ -15,32 +15,32 @@ class TelaInicializacao{
 
 class TelaAutenticar{
     public:
-        void TelaAutenticacao(Email&, Senha&) throw(invalid_argument);
+        bool TelaAutenticacao(Email&, Senha&) throw(invalid_argument);
 
 };
 
 class TelaUsuario{
     public:
-        void TelaCadastro(User&, Account&, Account&) throw(invalid_argument);
+        int TelaCadastro(User&, Account&, Account&) throw(invalid_argument);
         int TelaOptUsuario();
         void TelaVisualizarDados(User&, Account&, Account&);
-        void TelaAlterarDados(User&, Account&, Account&) throw(invalid_argument);
-        void TelaExcluirDados(Senha&) throw(invalid_argument);
+        int TelaAlterarDados(User&, Account&, Account&) throw(invalid_argument);
+        int TelaExcluirDados(Senha&) throw(invalid_argument);
 };
 
 class TelaCarona{
     public:
         int TelaOptCarona();
-        void TelaCadastrarCarona(Ride&) throw(invalid_argument);
-        void TelaDescadastrarCarona(Ride&);
-        void TelaListaReservas(Ride&);
+        int TelaCadastrarCarona(Ride&) throw(invalid_argument);
+        int TelaDescadastrarCarona(Ride&);
+        void TelaListaReservas(User&,Ride&,Booking&,Email&);
+        int TelaCodigoCarona(Ride&);
 };
 
 class TelaReserva{
     public:
         int TelaOptReserva();
-        void TelaVisualizarReserva(Email&);
-        void TelaCadastrarReserva(Booking&) throw(invalid_argument);
+        int TelaCadastrarReserva(Booking&) throw(invalid_argument);
         int TelaDescadastrarReserva();
 };
 

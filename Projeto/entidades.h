@@ -5,7 +5,7 @@
 #include "dominios.h"
 using namespace std;
 
-class User{
+class User{ /**< /brief Entidade que lida com usuários */
         private:
             Nome nome;
             Telefone telefone;

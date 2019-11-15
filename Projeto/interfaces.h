@@ -29,8 +29,8 @@ public:
     virtual void setIServUsuario(IServUsuario *) = 0;
     virtual ~IAprUsuario(){}
     virtual bool Cadastrar() throw(runtime_error) = 0;
-    virtual int Perfil() throw(runtime_error) = 0;
-    virtual bool VisualizarDados(User&,Account&,Account&) throw(runtime_error) = 0;
+    virtual bool Perfil(Email&, User&, Account&, Account&, Senha&) throw(runtime_error) = 0;
+    virtual bool VisualizarDados(User&, Account&, Account&) throw(runtime_error) = 0;
     virtual bool AlterarDados(Email&) throw(runtime_error) = 0;
     virtual bool ExcluirConta(Email&) throw(runtime_error) = 0;
 };
@@ -39,9 +39,9 @@ public:
 class IServUsuario {
 public:
     virtual ~IServUsuario(){}
-    virtual bool Cadastrar(User& ,Account& ,Account&) throw(runtime_error) = 0;
+    virtual bool Cadastrar(User& ,Account&, Account&) throw(runtime_error) = 0;
     virtual bool ExcluirConta(Email&,Senha&) throw(runtime_error) = 0;
-    virtual bool VisualizarDados() throw(runtime_error) = 0;
+    virtual bool VisualizarDados(User&, Account&, Account&) throw(runtime_error) = 0;
     virtual bool AlterarDados(Email&,User& ,Account& ,Account&) throw(runtime_error) = 0;
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,7 +50,7 @@ class IServCarona {
     virtual ~IServCarona(){}
     virtual bool CadastrarCarona(Email&,Ride&) throw(runtime_error) = 0;
     virtual bool DescadastrarCarona(Ride) throw(runtime_error) = 0;
-    virtual bool ListarReservas() throw(runtime_error) = 0;
+    virtual bool ListarReservas(User&, Ride&, Booking&,Email&) throw(runtime_error) = 0;
     virtual bool CadastrarReserva(Email&,Booking&) throw(runtime_error) = 0;
     virtual bool DescadastrarReserva(Email) throw(runtime_error) = 0;
 };
@@ -59,11 +59,11 @@ class IAprCarona {
     public:
     virtual void setIServCarona(IServCarona *) = 0;
     virtual ~IAprCarona(){}
-    virtual int Carona() throw(runtime_error) = 0;
+    virtual bool Carona(Email&) throw(runtime_error) = 0;
     virtual bool CadastrarCarona(Email&) throw(runtime_error) = 0;
     virtual bool DescadastrarCarona() throw(runtime_error) = 0;
-    virtual bool ListarReservas() throw(runtime_error) = 0;
-    virtual int Reserva() throw(runtime_error) = 0;
+    virtual bool ListarReservas(User&,Ride&,Booking&,Email&) throw(runtime_error) = 0;
+    virtual bool Reserva(Email&) throw(runtime_error) = 0;
     virtual bool CadastrarReserva(Email&) throw(runtime_error) = 0;
     virtual bool DescadastrarReserva(Email&) throw(runtime_error) = 0;
 };

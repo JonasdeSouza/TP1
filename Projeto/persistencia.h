@@ -53,7 +53,7 @@ public:
 class CmdCadastroUsuario:public ComandoSQL{
     public:
         void CmdCadastroUser(User user);
-        void CmdCadastroAccount(User user, Account acc);
+        void CmdCadastroAccount(User user, Account acc, Account acc2);
 };
 //-------------------------------------------------------------------------------------------------------------------------------
 class CmdAtualizacaoDados:public ComandoSQL{
@@ -79,9 +79,28 @@ class CmdDescadastroCarona:public ComandoSQL{
         void CmdDescadastrarCarona(Ride ride);
 };
 //-------------------------------------------------------------------------------------------------------------------------------
+class CmdVisualizarReservas:public ComandoSQL{
+    public:
+        void CmdGetNome(CodigoCarona codigocarona);
+        string GetResultNome() throw(runtime_error);
+        void CmdGetEmail(CodigoCarona codigocarona);
+        string GetResultEmail() throw(runtime_error);
+        void CmdGetCodreserv(CodigoCarona codigocarona);
+        string GetResultCodreserv() throw(runtime_error);
+        void CmdGetAssento(CodigoCarona codigocarona);
+        string GetResultAssento() throw(runtime_error);
+        void CmdGetBagagem(CodigoCarona codigocarona);
+        string GetResultBagagem() throw(runtime_error);
+};
+class CmdVisualizarCodCarona:public ComandoSQL{
+public:
+    void CmdGetcodcarona(Email usuario);
+        string GetResultcodcarona() throw(runtime_error);
+};
+//-------------------------------------------------------------------------------------------------------------------------------
 class CmdCadastroReserva:public ComandoSQL{
     public:
-        void CmdCadastrarReserva(Email usuario,Booking reserva);
+        void CmdCadastrarReserva(Email usuario,Booking reserva,Ride ride);
 };
 //-------------------------------------------------------------------------------------------------------------------------------
 class CmdDescadastroReserva:public ComandoSQL{
@@ -110,4 +129,13 @@ class CmdVisualizarDados:public ComandoSQL{
         void CmdGetAgencia2(Email email);
         string GetResultAgencia2() throw(runtime_error);
 };
+
+inline string ElementoResultado::getNomeColuna() const {
+        return nomeColuna;
+}
+
+inline string ElementoResultado::getValorColuna() const {
+        return valorColuna;
+}
+
 #endif // PERSISTENCIA_H_INCLUDED

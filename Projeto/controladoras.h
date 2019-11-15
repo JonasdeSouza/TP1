@@ -25,7 +25,7 @@ class CntrAprInicializacao {
         void setIAprCarona(IAprCarona *refAprCarona){
             this->refAprCarona = refAprCarona;
         }
-        int Start() throw(runtime_error);
+        void Start() throw(runtime_error);
 };
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 class CntrAprAutenticacao:public IAprAutenticacao {
@@ -46,8 +46,8 @@ class CntrAprUsuario:public IAprUsuario {
             this->refServUsuario = refServUsuario;
         }
         bool Cadastrar() throw(runtime_error);
-        int Perfil() throw(runtime_error);
-        bool VisualizarDados() throw(runtime_error);
+        bool Perfil(Email&,User&, Account&, Account&,Senha&) throw(runtime_error);
+        bool VisualizarDados(User&, Account&, Account&) throw(runtime_error);
         bool AlterarDados(Email&) throw(runtime_error);
         bool ExcluirConta(Email&) throw(runtime_error);
 };
@@ -59,11 +59,11 @@ class CntrAprCarona:public IAprCarona {
         void setIServCarona(IServCarona *refServCarona){
             this->refServCarona = refServCarona;
         }
-        int Carona() throw(runtime_error);
-        int Reserva() throw(runtime_error);
+        bool Carona(Email&) throw(runtime_error);
+        bool Reserva(Email&) throw(runtime_error);
         bool CadastrarCarona(Email&) throw(runtime_error);
         bool DescadastrarCarona() throw(runtime_error);
-        bool ListarReservas() throw(runtime_error);
+        bool ListarReservas(User&,Ride&,Booking&,Email&) throw(runtime_error);
         bool CadastrarReserva(Email&) throw(runtime_error);
         bool DescadastrarReserva(Email&) throw(runtime_error);
 };
@@ -87,7 +87,7 @@ class CntrServCarona:public IServCarona {
     public:
         bool CadastrarCarona(Email&,Ride&) throw(runtime_error);
         bool DescadastrarCarona(Ride ride) throw(runtime_error);
-        bool ListarReservas() throw(runtime_error);
+        bool ListarReservas(User&,Ride&,Booking&,Email&) throw(runtime_error);
         bool CadastrarReserva(Email&,Booking&) throw(runtime_error);
         bool DescadastrarReserva(Email) throw(runtime_error);
 };

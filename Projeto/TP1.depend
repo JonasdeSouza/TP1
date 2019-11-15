@@ -47,9 +47,13 @@
 	<string>
 	<stdexcept>
 
-1569506279 source:c:\users\particular\documents\tp1\tp1\projeto\main.cc
+1573669468 source:c:\users\particular\documents\tp1\tp1\projeto\main.cc
 	<iostream>
-	"user.h"
+	"dominios.h"
+	"entidades.h"
+	"controladoras.h"
+	"interfaces.h"
+	"curses.h"
 
 1569782766 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
 	<iostream>
@@ -73,13 +77,13 @@
 	<stdexcept>
 	"dominios.h"
 
-1569845587 source:c:\users\particular\documents\tp1\tp1\projeto\dominios.cpp
+1569931720 source:c:\users\particular\documents\tp1\tp1\projeto\dominios.cpp
 	<iostream>
 	<string>
 	<stdexcept>
 	"dominios.h"
 
-1569859832 c:\users\particular\documents\tp1\tp1\projeto\dominios.h
+1573219692 c:\users\particular\documents\tp1\tp1\projeto\dominios.h
 	<string>
 	<stdexcept>
 
@@ -286,4 +290,284 @@
 	"entidades.h"
 	"dominios.h"
 	"testes.h"
+
+1573673508 source:c:\users\particular\documents\tp1\tp1\projeto\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"entidades.h"
+	"curses.h"
+	<cstring>
+	"telas.h"
+	"persistencia.h"
+
+1573668932 c:\users\particular\documents\tp1\tp1\projeto\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1573658123 c:\users\particular\documents\tp1\tp1\projeto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1573219693 c:\users\particular\documents\tp1\tp1\projeto\entidades.h
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1573563669 c:\users\particular\documents\tp1\tp1\projeto\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1573655321 c:\users\particular\documents\tp1\tp1\projeto\telas.h
+	"dominios.h"
+	"entidades.h"
+	<string.h>
+	<stdlib.h>
+	"curses.h"
+
+1573653912 c:\users\particular\documents\tp1\tp1\projeto\persistencia.h
+	"dominios.h"
+	"entidades.h"
+	<list>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	"sqlite3.h"
+
+1570829188 c:\users\particular\documents\tp1\tp1\projeto\sqlite3.h
+	<stdarg.h>
+
+1569867791 source:c:\users\particular\documents\tp1\tp1\projeto\entidades.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+	"entidades.h"
+
+1569957852 c:\users\particular\documents\tp1\tp1\projeto\testes.h
+	"dominios.h"
+	"entidades.h"
+	<string>
+
+1573672969 source:c:\users\particular\documents\tp1\tp1\projeto\telas.cpp
+	"telas.h"
+	<iostream>
+
+1569931721 source:c:\users\particular\documents\tp1\tp1\projeto\testes.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+
+1573673567 source:c:\users\particular\documents\tp1\tp1\projeto\persistencia.cpp
+	"persistencia.h"
+	<string>
+	<string.h>
+	<conio.h>
+
+1573777018 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"entidades.h"
+	"curses.h"
+	<cstring>
+	"telas.h"
+	"persistencia.h"
+
+1573776086 c:\users\jonas\documents\tp1\lixodojonas\projeto\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1573776101 c:\users\jonas\documents\tp1\lixodojonas\projeto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1573685629 c:\users\jonas\documents\tp1\lixodojonas\projeto\dominios.h
+	<string>
+	<stdexcept>
+
+1573685631 c:\users\jonas\documents\tp1\lixodojonas\projeto\entidades.h
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1573685629 c:\users\jonas\documents\tp1\lixodojonas\projeto\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1573776214 c:\users\jonas\documents\tp1\lixodojonas\projeto\telas.h
+	"dominios.h"
+	"entidades.h"
+	<string.h>
+	<stdlib.h>
+	"curses.h"
+
+1573775329 c:\users\jonas\documents\tp1\lixodojonas\projeto\persistencia.h
+	"dominios.h"
+	"entidades.h"
+	<list>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	"sqlite3.h"
+
+1573685632 c:\users\jonas\documents\tp1\lixodojonas\projeto\sqlite3.h
+	<stdarg.h>
+
+1573685629 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\dominios.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1573685631 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\entidades.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+	"entidades.h"
+
+1573761756 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\main.cc
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"controladoras.h"
+	"interfaces.h"
+	"curses.h"
+
+1573778299 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\persistencia.cpp
+	"persistencia.h"
+	<string>
+	<string.h>
+	<conio.h>
+
+1573776243 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\telas.cpp
+	"telas.h"
+
+1573685632 source:c:\users\jonas\documents\tp1\lixodojonas\projeto\testes.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+
+1573685632 c:\users\jonas\documents\tp1\lixodojonas\projeto\testes.h
+	"dominios.h"
+	"entidades.h"
+	<string>
+
+1573748845 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"entidades.h"
+	"curses.h"
+	<cstring>
+	"telas.h"
+	"persistencia.h"
+
+1573744544 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1573745086 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1573219692 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\dominios.h
+	<string>
+	<stdexcept>
+
+1573219693 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\entidades.h
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1573563669 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1573745718 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\telas.h
+	"dominios.h"
+	"entidades.h"
+	<string.h>
+	<stdlib.h>
+	"curses.h"
+
+1573746163 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\persistencia.h
+	"dominios.h"
+	"entidades.h"
+	<list>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	"sqlite3.h"
+
+1570829188 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\sqlite3.h
+	<stdarg.h>
+
+1569931720 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\dominios.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+
+1569867791 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\entidades.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"dominios.h"
+	"entidades.h"
+
+1573744478 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\main.cc
+	<iostream>
+	"dominios.h"
+	"entidades.h"
+	"controladoras.h"
+	"interfaces.h"
+	"curses.h"
+
+1573748406 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\persistencia.cpp
+	"persistencia.h"
+	<string>
+	<string.h>
+	<conio.h>
+
+1573747755 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\telas.cpp
+	"telas.h"
+
+1569931721 source:c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\testes.cpp
+	<iostream>
+	<string>
+	<stdexcept>
+	"entidades.h"
+	"dominios.h"
+	"testes.h"
+
+1569957852 c:\users\particular\documents\tp1\local tp1\lixodojonas\projeto\testes.h
+	"dominios.h"
+	"entidades.h"
+	<string>
 

@@ -10,15 +10,42 @@
 #include <iostream>
 #include "dominios.h"
 #include "entidades.h"
-#include "testes.h"
 #include "controladoras.h"
 #include "interfaces.h"
+#include "curses.h"
 
 using namespace std;
 
 int main(){
 
-    CntrAprInicializacao run;
-    run.Start();
+   CntrAprInicializacao A;
+    CntrAprAutenticacao *B;
+    CntrAprCarona *C;
+    CntrAprUsuario *D;
+    CntrServAutenticacao *E;
+    CntrServCarona *F;
+    CntrServUsuario *G;
+    B = new CntrAprAutenticacao();
+    C = new CntrAprCarona();
+    D = new CntrAprUsuario();
+    E = new CntrServAutenticacao();
+    F = new CntrServCarona();
+    G = new CntrServUsuario();
+    A.setIAprAutenticacao(B);
+    A.setIAprCarona(C);
+    A.setIAprUsuario(D);
+    B->setIServAutenticacao(E);
+    C->setIServCarona(F);
+    D->setIServUsuario(G);
+    A.Start();
+    delete B;
+    delete C;
+    delete D;
+    delete E;
+    delete F;
+    delete G;
+
     return 0;
 }
+
+

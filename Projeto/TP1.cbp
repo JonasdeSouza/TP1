@@ -16,8 +16,8 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add library="E:/TP1/Projeto/pdcurses.lib" />
-					<Add library="E:/TP1/Projeto/sqlite3.lib" />
+					<Add library="C:/Users/Particular/Documents/Tp1/Local TP1/lixodojonas/Projeto/pdcurses.lib" />
+					<Add library="C:/Users/Particular/Documents/Tp1/Local TP1/lixodojonas/Projeto/sqlite3.lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -38,8 +38,9 @@
 			<Add option="-std=c++11" />
 		</Compiler>
 		<Linker>
-			<Add library="E:/TP1/Projeto/pdcurses.lib" />
-			<Add library="E:/TP1/Projeto/sqlite3.lib" />
+			<Add library="C:/Users/Particular/Documents/Tp1/Local TP1/lixodojonas/Projeto/pdcurses.lib" />
+			<Add library="C:/Users/Particular/Documents/Tp1/Local TP1/lixodojonas/Projeto/sqlite3.lib" />
+			<Add directory="C:/Users/Particular/Documents/Tp1/TP1/Projeto" />
 		</Linker>
 		<Unit filename="controladoras.cpp" />
 		<Unit filename="controladoras.h" />
@@ -52,7 +53,6 @@
 		<Unit filename="main.cc" />
 		<Unit filename="persistencia.cpp" />
 		<Unit filename="persistencia.h" />
-		<Unit filename="sqlite3.h" />
 		<Unit filename="telas.cpp" />
 		<Unit filename="telas.h" />
 		<Unit filename="testes.cpp" />
