@@ -13,11 +13,13 @@
 	<stdexcept>
 	"user.h"
 
-1569889925 source:c:\users\jonas\documents\tp1\tp1\projeto\main.cc
+1573761756 source:c:\users\jonas\documents\tp1\tp1\projeto\main.cc
 	<iostream>
 	"dominios.h"
 	"entidades.h"
-	"testes.h"
+	"controladoras.h"
+	"interfaces.h"
+	"curses.h"
 
 1569276398 c:\users\jonas\documents\tp1\tp1\projeto\user.h
 	<string>
@@ -55,24 +57,24 @@
 	"interfaces.h"
 	"curses.h"
 
-1569782766 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
+1573685629 source:c:\users\jonas\documents\tp1\tp1\projeto\dominios.cpp
 	<iostream>
 	<string>
 	<stdexcept>
 	"dominios.h"
 
-1569782079 c:\users\jonas\documents\tp1\tp1\projeto\dominios.h
+1573685629 c:\users\jonas\documents\tp1\tp1\projeto\dominios.h
 	<string>
 	<stdexcept>
 
-1569885066 source:c:\users\jonas\documents\tp1\tp1\projeto\entidades.cpp
+1573685631 source:c:\users\jonas\documents\tp1\tp1\projeto\entidades.cpp
 	<iostream>
 	<string>
 	<stdexcept>
 	"dominios.h"
 	"entidades.h"
 
-1569885066 c:\users\jonas\documents\tp1\tp1\projeto\entidades.h
+1573685631 c:\users\jonas\documents\tp1\tp1\projeto\entidades.h
 	<string>
 	<stdexcept>
 	"dominios.h"
@@ -87,12 +89,12 @@
 	<string>
 	<stdexcept>
 
-1569889747 c:\users\jonas\documents\tp1\tp1\projeto\testes.h
+1573685632 c:\users\jonas\documents\tp1\tp1\projeto\testes.h
 	"dominios.h"
 	"entidades.h"
 	<string>
 
-1569889720 source:c:\users\jonas\documents\tp1\tp1\projeto\testes.cpp
+1573685632 source:c:\users\jonas\documents\tp1\tp1\projeto\testes.cpp
 	<iostream>
 	<string>
 	<stdexcept>
@@ -570,4 +572,60 @@
 	"dominios.h"
 	"entidades.h"
 	<string>
+
+1573777018 source:c:\users\jonas\documents\tp1\tp1\projeto\controladoras.cpp
+	"controladoras.h"
+	"dominios.h"
+	"entidades.h"
+	"curses.h"
+	<cstring>
+	"telas.h"
+	"persistencia.h"
+
+1573776086 c:\users\jonas\documents\tp1\tp1\projeto\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<string>
+
+1573776101 c:\users\jonas\documents\tp1\tp1\projeto\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1573685629 c:\users\jonas\documents\tp1\tp1\projeto\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1573776214 c:\users\jonas\documents\tp1\tp1\projeto\telas.h
+	"dominios.h"
+	"entidades.h"
+	<string.h>
+	<stdlib.h>
+	"curses.h"
+
+1573775329 c:\users\jonas\documents\tp1\tp1\projeto\persistencia.h
+	"dominios.h"
+	"entidades.h"
+	<list>
+	<iostream>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	"sqlite3.h"
+
+1573685632 c:\users\jonas\documents\tp1\tp1\projeto\sqlite3.h
+	<stdarg.h>
+
+1573778299 source:c:\users\jonas\documents\tp1\tp1\projeto\persistencia.cpp
+	"persistencia.h"
+	<string>
+	<string.h>
+	<conio.h>
+
+1573776243 source:c:\users\jonas\documents\tp1\tp1\projeto\telas.cpp
+	"telas.h"
 
