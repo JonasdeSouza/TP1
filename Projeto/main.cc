@@ -12,7 +12,7 @@
 #include "entidades.h"
 #include "controladoras.h"
 #include "interfaces.h"
-#include "curses.h"
+#include <curses.h>
 
 using namespace std;
 

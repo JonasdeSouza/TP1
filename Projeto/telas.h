@@ -5,7 +5,7 @@
 #include "entidades.h"
 #include <string.h>
 #include <stdlib.h>
-#include "curses.h"
+#include <curses.h>
 
 class TelaInicializacao{
     public:

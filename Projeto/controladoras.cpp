@@ -1,10 +1,11 @@
 #include "controladoras.h"
 #include "dominios.h"
 #include "entidades.h"
-#include "curses.h"
+#include <curses.h>
 #include <cstring>
 #include "telas.h"
 #include "persistencia.h"
+#include <sqlite3.h>
 //--------------------------------------------------------------------------------------------------------------------------------------------
 void CntrAprInicializacao::Start() throw(runtime_error){
     TelaInicializacao TLInicializacao;

@@ -1,8 +1,8 @@
 #include "persistencia.h"
 #include <string>
 #include <string.h>
-#include <conio.h>
-
+#include "conio.h"
+#include <sqlite3.h>
 using namespace std;
 
 list<ElementoResultado> ComandoSQL::listaResultado;

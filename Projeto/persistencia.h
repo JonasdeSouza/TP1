@@ -8,7 +8,7 @@
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
-#include "sqlite3.h"
+#include <sqlite3.h>
 
 using namespace std;
 
